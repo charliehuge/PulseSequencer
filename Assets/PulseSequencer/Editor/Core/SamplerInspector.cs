@@ -40,6 +40,7 @@ namespace DerelictComputer
                 {
                     sample.Clip = (AudioClip)EditorGUILayout.ObjectField("Sample", sample.Clip, typeof (AudioClip), true);
                     sample.PitchInSemitones = EditorGUILayout.FloatField(PitchLabel, sample.PitchInSemitones);
+					sample.Envelope.ReleaseTime = EditorGUILayout.FloatField("Release Time", sample.Envelope.ReleaseTime); 
                 }
                 EditorGUI.indentLevel -= 2;
             }

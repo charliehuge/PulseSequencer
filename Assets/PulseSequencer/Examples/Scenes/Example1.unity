@@ -255,10 +255,12 @@ MonoBehaviour:
   _pattern: {fileID: 1051215786}
   Samples:
   - Clip: {fileID: 8300000, guid: 44f29bdc45a6c499c8d3a51a912c0576, type: 3}
-    PitchInSemitones: 12
+    PitchInSemitones: 1
+    Envelope:
+      ReleaseTime: .5
   _mixerGroup: {fileID: 0}
   _audioSourcePrefab: {fileID: 8277626, guid: 4647a8b8e965e6547bd5519348460160, type: 2}
-  _voices: 1
+  _voices: 4
 --- !u!23 &734158196
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -515,10 +517,16 @@ MonoBehaviour:
   Samples:
   - Clip: {fileID: 8300000, guid: 328886b4cbbd04b9a9fe138c6e99df76, type: 3}
     PitchInSemitones: 0
+    Envelope:
+      ReleaseTime: .25
   - Clip: {fileID: 8300000, guid: 328886b4cbbd04b9a9fe138c6e99df76, type: 3}
     PitchInSemitones: 12
+    Envelope:
+      ReleaseTime: .25
   - Clip: {fileID: 8300000, guid: 328886b4cbbd04b9a9fe138c6e99df76, type: 3}
     PitchInSemitones: -2
+    Envelope:
+      ReleaseTime: .25
   _mixerGroup: {fileID: 0}
   _audioSourcePrefab: {fileID: 8277626, guid: 4647a8b8e965e6547bd5519348460160, type: 2}
   _voices: 2

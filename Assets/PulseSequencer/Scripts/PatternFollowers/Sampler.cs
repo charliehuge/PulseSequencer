@@ -15,6 +15,7 @@ namespace DerelictComputer
         {
             public AudioClip Clip;
             public float PitchInSemitones = 0f;
+			public VolumeEnvelope Envelope = new VolumeEnvelope();
         }
 
         /// <summary>
@@ -83,7 +84,7 @@ namespace DerelictComputer
             var currentAudioSource = _audioSources[_currentAudioSourceIndex];
             _currentAudioSourceIndex = (_currentAudioSourceIndex + 1)%_audioSources.Count;
 
-            currentAudioSource.clip = currentSample.Clip;
+            currentAudioSource.clip = currentSample.Envelope.Apply(currentSample.Clip);
             currentAudioSource.pitch = MusicMathUtils.SemitonesToPitch(currentSample.PitchInSemitones);
             currentAudioSource.PlayScheduled(pulseTime);
         }
