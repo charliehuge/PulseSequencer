@@ -255,9 +255,21 @@ MonoBehaviour:
   _pattern: {fileID: 1051215786}
   Samples:
   - Clip: {fileID: 8300000, guid: 44f29bdc45a6c499c8d3a51a912c0576, type: 3}
-    PitchInSemitones: 1
+    PitchInSemitones: 0
+    Envelope:
+      ReleaseTime: 1
+  - Clip: {fileID: 8300000, guid: 44f29bdc45a6c499c8d3a51a912c0576, type: 3}
+    PitchInSemitones: 2
     Envelope:
       ReleaseTime: .5
+  - Clip: {fileID: 8300000, guid: 44f29bdc45a6c499c8d3a51a912c0576, type: 3}
+    PitchInSemitones: 4
+    Envelope:
+      ReleaseTime: .25
+  - Clip: {fileID: 8300000, guid: 44f29bdc45a6c499c8d3a51a912c0576, type: 3}
+    PitchInSemitones: 6
+    Envelope:
+      ReleaseTime: .125
   _mixerGroup: {fileID: 0}
   _audioSourcePrefab: {fileID: 8277626, guid: 4647a8b8e965e6547bd5519348460160, type: 2}
   _voices: 4
@@ -518,7 +530,7 @@ MonoBehaviour:
   - Clip: {fileID: 8300000, guid: 328886b4cbbd04b9a9fe138c6e99df76, type: 3}
     PitchInSemitones: 0
     Envelope:
-      ReleaseTime: .25
+      ReleaseTime: .100000001
   - Clip: {fileID: 8300000, guid: 328886b4cbbd04b9a9fe138c6e99df76, type: 3}
     PitchInSemitones: 12
     Envelope:
@@ -526,7 +538,7 @@ MonoBehaviour:
   - Clip: {fileID: 8300000, guid: 328886b4cbbd04b9a9fe138c6e99df76, type: 3}
     PitchInSemitones: -2
     Envelope:
-      ReleaseTime: .25
+      ReleaseTime: .100000001
   _mixerGroup: {fileID: 0}
   _audioSourcePrefab: {fileID: 8277626, guid: 4647a8b8e965e6547bd5519348460160, type: 2}
   _voices: 2
@@ -580,7 +592,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1446798963}
   m_LocalRotation: {x: .458795428, y: .226062849, z: -.187361717, w: .83862865}
-  m_LocalPosition: {x: 0, y: 0, z: -5.03000021}
+  m_LocalPosition: {x: 0, y: 0, z: -2.75}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
