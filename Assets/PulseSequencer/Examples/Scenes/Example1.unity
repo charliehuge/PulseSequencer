@@ -257,22 +257,30 @@ MonoBehaviour:
   - Clip: {fileID: 8300000, guid: 44f29bdc45a6c499c8d3a51a912c0576, type: 3}
     PitchInSemitones: 0
     Envelope:
-      ReleaseTime: 1
+      _attackTime: 0
+      _sustainTime: .5
+      _releaseTime: .25
   - Clip: {fileID: 8300000, guid: 44f29bdc45a6c499c8d3a51a912c0576, type: 3}
     PitchInSemitones: 2
     Envelope:
-      ReleaseTime: .5
+      _attackTime: 0
+      _sustainTime: .25
+      _releaseTime: .25
   - Clip: {fileID: 8300000, guid: 44f29bdc45a6c499c8d3a51a912c0576, type: 3}
     PitchInSemitones: 4
     Envelope:
-      ReleaseTime: .25
+      _attackTime: 0
+      _sustainTime: 0
+      _releaseTime: .25
   - Clip: {fileID: 8300000, guid: 44f29bdc45a6c499c8d3a51a912c0576, type: 3}
-    PitchInSemitones: 6
+    PitchInSemitones: 8
     Envelope:
-      ReleaseTime: .125
+      _attackTime: 0
+      _sustainTime: 0
+      _releaseTime: .125
   _mixerGroup: {fileID: 0}
   _audioSourcePrefab: {fileID: 8277626, guid: 4647a8b8e965e6547bd5519348460160, type: 2}
-  _voices: 4
+  _voices: 2
 --- !u!23 &734158196
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -530,15 +538,21 @@ MonoBehaviour:
   - Clip: {fileID: 8300000, guid: 328886b4cbbd04b9a9fe138c6e99df76, type: 3}
     PitchInSemitones: 0
     Envelope:
-      ReleaseTime: .100000001
+      _attackTime: 0
+      _sustainTime: 0
+      _releaseTime: .5
   - Clip: {fileID: 8300000, guid: 328886b4cbbd04b9a9fe138c6e99df76, type: 3}
     PitchInSemitones: 12
     Envelope:
-      ReleaseTime: .25
+      _attackTime: .00999999978
+      _sustainTime: .100000001
+      _releaseTime: .25
   - Clip: {fileID: 8300000, guid: 328886b4cbbd04b9a9fe138c6e99df76, type: 3}
-    PitchInSemitones: -2
+    PitchInSemitones: -1
     Envelope:
-      ReleaseTime: .100000001
+      _attackTime: 0
+      _sustainTime: 0
+      _releaseTime: .5
   _mixerGroup: {fileID: 0}
   _audioSourcePrefab: {fileID: 8277626, guid: 4647a8b8e965e6547bd5519348460160, type: 2}
   _voices: 2

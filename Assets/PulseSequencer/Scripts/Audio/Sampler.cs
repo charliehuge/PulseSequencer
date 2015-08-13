@@ -21,7 +21,7 @@ namespace DerelictComputer
         /// <summary>
         /// The collection of samples
         /// </summary>
-        [HideInInspector] public List<SampleInfo> Samples = new List<SampleInfo>();
+        public List<SampleInfo> Samples = new List<SampleInfo>();
 
         /// <summary>
         /// Optionally override the AudioMixerGroup assigned in the prefab
