@@ -64,6 +64,7 @@ namespace DerelictComputer
             {
                 return;
             }
+
 		
             if (Steps[_currentStep].Active && StepTriggered != null)
             {
