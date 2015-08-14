@@ -167,11 +167,176 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 319419274}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: -10}
+  m_LocalPosition: {x: 1.60000002, y: 1, z: -13.6000004}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
+--- !u!1 &336213713
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 336213720}
+  - 33: {fileID: 336213719}
+  - 136: {fileID: 336213718}
+  - 23: {fileID: 336213717}
+  - 114: {fileID: 336213716}
+  - 108: {fileID: 336213715}
+  - 114: {fileID: 336213714}
+  m_Layer: 0
+  m_Name: Capsule
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &336213714
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 336213713}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46505b6464ba0445a8343a1234cbad03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _pattern: {fileID: 1493867678}
+  _upSpeed: 4.5
+  _upIntensity: 5.92999983
+  _downSpeed: 4.19000006
+  _downIntensity: 1.62
+--- !u!108 &336213715
+Light:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 336213713}
+  m_Enabled: 1
+  serializedVersion: 6
+  m_Type: 2
+  m_Color: {r: 0, g: 1, b: .544827461, a: 1}
+  m_Intensity: 1
+  m_Range: 10
+  m_SpotAngle: 30
+  m_CookieSize: 10
+  m_Shadows:
+    m_Type: 0
+    m_Resolution: -1
+    m_Strength: 1
+    m_Bias: .0500000007
+    m_NormalBias: .400000006
+  m_Cookie: {fileID: 0}
+  m_DrawHalo: 1
+  m_Flare: {fileID: 0}
+  m_RenderMode: 0
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_Lightmapping: 4
+  m_BounceIntensity: 1
+  m_ShadowRadius: 0
+  m_ShadowAngle: 0
+  m_AreaSize: {x: 1, y: 1}
+--- !u!114 &336213716
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 336213713}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e58daec71fa042b59edf8525c705e52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _pattern: {fileID: 1493867678}
+  Samples:
+  - _clip: {fileID: 8300000, guid: 617e13366f2ed49358ec91a8edd09db3, type: 3}
+    _pitchInSemitones: 0
+    _envelope:
+      _attackTime: .125
+      _sustainTime: .25
+      _releaseTime: 1
+  - _clip: {fileID: 8300000, guid: 617e13366f2ed49358ec91a8edd09db3, type: 3}
+    _pitchInSemitones: 7
+    _envelope:
+      _attackTime: .125
+      _sustainTime: .25
+      _releaseTime: 1
+  - _clip: {fileID: 8300000, guid: 617e13366f2ed49358ec91a8edd09db3, type: 3}
+    _pitchInSemitones: 6
+    _envelope:
+      _attackTime: .125
+      _sustainTime: .25
+      _releaseTime: 1
+  - _clip: {fileID: 8300000, guid: 617e13366f2ed49358ec91a8edd09db3, type: 3}
+    _pitchInSemitones: 11
+    _envelope:
+      _attackTime: .125
+      _sustainTime: .25
+      _releaseTime: 1
+  _mixerGroup: {fileID: 0}
+  _audioSourcePrefab: {fileID: 8277626, guid: 4647a8b8e965e6547bd5519348460160, type: 2}
+  _voices: 1
+--- !u!23 &336213717
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 336213713}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_Materials:
+  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 1
+  m_ReflectionProbeUsage: 1
+  m_ProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 1
+  m_ImportantGI: 0
+  m_AutoUVMaxDistance: .5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+--- !u!136 &336213718
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 336213713}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: .5
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!33 &336213719
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 336213713}
+  m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &336213720
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 336213713}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 4.67000008, y: 0, z: -4.73000002}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
 --- !u!1 &734158192
 GameObject:
   m_ObjectHideFlags: 0
@@ -220,7 +385,7 @@ Light:
   m_Type: 2
   m_Color: {r: 1, g: .268965542, b: 0, a: 1}
   m_Intensity: 1
-  m_Range: 5.07999992
+  m_Range: 10
   m_SpotAngle: 30
   m_CookieSize: 10
   m_Shadows:
@@ -254,30 +419,30 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _pattern: {fileID: 1051215786}
   Samples:
-  - Clip: {fileID: 8300000, guid: 44f29bdc45a6c499c8d3a51a912c0576, type: 3}
-    PitchInSemitones: 0
-    Envelope:
+  - _clip: {fileID: 8300000, guid: 44f29bdc45a6c499c8d3a51a912c0576, type: 3}
+    _pitchInSemitones: 0
+    _envelope:
+      _attackTime: 0
+      _sustainTime: 1
+      _releaseTime: .25
+  - _clip: {fileID: 8300000, guid: 44f29bdc45a6c499c8d3a51a912c0576, type: 3}
+    _pitchInSemitones: 4
+    _envelope:
       _attackTime: 0
       _sustainTime: .5
       _releaseTime: .25
-  - Clip: {fileID: 8300000, guid: 44f29bdc45a6c499c8d3a51a912c0576, type: 3}
-    PitchInSemitones: 2
-    Envelope:
+  - _clip: {fileID: 8300000, guid: 44f29bdc45a6c499c8d3a51a912c0576, type: 3}
+    _pitchInSemitones: 8
+    _envelope:
       _attackTime: 0
       _sustainTime: .25
       _releaseTime: .25
-  - Clip: {fileID: 8300000, guid: 44f29bdc45a6c499c8d3a51a912c0576, type: 3}
-    PitchInSemitones: 4
-    Envelope:
+  - _clip: {fileID: 8300000, guid: 44f29bdc45a6c499c8d3a51a912c0576, type: 3}
+    _pitchInSemitones: 12
+    _envelope:
       _attackTime: 0
       _sustainTime: 0
       _releaseTime: .25
-  - Clip: {fileID: 8300000, guid: 44f29bdc45a6c499c8d3a51a912c0576, type: 3}
-    PitchInSemitones: 8
-    Envelope:
-      _attackTime: 0
-      _sustainTime: 0
-      _releaseTime: .125
   _mixerGroup: {fileID: 0}
   _audioSourcePrefab: {fileID: 8277626, guid: 4647a8b8e965e6547bd5519348460160, type: 2}
   _voices: 2
@@ -335,7 +500,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
 --- !u!1 &859207512
 GameObject:
   m_ObjectHideFlags: 0
@@ -363,7 +528,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ff69fccba9b444119af1ab5c87c94af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _period: .25
+  _period: .125
   _latency: .10000000000000001
 --- !u!4 &859207514
 Transform:
@@ -407,12 +572,20 @@ MonoBehaviour:
   Steps:
   - Active: 1
   - Active: 0
+  - Active: 0
+  - Active: 0
   - Active: 1
+  - Active: 0
+  - Active: 0
+  - Active: 0
+  - Active: 1
+  - Active: 0
+  - Active: 0
   - Active: 0
   - Active: 1
   - Active: 0
   - Active: 1
-  - Active: 1
+  - Active: 0
   _pulse: {fileID: 859207513}
 --- !u!4 &1029668848
 Transform:
@@ -535,24 +708,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _pattern: {fileID: 1029668847}
   Samples:
-  - Clip: {fileID: 8300000, guid: 328886b4cbbd04b9a9fe138c6e99df76, type: 3}
-    PitchInSemitones: 0
-    Envelope:
+  - _clip: {fileID: 8300000, guid: 328886b4cbbd04b9a9fe138c6e99df76, type: 3}
+    _pitchInSemitones: 0
+    _envelope:
       _attackTime: 0
-      _sustainTime: 0
-      _releaseTime: .5
-  - Clip: {fileID: 8300000, guid: 328886b4cbbd04b9a9fe138c6e99df76, type: 3}
-    PitchInSemitones: 12
-    Envelope:
-      _attackTime: .00999999978
-      _sustainTime: .100000001
+      _sustainTime: .25
       _releaseTime: .25
-  - Clip: {fileID: 8300000, guid: 328886b4cbbd04b9a9fe138c6e99df76, type: 3}
-    PitchInSemitones: -1
-    Envelope:
+  - _clip: {fileID: 8300000, guid: 328886b4cbbd04b9a9fe138c6e99df76, type: 3}
+    _pitchInSemitones: 12
+    _envelope:
+      _attackTime: 0
+      _sustainTime: .25
+      _releaseTime: 0
+  - _clip: {fileID: 8300000, guid: 328886b4cbbd04b9a9fe138c6e99df76, type: 3}
+    _pitchInSemitones: -1
+    _envelope:
       _attackTime: 0
       _sustainTime: 0
-      _releaseTime: .5
+      _releaseTime: .25
   _mixerGroup: {fileID: 0}
   _audioSourcePrefab: {fileID: 8277626, guid: 4647a8b8e965e6547bd5519348460160, type: 2}
   _voices: 2
@@ -607,6 +780,50 @@ Transform:
   m_GameObject: {fileID: 1446798963}
   m_LocalRotation: {x: .458795428, y: .226062849, z: -.187361717, w: .83862865}
   m_LocalPosition: {x: 0, y: 0, z: -2.75}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+--- !u!1 &1493867677
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1493867679}
+  - 114: {fileID: 1493867678}
+  m_Layer: 0
+  m_Name: CapsulePattern
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1493867678
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1493867677}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8533c7e9298c34956b876eb07885172d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Steps:
+  - Active: 1
+  - Active: 0
+  - Active: 0
+  _pulse: {fileID: 859207513}
+--- !u!4 &1493867679
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1493867677}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}

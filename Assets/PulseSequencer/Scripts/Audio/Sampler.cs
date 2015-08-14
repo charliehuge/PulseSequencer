@@ -11,17 +11,45 @@ namespace DerelictComputer
     public class Sampler : PatternFollower
     {
         [Serializable]
-        public class SampleInfo
+        public class Sample
         {
-            public AudioClip Clip;
-            public float PitchInSemitones = 0f;
-			public VolumeEnvelope Envelope = new VolumeEnvelope();
+            [SerializeField] private AudioClip _clip;
+            [SerializeField] private float _pitchInSemitones = 0f;
+			[SerializeField] private VolumeEnvelope _envelope = new VolumeEnvelope();
+
+			private AudioClip _processedClip;
+
+			public AudioClip Clip
+			{
+				get
+				{
+					if (_processedClip == null)
+					{
+						if (_clip == null)
+						{
+							return null;
+						}
+
+						_processedClip = _envelope.Apply(_clip);
+					}
+
+					return _processedClip;
+				}
+			}
+
+			public float Pitch
+			{
+				get
+				{
+					return MusicMathUtils.SemitonesToPitch(_pitchInSemitones);
+				}
+			}
         }
 
         /// <summary>
         /// The collection of samples
         /// </summary>
-        public List<SampleInfo> Samples = new List<SampleInfo>();
+        public List<Sample> Samples = new List<Sample>();
 
         /// <summary>
         /// Optionally override the AudioMixerGroup assigned in the prefab
@@ -84,8 +112,8 @@ namespace DerelictComputer
             var currentAudioSource = _audioSources[_currentAudioSourceIndex];
             _currentAudioSourceIndex = (_currentAudioSourceIndex + 1)%_audioSources.Count;
 
-            currentAudioSource.clip = currentSample.Envelope.Apply(currentSample.Clip);
-            currentAudioSource.pitch = MusicMathUtils.SemitonesToPitch(currentSample.PitchInSemitones);
+			currentAudioSource.clip = currentSample.Clip;
+			currentAudioSource.pitch = currentSample.Pitch;
             currentAudioSource.PlayScheduled(pulseTime);
         }
     }
