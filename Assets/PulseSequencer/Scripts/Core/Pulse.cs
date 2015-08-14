@@ -21,15 +21,23 @@ namespace DerelictComputer
         /// </summary>
         [SerializeField] private double _latency = 0.1;
 
+		private bool _needsReset = true;
+
         private double _nextPulseTime;
 
-        private void OnEnable()
+        private void Reset()
         {
-            _nextPulseTime = AudioSettings.dspTime + _period;
+            _nextPulseTime = AudioSettings.dspTime;
+			_needsReset = false;
         }
 
         private void Update()
         {
+			if (_needsReset)
+			{
+				Reset();
+			}
+
             if (AudioSettings.dspTime + _latency > _nextPulseTime)
             {
                 var thisPulseTime = _nextPulseTime;
