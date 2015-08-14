@@ -205,10 +205,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _pattern: {fileID: 1493867678}
-  _upSpeed: 4.5
-  _upIntensity: 5.92999983
-  _downSpeed: 4.19000006
-  _downIntensity: 1.62
+  _upSpeed: 4.96999979
+  _upIntensity: .889999986
+  _downSpeed: 3.49000001
+  _downIntensity: 0
 --- !u!108 &336213715
 Light:
   m_ObjectHideFlags: 0
@@ -370,9 +370,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _pattern: {fileID: 1051215786}
-  _upSpeed: 8.5
+  _upSpeed: 10
   _upIntensity: 4.69000006
-  _downSpeed: 2.57999992
+  _downSpeed: 8.02999973
   _downIntensity: 0
 --- !u!108 &734158194
 Light:
