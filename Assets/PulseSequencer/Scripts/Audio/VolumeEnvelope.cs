@@ -6,32 +6,55 @@ namespace DerelictComputer
 	[Serializable]
 	public class VolumeEnvelope 
 	{
+		[SerializeField] private bool _enabled;
+	    [SerializeField] private bool _reverse;
+	    [SerializeField] private float _offset = 0f;
 		[SerializeField] private float _attackTime = 0f;
 		[SerializeField] private float _sustainTime = 10f;
 		[SerializeField] private float _releaseTime = 0f;
 
 		public AudioClip Apply(AudioClip inClip)
 		{
-			float[] sampleData = new float[inClip.samples];
+			if (!_enabled)
+			{
+				return inClip;
+			}
 
-			if (!inClip.GetData(sampleData, 0))
+		    var channels = inClip.channels;
+
+		    var offsetSamples = (int) (_offset*inClip.frequency*channels);
+
+			var sampleData = new float[inClip.samples - offsetSamples];
+
+            var tmpSampleData = new float[inClip.samples];
+
+			if (!inClip.GetData(tmpSampleData, 0))
 			{
 				Debug.LogWarning("Couldn't get sample data. Returning source clip.");
 				return inClip;
 			}
 
-			float attackSamples = _attackTime * inClip.frequency;
-			float sustainSamples = _sustainTime * inClip.frequency;
-			float releaseSamples = _releaseTime * inClip.frequency;
+		    for (int destinationIdx = 0; destinationIdx < sampleData.Length; destinationIdx++)
+		    {
+		        var sourceIdx = _reverse
+		            ? tmpSampleData.Length - destinationIdx - offsetSamples - 1
+		            : destinationIdx + offsetSamples;
 
-			for (int sIdx = 0; sIdx < inClip.samples; sIdx++)
+		        sampleData[destinationIdx] = tmpSampleData[sourceIdx];
+		    }
+
+		    var attackSamples = (int) (_attackTime*inClip.frequency);
+		    var sustainSamples = (int) (_sustainTime*inClip.frequency);
+		    var releaseSamples = (int) (_releaseTime*inClip.frequency);
+
+			for (int sIdx = 0; sIdx < sampleData.Length; sIdx++)
 			{
-				var samplesFromStart = sIdx / inClip.channels;
-				float volume = 0f;
+				var samplesFromStart = sIdx / channels;
+				var volume = 0f;
 
 				if (samplesFromStart < attackSamples)
 				{
-					volume = Mathf.Lerp(0f, 1f, samplesFromStart / attackSamples);
+					volume = Mathf.Lerp(0f, 1f, samplesFromStart / (float)attackSamples);
 				}
 				else if (samplesFromStart < sustainSamples + attackSamples)
 				{
@@ -39,13 +62,13 @@ namespace DerelictComputer
 				}
 				else if (samplesFromStart < releaseSamples + sustainSamples + attackSamples)
 				{
-					volume = Mathf.Lerp(1f, 0f, (samplesFromStart - attackSamples - sustainSamples) / releaseSamples);
+					volume = Mathf.Lerp(1f, 0f, (samplesFromStart - attackSamples - sustainSamples) / (float)releaseSamples);
 				}
 
-				sampleData[sIdx] *= Mathf.Clamp(volume, 0f, 1f);
+			    sampleData[sIdx] *= Mathf.Clamp(volume, 0f, 1f);
 			}
 
-			var outClip = AudioClip.Create(inClip.name + "_VolumeEnvelope", inClip.samples, inClip.channels, inClip.frequency, false);
+			var outClip = AudioClip.Create(inClip.name + "_VolumeEnvelope", sampleData.Length, channels, inClip.frequency, false);
 			outClip.SetData(sampleData, 0);
 			return outClip;
 		}

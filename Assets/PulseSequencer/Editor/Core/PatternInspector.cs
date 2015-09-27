@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace DerelictComputer
 {
-    [CustomEditor(typeof(Pattern))]
+    [CustomEditor(typeof(Pattern)), CanEditMultipleObjects]
     public class PatternInspector : Editor
     {
         private const int StepsPerRow = 8;
@@ -26,7 +26,7 @@ namespace DerelictComputer
         {
             var pattern = (Pattern) target;
 		
-            _numSteps = EditorGUILayout.IntSlider("Steps", _numSteps, 1, 32);
+            _numSteps = EditorGUILayout.IntSlider("Steps", _numSteps, 1, 64);
             var wasEnabled = GUI.enabled;
             GUI.enabled &= _numSteps != pattern.Steps.Count;
 

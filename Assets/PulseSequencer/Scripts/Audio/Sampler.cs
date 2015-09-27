@@ -17,33 +17,51 @@ namespace DerelictComputer
             [SerializeField] private float _pitchInSemitones = 0f;
 			[SerializeField] private VolumeEnvelope _envelope = new VolumeEnvelope();
 
+            private bool _initialized;
+
 			private AudioClip _processedClip;
+
+            private float _pitch;
 
 			public AudioClip Clip
 			{
-				get
-				{
-					if (_processedClip == null)
-					{
-						if (_clip == null)
-						{
-							return null;
-						}
+			    get
+			    {
+			        if (!_initialized)
+			        {
+			            Init();    
+			        }
 
-						_processedClip = _envelope.Apply(_clip);
-					}
-
-					return _processedClip;
-				}
+			        return _processedClip;
+			    }
 			}
 
 			public float Pitch
 			{
-				get
-				{
-					return MusicMathUtils.SemitonesToPitch(_pitchInSemitones);
-				}
+			    get
+			    {
+			        if (!_initialized)
+			        {
+			            Init();
+			        }
+
+                    return _pitch;
+			    }
 			}
+
+            public void Init()
+            {
+                if (_initialized)
+                {
+                    return;
+                }
+
+                _processedClip = _envelope.Apply(_clip);
+
+                _pitch = MusicMathUtils.SemitonesToPitch(_pitchInSemitones);
+
+                _initialized = true;
+            }
         }
 
         /// <summary>
@@ -97,6 +115,11 @@ namespace DerelictComputer
 
                 _audioSources.Add(audioSource);
             }
+
+            for (var i = 0; i < Samples.Count; i++)
+            {
+                Samples[i].Init();
+            }
         }
 	
         protected override void OnStepTriggered(int stepIndex, double pulseTime)
@@ -115,6 +138,11 @@ namespace DerelictComputer
 			currentAudioSource.clip = currentSample.Clip;
 			currentAudioSource.pitch = currentSample.Pitch;
             currentAudioSource.PlayScheduled(pulseTime);
+        }
+
+        private void OnDrawGizmos()
+        {
+            Gizmos.DrawIcon(transform.position, "headphones.png");
         }
     }
 }
