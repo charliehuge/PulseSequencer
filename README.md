@@ -4,7 +4,7 @@ A pulse-based sequencer for Unity3d, as seen in http://derelictcomputer.itch.io/
 
 The PulseSequencer allows composers to create 3d, polyrhythmic music using Unity's built-in audio system. It also allows for triggering visual effects, such as animations or light lerps in sync with the music.
 
-To get started:
+To get started, check out the example scene, or:
 - Add a Pulse, Pattern, and Sampler to a scene
 - Reference the Pulse in the Pattern object
 - Reference the Pattern in the Sampler object
