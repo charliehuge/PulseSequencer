@@ -9,6 +9,8 @@ namespace DerelictComputer
     {
         [SerializeField] private Pattern _pattern;
 
+        public bool Suspended { get; set; }
+
         public virtual void Reset()
         {
             // empty
@@ -34,7 +36,7 @@ namespace DerelictComputer
                 return;
             }
 
-            _pattern.StepTriggered += OnStepTriggered;
+            _pattern.StepTriggered -= OnStepTriggered;
         }
 
         protected abstract void OnStepTriggered (int stepIndex, double pulseTime);

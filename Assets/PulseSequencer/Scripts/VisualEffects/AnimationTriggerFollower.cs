@@ -16,6 +16,11 @@ namespace DerelictComputer
 
         protected override void OnStepTriggered(int stepIndex, double pulseTime)
         {
+            if (Suspended)
+            {
+                return;
+            }
+
             _animator.SetTrigger(_triggerName);
         }
     }

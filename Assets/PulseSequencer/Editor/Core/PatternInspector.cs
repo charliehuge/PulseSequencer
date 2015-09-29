@@ -26,7 +26,7 @@ namespace DerelictComputer
         {
             var pattern = (Pattern) target;
 		
-            _numSteps = EditorGUILayout.IntSlider("Steps", _numSteps, 1, 64);
+            _numSteps = EditorGUILayout.IntSlider("Steps", _numSteps, 1, 128);
             var wasEnabled = GUI.enabled;
             GUI.enabled &= _numSteps != pattern.Steps.Count;
 

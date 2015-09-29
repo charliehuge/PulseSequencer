@@ -132,6 +132,12 @@ namespace DerelictComputer
             var currentSample = Samples[_currentSampleIndex];
             _currentSampleIndex = (_currentSampleIndex + 1)%Samples.Count;
 
+            // if suspended, keep counting sample indices in order to keep in phase
+            if (Suspended)
+            {
+                return;
+            }
+
             var currentAudioSource = _audioSources[_currentAudioSourceIndex];
             _currentAudioSourceIndex = (_currentAudioSourceIndex + 1)%_audioSources.Count;
 

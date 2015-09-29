@@ -37,6 +37,9 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
+--- !u!127 &3
+LevelGameManager:
+  m_ObjectHideFlags: 0
 --- !u!157 &4
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -65,7 +68,6 @@ LightmapSettings:
     m_TextureCompression: 1
     m_FinalGather: 0
     m_FinalGatherRayCount: 1024
-    m_ReflectionCompression: 2
   m_LightmapSnapshot: {fileID: 0}
   m_RuntimeCPUUsage: 25
 --- !u!196 &5
@@ -153,7 +155,6 @@ Camera:
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
-  m_TargetEye: 3
   m_HDR: 0
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
@@ -256,36 +257,24 @@ MonoBehaviour:
   - _clip: {fileID: 8300000, guid: 617e13366f2ed49358ec91a8edd09db3, type: 3}
     _pitchInSemitones: 0
     _envelope:
-      _enabled: 0
-      _reverse: 0
-      _offset: 0
       _attackTime: .125
       _sustainTime: .25
       _releaseTime: 1
   - _clip: {fileID: 8300000, guid: 617e13366f2ed49358ec91a8edd09db3, type: 3}
     _pitchInSemitones: 7
     _envelope:
-      _enabled: 0
-      _reverse: 0
-      _offset: 0
       _attackTime: .125
       _sustainTime: .25
       _releaseTime: 1
   - _clip: {fileID: 8300000, guid: 617e13366f2ed49358ec91a8edd09db3, type: 3}
     _pitchInSemitones: 6
     _envelope:
-      _enabled: 0
-      _reverse: 0
-      _offset: 0
       _attackTime: .125
       _sustainTime: .25
       _releaseTime: 1
   - _clip: {fileID: 8300000, guid: 617e13366f2ed49358ec91a8edd09db3, type: 3}
     _pitchInSemitones: 11
     _envelope:
-      _enabled: 0
-      _reverse: 0
-      _offset: 0
       _attackTime: .125
       _sustainTime: .25
       _releaseTime: 1
@@ -433,36 +422,24 @@ MonoBehaviour:
   - _clip: {fileID: 8300000, guid: 44f29bdc45a6c499c8d3a51a912c0576, type: 3}
     _pitchInSemitones: 0
     _envelope:
-      _enabled: 0
-      _reverse: 0
-      _offset: 0
       _attackTime: 0
       _sustainTime: 1
       _releaseTime: .25
   - _clip: {fileID: 8300000, guid: 44f29bdc45a6c499c8d3a51a912c0576, type: 3}
     _pitchInSemitones: 4
     _envelope:
-      _enabled: 0
-      _reverse: 0
-      _offset: 0
       _attackTime: 0
       _sustainTime: .5
       _releaseTime: .25
   - _clip: {fileID: 8300000, guid: 44f29bdc45a6c499c8d3a51a912c0576, type: 3}
     _pitchInSemitones: 8
     _envelope:
-      _enabled: 0
-      _reverse: 0
-      _offset: 0
       _attackTime: 0
       _sustainTime: .25
       _releaseTime: .25
   - _clip: {fileID: 8300000, guid: 44f29bdc45a6c499c8d3a51a912c0576, type: 3}
     _pitchInSemitones: 12
     _envelope:
-      _enabled: 0
-      _reverse: 0
-      _offset: 0
       _attackTime: 0
       _sustainTime: 0
       _releaseTime: .25
@@ -734,27 +711,18 @@ MonoBehaviour:
   - _clip: {fileID: 8300000, guid: 328886b4cbbd04b9a9fe138c6e99df76, type: 3}
     _pitchInSemitones: 0
     _envelope:
-      _enabled: 0
-      _reverse: 0
-      _offset: 0
       _attackTime: 0
       _sustainTime: .25
       _releaseTime: .25
   - _clip: {fileID: 8300000, guid: 328886b4cbbd04b9a9fe138c6e99df76, type: 3}
     _pitchInSemitones: 12
     _envelope:
-      _enabled: 0
-      _reverse: 0
-      _offset: 0
       _attackTime: 0
       _sustainTime: .25
       _releaseTime: 0
   - _clip: {fileID: 8300000, guid: 328886b4cbbd04b9a9fe138c6e99df76, type: 3}
     _pitchInSemitones: -1
     _envelope:
-      _enabled: 0
-      _reverse: 0
-      _offset: 0
       _attackTime: 0
       _sustainTime: 0
       _releaseTime: .25
