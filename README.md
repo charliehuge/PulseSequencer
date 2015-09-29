@@ -15,9 +15,8 @@ To get started, check out the example scene, or:
 
 This project is very young, and therefore many safeguards and editor helpers are not implemented. I'm using this in my own projects, and will be updating this repository as I add features in those projects. So please bear with me! If you have any feature requests or find any bugs, please feel free to report them via the issue tracker.
 
-Thanks, have fun, and please let me know if you use this. I'd love to see and hear what you do with it!
-
 If you like using the Pulse Sequencer, and want to help me develop it, that's awesome! There are a few ways you can help:
 - Submit bugs and feature requests via the issue tracker. This will help me know what people want to see, and prioritize those things.
-- If you're a coder, fork the repo and submit pull requests for features and bug fixes. This gets a lot better if I have help!
+- If you're a coder, fork the repo and submit pull requests for features and bug fixes. This gets a lot better if I have help.
+- Let me know how you're using it. Seeing your work inspires me to keep going further, and often gives me ideas for new features.
 - If you can, consider [becoming a patron](https://www.patreon.com/derelictcomputer)!
