@@ -4,8 +4,8 @@ A pulse-based sequencer for Unity3d.
 
 ## See it in action!
 
-[Step Sequencer](http://derelictcomputer.itch.io/step-sequencer)
-[Pulsars](http://derelictcomputer.itch.io/pulsars)
+- [Step Sequencer](http://derelictcomputer.itch.io/step-sequencer)
+- [Pulsars](http://derelictcomputer.itch.io/pulsars)
 
 ## Info
 
