@@ -9,6 +9,8 @@ namespace DerelictComputer
     /// </summary>
     public class Pulse : MonoBehaviour
     {
+        public event Action DidReset;
+
         public event Action<double> Triggered;
 
         /// <summary>
@@ -21,33 +23,37 @@ namespace DerelictComputer
         /// </summary>
         [SerializeField] private double _latency = 0.1;
 
-		private bool _needsReset = true;
-
         private double _nextPulseTime;
 
-        private void Reset()
+        public void Reset()
         {
             _nextPulseTime = AudioSettings.dspTime;
-			_needsReset = false;
+
+            if (DidReset != null)
+            {
+                DidReset();
+            }
+        }
+
+        private void Awake()
+        {
+            Reset();
         }
 
         private void Update()
         {
-			if (_needsReset)
-			{
-				Reset();
-			}
-
-            if (AudioSettings.dspTime + _latency > _nextPulseTime)
+            if (!(AudioSettings.dspTime + _latency > _nextPulseTime))
             {
-                var thisPulseTime = _nextPulseTime;
+                return;
+            }
 
-                _nextPulseTime += _period;
+            var thisPulseTime = _nextPulseTime;
 
-                if (Triggered != null)
-                {
-                    Triggered(thisPulseTime);
-                }
+            _nextPulseTime += _period;
+
+            if (Triggered != null)
+            {
+                Triggered(thisPulseTime);
             }
         }
     }

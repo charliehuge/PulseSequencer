@@ -22,6 +22,8 @@ namespace DerelictComputer
             public bool Active = false;
         }
 
+        public event Action DidReset;
+
         public event PatternStepDelegate StepTriggered;
 
         [HideInInspector] public List<StepInfo> Steps = new List<StepInfo>();
@@ -33,6 +35,11 @@ namespace DerelictComputer
         public void Reset()
         {
             _currentStep = 0;
+
+            if (DidReset != null)
+            {
+                DidReset();
+            }
         }
 
         private void OnEnable()
@@ -44,6 +51,7 @@ namespace DerelictComputer
             }
 
             _pulse.Triggered += OnPulseTriggered;
+            _pulse.DidReset += OnPulseDidReset;
 
             Reset();
         }
@@ -56,6 +64,12 @@ namespace DerelictComputer
             }
 
             _pulse.Triggered -= OnPulseTriggered;
+            _pulse.DidReset -= OnPulseDidReset;
+        }
+
+        private void OnPulseDidReset()
+        {
+            Reset();
         }
 
         private void OnPulseTriggered (double pulseTime)

@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 namespace DerelictComputer
 {
@@ -25,6 +26,7 @@ namespace DerelictComputer
             }
 
             _pattern.StepTriggered += OnStepTriggered;
+            _pattern.DidReset += OnPatternDidReset;
 
             Reset();
         }
@@ -37,8 +39,14 @@ namespace DerelictComputer
             }
 
             _pattern.StepTriggered -= OnStepTriggered;
+            _pattern.DidReset -= OnPatternDidReset;
         }
 
         protected abstract void OnStepTriggered (int stepIndex, double pulseTime);
+
+        private void OnPatternDidReset()
+        {
+            Reset();
+        }
     }
 }
