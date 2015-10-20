@@ -16,6 +16,12 @@ namespace DerelictComputer
     /// </summary>
     public class Pattern : MonoBehaviour 
     {
+        public enum FollowType
+        {
+            Pulse,
+            Pattern
+        }
+
         [Serializable]
         public class StepInfo
         {
@@ -28,7 +34,11 @@ namespace DerelictComputer
 
         [HideInInspector] public List<StepInfo> Steps = new List<StepInfo>();
 
+        [SerializeField] private FollowType _followType = FollowType.Pulse;
+
         [SerializeField] private Pulse _pulse;
+
+        [SerializeField] private Pattern _pattern;
 
         private int _currentStep;
 
@@ -44,48 +54,92 @@ namespace DerelictComputer
 
         private void OnEnable()
         {
-            if (_pulse == null)
+            switch (_followType)
             {
-                Debug.LogWarning("I think you forgot to assign a pulse. Fix that or I'm not doing anything. Nuh-uh.");
-                return;
-            }
+                case FollowType.Pulse:
+                    if (_pulse == null)
+                    {
+                        Debug.LogWarning("I think you forgot to assign a pulse. Fix that or nothing will happen.");
+                        return;
+                    }
 
-            _pulse.Triggered += OnPulseTriggered;
-            _pulse.DidReset += OnPulseDidReset;
+                    _pulse.Triggered += OnPulseTriggered;
+                    _pulse.DidReset += OnDidReset;
+                    break;
+                case FollowType.Pattern:
+                    if (_pattern == null)
+                    {
+                        Debug.LogWarning("I think you forgot to assign a pattern. Fix that or nothing will happen.");
+                        return;
+                    }
+
+                    _pattern.StepTriggered += OnPatternStepTriggered;
+                    _pattern.DidReset += OnDidReset;
+                    break;
+                default:
+                    throw new ArgumentOutOfRangeException();
+            }
 
             Reset();
         }
 
         private void OnDisable()
         {
-            if (_pulse == null)
+            switch (_followType)
             {
-                return;
+                case FollowType.Pulse:
+                    if (_pulse == null)
+                    {
+                        return;
+                    }
+
+                    _pulse.Triggered -= OnPulseTriggered;
+                    _pulse.DidReset -= OnDidReset;
+                    break;
+                case FollowType.Pattern:
+                    if (_pattern == null)
+                    {
+                        return;
+                    }
+
+                    _pattern.StepTriggered -= OnPatternStepTriggered;
+                    _pattern.DidReset -= OnDidReset;
+                    break;
+                default:
+                    throw new ArgumentOutOfRangeException();
             }
 
-            _pulse.Triggered -= OnPulseTriggered;
-            _pulse.DidReset -= OnPulseDidReset;
         }
 
-        private void OnPulseDidReset()
+        private void OnDidReset()
         {
             Reset();
         }
 
         private void OnPulseTriggered (double pulseTime)
         {
+            Step(pulseTime);
+        }
+
+        private void OnPatternStepTriggered(int stepIndex, double pulseTime)
+        {
+            Step(pulseTime);
+        }
+
+        private void Step(double pulseTime)
+        {
             if (Steps.Count == 0)
             {
                 return;
             }
 
-		
+
             if (Steps[_currentStep].Active && StepTriggered != null)
             {
                 StepTriggered(_currentStep, pulseTime);
             }
-		
-            _currentStep = (_currentStep + 1)%Steps.Count;
+
+            _currentStep = (_currentStep + 1) % Steps.Count;
         }
     }
 }

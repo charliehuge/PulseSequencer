@@ -256,38 +256,38 @@ MonoBehaviour:
   - _clip: {fileID: 8300000, guid: 617e13366f2ed49358ec91a8edd09db3, type: 3}
     _pitchInSemitones: 0
     _envelope:
-      _enabled: 0
+      _enabled: 1
       _reverse: 0
       _offset: 0
-      _attackTime: .125
+      _attackTime: 0
       _sustainTime: .25
       _releaseTime: 1
   - _clip: {fileID: 8300000, guid: 617e13366f2ed49358ec91a8edd09db3, type: 3}
     _pitchInSemitones: 7
     _envelope:
-      _enabled: 0
-      _reverse: 0
-      _offset: 0
-      _attackTime: .125
+      _enabled: 1
+      _reverse: 1
+      _offset: .25
+      _attackTime: 0
       _sustainTime: .25
       _releaseTime: 1
   - _clip: {fileID: 8300000, guid: 617e13366f2ed49358ec91a8edd09db3, type: 3}
-    _pitchInSemitones: 6
+    _pitchInSemitones: 5
     _envelope:
-      _enabled: 0
+      _enabled: 1
       _reverse: 0
       _offset: 0
-      _attackTime: .125
+      _attackTime: 0
       _sustainTime: .25
       _releaseTime: 1
   - _clip: {fileID: 8300000, guid: 617e13366f2ed49358ec91a8edd09db3, type: 3}
-    _pitchInSemitones: 11
+    _pitchInSemitones: -3
     _envelope:
-      _enabled: 0
+      _enabled: 1
       _reverse: 0
       _offset: 0
-      _attackTime: .125
-      _sustainTime: .25
+      _attackTime: 0
+      _sustainTime: 0
       _releaseTime: 1
   _mixerGroup: {fileID: 0}
   _audioSourcePrefab: {fileID: 8277626, guid: 4647a8b8e965e6547bd5519348460160, type: 2}
@@ -382,8 +382,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _pattern: {fileID: 1051215786}
   _upSpeed: 10
-  _upIntensity: 4.69000006
-  _downSpeed: 8.02999973
+  _upIntensity: 2.21000004
+  _downSpeed: 10
   _downIntensity: 0
 --- !u!108 &734158194
 Light:
@@ -431,27 +431,9 @@ MonoBehaviour:
   _pattern: {fileID: 1051215786}
   Samples:
   - _clip: {fileID: 8300000, guid: 44f29bdc45a6c499c8d3a51a912c0576, type: 3}
-    _pitchInSemitones: 0
+    _pitchInSemitones: 12
     _envelope:
-      _enabled: 0
-      _reverse: 0
-      _offset: 0
-      _attackTime: 0
-      _sustainTime: 1
-      _releaseTime: .25
-  - _clip: {fileID: 8300000, guid: 44f29bdc45a6c499c8d3a51a912c0576, type: 3}
-    _pitchInSemitones: 4
-    _envelope:
-      _enabled: 0
-      _reverse: 0
-      _offset: 0
-      _attackTime: 0
-      _sustainTime: .5
-      _releaseTime: .25
-  - _clip: {fileID: 8300000, guid: 44f29bdc45a6c499c8d3a51a912c0576, type: 3}
-    _pitchInSemitones: 8
-    _envelope:
-      _enabled: 0
+      _enabled: 1
       _reverse: 0
       _offset: 0
       _attackTime: 0
@@ -460,15 +442,15 @@ MonoBehaviour:
   - _clip: {fileID: 8300000, guid: 44f29bdc45a6c499c8d3a51a912c0576, type: 3}
     _pitchInSemitones: 12
     _envelope:
-      _enabled: 0
-      _reverse: 0
+      _enabled: 1
+      _reverse: 1
       _offset: 0
       _attackTime: 0
-      _sustainTime: 0
+      _sustainTime: .25
       _releaseTime: .25
   _mixerGroup: {fileID: 0}
   _audioSourcePrefab: {fileID: 8277626, guid: 4647a8b8e965e6547bd5519348460160, type: 2}
-  _voices: 2
+  _voices: 4
 --- !u!23 &734158196
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -610,7 +592,9 @@ MonoBehaviour:
   - Active: 0
   - Active: 1
   - Active: 0
+  _followType: 0
   _pulse: {fileID: 859207513}
+  _pattern: {fileID: 0}
 --- !u!4 &1029668848
 Transform:
   m_ObjectHideFlags: 0
@@ -651,11 +635,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Steps:
-  - Active: 0
-  - Active: 0
   - Active: 1
-  - Active: 0
+  _followType: 0
   _pulse: {fileID: 859207513}
+  _pattern: {fileID: 0}
 --- !u!4 &1051215787
 Transform:
   m_ObjectHideFlags: 0
@@ -845,10 +828,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Steps:
+  - Active: 0
+  - Active: 0
   - Active: 1
-  - Active: 0
-  - Active: 0
-  _pulse: {fileID: 859207513}
+  _followType: 1
+  _pulse: {fileID: 0}
+  _pattern: {fileID: 1051215786}
 --- !u!4 &1493867679
 Transform:
   m_ObjectHideFlags: 0
