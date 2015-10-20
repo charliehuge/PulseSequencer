@@ -13,6 +13,10 @@ namespace DerelictComputer
 
         public event Action<double> Triggered;
 
+        private const double PeriodMinimum = 0.016; // really don't want this to be any shorter than a frame at 60FPS
+
+        private const double BpmMinimum = 0.1; // so it doesn't go zero of negative, but really, do you ever want one beat every 10 minutes?
+
         /// <summary>
         /// Period in seconds
         /// </summary>
@@ -33,7 +37,9 @@ namespace DerelictComputer
         public double Period
         {
             get { return _period; }
-            set { _period = value; }
+            set {
+                _period = value < PeriodMinimum ? PeriodMinimum : value;
+            }
         }
 
         public uint PulsesPerBeat
@@ -53,12 +59,17 @@ namespace DerelictComputer
 
         public double GetBpm()
         {
-            return 60.0/(_period*_pulsesPerBeat);
+            return 60.0/(Period*_pulsesPerBeat);
         }
 
         public void SetBpm(double bpm, uint pulsesPerBeat)
         {
-            _period = 60.0/(bpm*pulsesPerBeat);
+            if (bpm < BpmMinimum)
+            {
+                bpm = BpmMinimum;
+            }
+
+            Period = 60.0/(bpm*pulsesPerBeat);
             _pulsesPerBeat = pulsesPerBeat;
         }
 
@@ -73,7 +84,7 @@ namespace DerelictComputer
             {
                 var thisPulseTime = _nextPulseTime;
 
-                _nextPulseTime += _period;
+                _nextPulseTime += Period;
 
                 if (Triggered != null)
                 {
