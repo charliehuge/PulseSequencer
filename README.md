@@ -1,6 +1,6 @@
 # PulseSequencer
 
-A pulse-based sequencer for Unity3d, as seen in http://derelictcomputer.itch.io/pulsars
+A pulse-based sequencer for Unity3d, as seen in [Pulsars](http://derelictcomputer.itch.io/pulsars)
 
 The PulseSequencer allows composers to create 3d, polyrhythmic music using Unity's built-in audio system. It also allows for triggering visual effects, such as animations or light lerps in sync with the music.
 
