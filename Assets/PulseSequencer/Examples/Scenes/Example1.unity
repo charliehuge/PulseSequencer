@@ -551,8 +551,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ff69fccba9b444119af1ab5c87c94af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Period: .125
-  PulsesPerBeat: 4
+  _period: .125
+  _pulsesPerBeat: 4
   _latency: .10000000000000001
 --- !u!4 &859207514
 Transform:

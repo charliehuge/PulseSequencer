@@ -16,12 +16,12 @@ namespace DerelictComputer
         /// <summary>
         /// Period in seconds
         /// </summary>
-        [HideInInspector] public double Period = 1d;
+        [SerializeField, HideInInspector] private double _period = 1d;
 
         /// <summary>
         /// How many pulses per beat? This is only used for the inspector, but is serialized so we can keep it around.
         /// </summary>
-        [HideInInspector] public int PulsesPerBeat = 4;
+        [SerializeField, HideInInspector] private uint _pulsesPerBeat = 4;
 
         /// <summary>
         /// How much time should we look ahead?
@@ -29,6 +29,17 @@ namespace DerelictComputer
         [SerializeField] private double _latency = 0.1;
 
         private double _nextPulseTime;
+
+        public double Period
+        {
+            get { return _period; }
+            set { _period = value; }
+        }
+
+        public uint PulsesPerBeat
+        {
+            get { return _pulsesPerBeat; }
+        }
 
         public void Reset()
         {
@@ -38,6 +49,17 @@ namespace DerelictComputer
             {
                 DidReset();
             }
+        }
+
+        public double GetBpm()
+        {
+            return 60.0/(_period*_pulsesPerBeat);
+        }
+
+        public void SetBpm(double bpm, uint pulsesPerBeat)
+        {
+            _period = 60.0/(bpm*pulsesPerBeat);
+            _pulsesPerBeat = pulsesPerBeat;
         }
 
         private void Awake()
@@ -51,7 +73,7 @@ namespace DerelictComputer
             {
                 var thisPulseTime = _nextPulseTime;
 
-                _nextPulseTime += Period;
+                _nextPulseTime += _period;
 
                 if (Triggered != null)
                 {

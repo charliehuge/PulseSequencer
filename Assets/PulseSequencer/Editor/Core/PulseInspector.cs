@@ -45,11 +45,11 @@ namespace DerelictComputer
 
                     bpm = EditorGUILayout.DoubleField(BpmLabel, bpm);
 
-                    pulse.PulsesPerBeat = EditorGUILayout.IntSlider(PpbLabel, pulse.PulsesPerBeat, 1, 16);
+                    var pulsesPerBeat = (uint)EditorGUILayout.IntSlider(PpbLabel, (int)pulse.PulsesPerBeat, 1, 16);
 
                     if (EditorGUI.EndChangeCheck())
                     {
-                        pulse.Period = 60.0 / (bpm * pulse.PulsesPerBeat);
+                        pulse.SetBpm(bpm, pulsesPerBeat);
                     }
 
                     break;
