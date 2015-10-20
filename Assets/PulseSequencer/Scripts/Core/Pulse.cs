@@ -16,7 +16,12 @@ namespace DerelictComputer
         /// <summary>
         /// Period in seconds
         /// </summary>
-        [SerializeField] private double _period = 1d;
+        [HideInInspector] public double Period = 1d;
+
+        /// <summary>
+        /// How many pulses per beat? This is only used for the inspector, but is serialized so we can keep it around.
+        /// </summary>
+        [HideInInspector] public int PulsesPerBeat = 4;
 
         /// <summary>
         /// How much time should we look ahead?
@@ -42,18 +47,16 @@ namespace DerelictComputer
 
         private void Update()
         {
-            if (!(AudioSettings.dspTime + _latency > _nextPulseTime))
+            while (AudioSettings.dspTime + _latency > _nextPulseTime)
             {
-                return;
-            }
+                var thisPulseTime = _nextPulseTime;
 
-            var thisPulseTime = _nextPulseTime;
+                _nextPulseTime += Period;
 
-            _nextPulseTime += _period;
-
-            if (Triggered != null)
-            {
-                Triggered(thisPulseTime);
+                if (Triggered != null)
+                {
+                    Triggered(thisPulseTime);
+                }
             }
         }
     }
