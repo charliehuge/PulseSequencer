@@ -193,15 +193,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _pattern: {fileID: 1007833795}
   Samples:
-  - _clip: {fileID: 8300000, guid: d17098f8c52ebdc48a819d13e7be94fb, type: 3}
+  - Envelope:
+      Enabled: 1
+      Reverse: 0
+      Offset: 0
+      AttackTime: 0
+      SustainTime: .5
+      ReleaseTime: .5
+    _clip: {fileID: 8300000, guid: d17098f8c52ebdc48a819d13e7be94fb, type: 3}
     _pitchInSemitones: 0
-    _envelope:
-      _enabled: 1
-      _reverse: 0
-      _offset: 0
-      _attackTime: 0
-      _sustainTime: 0
-      _releaseTime: .5
   _mixerGroup: {fileID: 0}
   _audioSourcePrefab: {fileID: 8277626, guid: 4647a8b8e965e6547bd5519348460160, type: 2}
   _voices: 1
@@ -543,15 +543,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _pattern: {fileID: 321269280}
   Samples:
-  - _clip: {fileID: 8300000, guid: 328886b4cbbd04b9a9fe138c6e99df76, type: 3}
+  - Envelope:
+      Enabled: 1
+      Reverse: 0
+      Offset: 0
+      AttackTime: 0
+      SustainTime: .25
+      ReleaseTime: .25
+    _clip: {fileID: 8300000, guid: 328886b4cbbd04b9a9fe138c6e99df76, type: 3}
     _pitchInSemitones: 0
-    _envelope:
-      _enabled: 1
-      _reverse: 0
-      _offset: 0
-      _attackTime: 0
-      _sustainTime: 0
-      _releaseTime: .25
   _mixerGroup: {fileID: 0}
   _audioSourcePrefab: {fileID: 8277626, guid: 4647a8b8e965e6547bd5519348460160, type: 2}
   _voices: 1
@@ -733,15 +733,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _pattern: {fileID: 1419605766}
   Samples:
-  - _clip: {fileID: 8300000, guid: 328886b4cbbd04b9a9fe138c6e99df76, type: 3}
+  - Envelope:
+      Enabled: 1
+      Reverse: 0
+      Offset: 0
+      AttackTime: 0
+      SustainTime: .25
+      ReleaseTime: .25
+    _clip: {fileID: 8300000, guid: 328886b4cbbd04b9a9fe138c6e99df76, type: 3}
     _pitchInSemitones: 0
-    _envelope:
-      _enabled: 1
-      _reverse: 0
-      _offset: 0
-      _attackTime: 0
-      _sustainTime: 0
-      _releaseTime: .25
   _mixerGroup: {fileID: 0}
   _audioSourcePrefab: {fileID: 8277626, guid: 4647a8b8e965e6547bd5519348460160, type: 2}
   _voices: 1
@@ -918,15 +918,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _pattern: {fileID: 1818595132}
   Samples:
-  - _clip: {fileID: 8300000, guid: 328886b4cbbd04b9a9fe138c6e99df76, type: 3}
+  - Envelope:
+      Enabled: 1
+      Reverse: 0
+      Offset: 0
+      AttackTime: 0
+      SustainTime: .25
+      ReleaseTime: .25
+    _clip: {fileID: 8300000, guid: 328886b4cbbd04b9a9fe138c6e99df76, type: 3}
     _pitchInSemitones: 0
-    _envelope:
-      _enabled: 1
-      _reverse: 0
-      _offset: 0
-      _attackTime: 0
-      _sustainTime: 0
-      _releaseTime: .25
   _mixerGroup: {fileID: 0}
   _audioSourcePrefab: {fileID: 8277626, guid: 4647a8b8e965e6547bd5519348460160, type: 2}
   _voices: 1
@@ -1150,15 +1150,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _pattern: {fileID: 300592681}
   Samples:
-  - _clip: {fileID: 8300000, guid: 44f29bdc45a6c499c8d3a51a912c0576, type: 3}
+  - Envelope:
+      Enabled: 1
+      Reverse: 0
+      Offset: 0
+      AttackTime: 0
+      SustainTime: .25
+      ReleaseTime: .25
+    _clip: {fileID: 8300000, guid: 44f29bdc45a6c499c8d3a51a912c0576, type: 3}
     _pitchInSemitones: 0
-    _envelope:
-      _enabled: 1
-      _reverse: 0
-      _offset: 0
-      _attackTime: 0
-      _sustainTime: .5
-      _releaseTime: .25
   _mixerGroup: {fileID: 0}
   _audioSourcePrefab: {fileID: 8277626, guid: 4647a8b8e965e6547bd5519348460160, type: 2}
   _voices: 1
@@ -1454,15 +1454,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _pattern: {fileID: 410569343}
   Samples:
-  - _clip: {fileID: 8300000, guid: 44f29bdc45a6c499c8d3a51a912c0576, type: 3}
+  - Envelope:
+      Enabled: 1
+      Reverse: 0
+      Offset: 0
+      AttackTime: 0
+      SustainTime: .25
+      ReleaseTime: .25
+    _clip: {fileID: 8300000, guid: 44f29bdc45a6c499c8d3a51a912c0576, type: 3}
     _pitchInSemitones: 0
-    _envelope:
-      _enabled: 1
-      _reverse: 0
-      _offset: 0
-      _attackTime: 0
-      _sustainTime: .5
-      _releaseTime: .25
   _mixerGroup: {fileID: 0}
   _audioSourcePrefab: {fileID: 8277626, guid: 4647a8b8e965e6547bd5519348460160, type: 2}
   _voices: 1
@@ -1774,15 +1774,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _pattern: {fileID: 1199256668}
   Samples:
-  - _clip: {fileID: 8300000, guid: 328886b4cbbd04b9a9fe138c6e99df76, type: 3}
+  - Envelope:
+      Enabled: 1
+      Reverse: 0
+      Offset: 0
+      AttackTime: 0
+      SustainTime: .25
+      ReleaseTime: .25
+    _clip: {fileID: 8300000, guid: 328886b4cbbd04b9a9fe138c6e99df76, type: 3}
     _pitchInSemitones: 0
-    _envelope:
-      _enabled: 1
-      _reverse: 0
-      _offset: 0
-      _attackTime: 0
-      _sustainTime: 0
-      _releaseTime: .25
   _mixerGroup: {fileID: 0}
   _audioSourcePrefab: {fileID: 8277626, guid: 4647a8b8e965e6547bd5519348460160, type: 2}
   _voices: 1
@@ -1976,15 +1976,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _pattern: {fileID: 1398018926}
   Samples:
-  - _clip: {fileID: 8300000, guid: 328886b4cbbd04b9a9fe138c6e99df76, type: 3}
+  - Envelope:
+      Enabled: 1
+      Reverse: 0
+      Offset: 0
+      AttackTime: 0
+      SustainTime: .25
+      ReleaseTime: .25
+    _clip: {fileID: 8300000, guid: 328886b4cbbd04b9a9fe138c6e99df76, type: 3}
     _pitchInSemitones: 0
-    _envelope:
-      _enabled: 1
-      _reverse: 0
-      _offset: 0
-      _attackTime: 0
-      _sustainTime: 0
-      _releaseTime: .25
   _mixerGroup: {fileID: 0}
   _audioSourcePrefab: {fileID: 8277626, guid: 4647a8b8e965e6547bd5519348460160, type: 2}
   _voices: 1
@@ -2149,15 +2149,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _pattern: {fileID: 339378041}
   Samples:
-  - _clip: {fileID: 8300000, guid: 44f29bdc45a6c499c8d3a51a912c0576, type: 3}
+  - Envelope:
+      Enabled: 1
+      Reverse: 0
+      Offset: 0
+      AttackTime: 0
+      SustainTime: .25
+      ReleaseTime: .25
+    _clip: {fileID: 8300000, guid: 44f29bdc45a6c499c8d3a51a912c0576, type: 3}
     _pitchInSemitones: 0
-    _envelope:
-      _enabled: 1
-      _reverse: 0
-      _offset: 0
-      _attackTime: 0
-      _sustainTime: .5
-      _releaseTime: .25
   _mixerGroup: {fileID: 0}
   _audioSourcePrefab: {fileID: 8277626, guid: 4647a8b8e965e6547bd5519348460160, type: 2}
   _voices: 1
@@ -2469,15 +2469,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _pattern: {fileID: 2105918074}
   Samples:
-  - _clip: {fileID: 8300000, guid: 44f29bdc45a6c499c8d3a51a912c0576, type: 3}
+  - Envelope:
+      Enabled: 1
+      Reverse: 0
+      Offset: 0
+      AttackTime: 0
+      SustainTime: .25
+      ReleaseTime: .25
+    _clip: {fileID: 8300000, guid: 44f29bdc45a6c499c8d3a51a912c0576, type: 3}
     _pitchInSemitones: 0
-    _envelope:
-      _enabled: 1
-      _reverse: 0
-      _offset: 0
-      _attackTime: 0
-      _sustainTime: .5
-      _releaseTime: .25
   _mixerGroup: {fileID: 0}
   _audioSourcePrefab: {fileID: 8277626, guid: 4647a8b8e965e6547bd5519348460160, type: 2}
   _voices: 1
@@ -3028,15 +3028,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _pattern: {fileID: 365738929}
   Samples:
-  - _clip: {fileID: 8300000, guid: 44f29bdc45a6c499c8d3a51a912c0576, type: 3}
+  - Envelope:
+      Enabled: 1
+      Reverse: 0
+      Offset: 0
+      AttackTime: 0
+      SustainTime: .25
+      ReleaseTime: .25
+    _clip: {fileID: 8300000, guid: 44f29bdc45a6c499c8d3a51a912c0576, type: 3}
     _pitchInSemitones: 0
-    _envelope:
-      _enabled: 1
-      _reverse: 0
-      _offset: 0
-      _attackTime: 0
-      _sustainTime: .5
-      _releaseTime: .25
   _mixerGroup: {fileID: 0}
   _audioSourcePrefab: {fileID: 8277626, guid: 4647a8b8e965e6547bd5519348460160, type: 2}
   _voices: 1
@@ -3318,15 +3318,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _pattern: {fileID: 7968332}
   Samples:
-  - _clip: {fileID: 8300000, guid: 44f29bdc45a6c499c8d3a51a912c0576, type: 3}
+  - Envelope:
+      Enabled: 1
+      Reverse: 0
+      Offset: 0
+      AttackTime: 0
+      SustainTime: .25
+      ReleaseTime: .25
+    _clip: {fileID: 8300000, guid: 44f29bdc45a6c499c8d3a51a912c0576, type: 3}
     _pitchInSemitones: 0
-    _envelope:
-      _enabled: 1
-      _reverse: 0
-      _offset: 0
-      _attackTime: 0
-      _sustainTime: .5
-      _releaseTime: .25
   _mixerGroup: {fileID: 0}
   _audioSourcePrefab: {fileID: 8277626, guid: 4647a8b8e965e6547bd5519348460160, type: 2}
   _voices: 1
@@ -3550,15 +3550,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _pattern: {fileID: 1840162544}
   Samples:
-  - _clip: {fileID: 8300000, guid: 44f29bdc45a6c499c8d3a51a912c0576, type: 3}
+  - Envelope:
+      Enabled: 1
+      Reverse: 0
+      Offset: 0
+      AttackTime: 0
+      SustainTime: .25
+      ReleaseTime: .25
+    _clip: {fileID: 8300000, guid: 44f29bdc45a6c499c8d3a51a912c0576, type: 3}
     _pitchInSemitones: 0
-    _envelope:
-      _enabled: 1
-      _reverse: 0
-      _offset: 0
-      _attackTime: 0
-      _sustainTime: .5
-      _releaseTime: .25
   _mixerGroup: {fileID: 0}
   _audioSourcePrefab: {fileID: 8277626, guid: 4647a8b8e965e6547bd5519348460160, type: 2}
   _voices: 1
@@ -3711,15 +3711,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _pattern: {fileID: 342117469}
   Samples:
-  - _clip: {fileID: 8300000, guid: d17098f8c52ebdc48a819d13e7be94fb, type: 3}
+  - Envelope:
+      Enabled: 1
+      Reverse: 0
+      Offset: 0
+      AttackTime: 0
+      SustainTime: .5
+      ReleaseTime: .5
+    _clip: {fileID: 8300000, guid: d17098f8c52ebdc48a819d13e7be94fb, type: 3}
     _pitchInSemitones: 0
-    _envelope:
-      _enabled: 1
-      _reverse: 0
-      _offset: 0
-      _attackTime: 0
-      _sustainTime: 0
-      _releaseTime: .5
   _mixerGroup: {fileID: 0}
   _audioSourcePrefab: {fileID: 8277626, guid: 4647a8b8e965e6547bd5519348460160, type: 2}
   _voices: 1
@@ -3925,15 +3925,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _pattern: {fileID: 356758295}
   Samples:
-  - _clip: {fileID: 8300000, guid: d17098f8c52ebdc48a819d13e7be94fb, type: 3}
+  - Envelope:
+      Enabled: 1
+      Reverse: 0
+      Offset: 0
+      AttackTime: 0
+      SustainTime: .5
+      ReleaseTime: .5
+    _clip: {fileID: 8300000, guid: d17098f8c52ebdc48a819d13e7be94fb, type: 3}
     _pitchInSemitones: 0
-    _envelope:
-      _enabled: 1
-      _reverse: 0
-      _offset: 0
-      _attackTime: 0
-      _sustainTime: 0
-      _releaseTime: .5
   _mixerGroup: {fileID: 0}
   _audioSourcePrefab: {fileID: 8277626, guid: 4647a8b8e965e6547bd5519348460160, type: 2}
   _voices: 1
@@ -4098,15 +4098,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _pattern: {fileID: 923749238}
   Samples:
-  - _clip: {fileID: 8300000, guid: 328886b4cbbd04b9a9fe138c6e99df76, type: 3}
+  - Envelope:
+      Enabled: 1
+      Reverse: 0
+      Offset: 0
+      AttackTime: 0
+      SustainTime: .25
+      ReleaseTime: .25
+    _clip: {fileID: 8300000, guid: 328886b4cbbd04b9a9fe138c6e99df76, type: 3}
     _pitchInSemitones: 0
-    _envelope:
-      _enabled: 1
-      _reverse: 0
-      _offset: 0
-      _attackTime: 0
-      _sustainTime: 0
-      _releaseTime: .25
   _mixerGroup: {fileID: 0}
   _audioSourcePrefab: {fileID: 8277626, guid: 4647a8b8e965e6547bd5519348460160, type: 2}
   _voices: 1
@@ -4271,15 +4271,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _pattern: {fileID: 1011791048}
   Samples:
-  - _clip: {fileID: 8300000, guid: 328886b4cbbd04b9a9fe138c6e99df76, type: 3}
+  - Envelope:
+      Enabled: 1
+      Reverse: 0
+      Offset: 0
+      AttackTime: 0
+      SustainTime: .25
+      ReleaseTime: .25
+    _clip: {fileID: 8300000, guid: 328886b4cbbd04b9a9fe138c6e99df76, type: 3}
     _pitchInSemitones: 0
-    _envelope:
-      _enabled: 1
-      _reverse: 0
-      _offset: 0
-      _attackTime: 0
-      _sustainTime: 0
-      _releaseTime: .25
   _mixerGroup: {fileID: 0}
   _audioSourcePrefab: {fileID: 8277626, guid: 4647a8b8e965e6547bd5519348460160, type: 2}
   _voices: 1
@@ -4502,15 +4502,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _pattern: {fileID: 1962039405}
   Samples:
-  - _clip: {fileID: 8300000, guid: d17098f8c52ebdc48a819d13e7be94fb, type: 3}
+  - Envelope:
+      Enabled: 1
+      Reverse: 0
+      Offset: 0
+      AttackTime: 0
+      SustainTime: .5
+      ReleaseTime: .5
+    _clip: {fileID: 8300000, guid: d17098f8c52ebdc48a819d13e7be94fb, type: 3}
     _pitchInSemitones: 0
-    _envelope:
-      _enabled: 1
-      _reverse: 0
-      _offset: 0
-      _attackTime: 0
-      _sustainTime: 0
-      _releaseTime: .5
   _mixerGroup: {fileID: 0}
   _audioSourcePrefab: {fileID: 8277626, guid: 4647a8b8e965e6547bd5519348460160, type: 2}
   _voices: 1
@@ -4675,15 +4675,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _pattern: {fileID: 955919967}
   Samples:
-  - _clip: {fileID: 8300000, guid: d17098f8c52ebdc48a819d13e7be94fb, type: 3}
+  - Envelope:
+      Enabled: 1
+      Reverse: 0
+      Offset: 0
+      AttackTime: 0
+      SustainTime: .5
+      ReleaseTime: .5
+    _clip: {fileID: 8300000, guid: d17098f8c52ebdc48a819d13e7be94fb, type: 3}
     _pitchInSemitones: 0
-    _envelope:
-      _enabled: 1
-      _reverse: 0
-      _offset: 0
-      _attackTime: 0
-      _sustainTime: 0
-      _releaseTime: .5
   _mixerGroup: {fileID: 0}
   _audioSourcePrefab: {fileID: 8277626, guid: 4647a8b8e965e6547bd5519348460160, type: 2}
   _voices: 1
@@ -4848,15 +4848,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _pattern: {fileID: 1972297338}
   Samples:
-  - _clip: {fileID: 8300000, guid: 328886b4cbbd04b9a9fe138c6e99df76, type: 3}
+  - Envelope:
+      Enabled: 1
+      Reverse: 0
+      Offset: 0
+      AttackTime: 0
+      SustainTime: .25
+      ReleaseTime: .25
+    _clip: {fileID: 8300000, guid: 328886b4cbbd04b9a9fe138c6e99df76, type: 3}
     _pitchInSemitones: 0
-    _envelope:
-      _enabled: 1
-      _reverse: 0
-      _offset: 0
-      _attackTime: 0
-      _sustainTime: 0
-      _releaseTime: .25
   _mixerGroup: {fileID: 0}
   _audioSourcePrefab: {fileID: 8277626, guid: 4647a8b8e965e6547bd5519348460160, type: 2}
   _voices: 1
@@ -5021,15 +5021,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _pattern: {fileID: 821569816}
   Samples:
-  - _clip: {fileID: 8300000, guid: d17098f8c52ebdc48a819d13e7be94fb, type: 3}
+  - Envelope:
+      Enabled: 1
+      Reverse: 0
+      Offset: 0
+      AttackTime: 0
+      SustainTime: .5
+      ReleaseTime: .5
+    _clip: {fileID: 8300000, guid: d17098f8c52ebdc48a819d13e7be94fb, type: 3}
     _pitchInSemitones: 0
-    _envelope:
-      _enabled: 1
-      _reverse: 0
-      _offset: 0
-      _attackTime: 0
-      _sustainTime: 0
-      _releaseTime: .5
   _mixerGroup: {fileID: 0}
   _audioSourcePrefab: {fileID: 8277626, guid: 4647a8b8e965e6547bd5519348460160, type: 2}
   _voices: 1
@@ -5510,7 +5510,7 @@ Camera:
     height: 1
   near clip plane: .300000012
   far clip plane: 1000
-  field of view: 70
+  field of view: 60
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -5720,15 +5720,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _pattern: {fileID: 1684864998}
   Samples:
-  - _clip: {fileID: 8300000, guid: d17098f8c52ebdc48a819d13e7be94fb, type: 3}
+  - Envelope:
+      Enabled: 1
+      Reverse: 0
+      Offset: 0
+      AttackTime: 0
+      SustainTime: .5
+      ReleaseTime: .5
+    _clip: {fileID: 8300000, guid: d17098f8c52ebdc48a819d13e7be94fb, type: 3}
     _pitchInSemitones: 0
-    _envelope:
-      _enabled: 1
-      _reverse: 0
-      _offset: 0
-      _attackTime: 0
-      _sustainTime: 0
-      _releaseTime: .5
   _mixerGroup: {fileID: 0}
   _audioSourcePrefab: {fileID: 8277626, guid: 4647a8b8e965e6547bd5519348460160, type: 2}
   _voices: 1
@@ -6128,15 +6128,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _pattern: {fileID: 1370928730}
   Samples:
-  - _clip: {fileID: 8300000, guid: 44f29bdc45a6c499c8d3a51a912c0576, type: 3}
+  - Envelope:
+      Enabled: 1
+      Reverse: 0
+      Offset: 0
+      AttackTime: 0
+      SustainTime: .25
+      ReleaseTime: .25
+    _clip: {fileID: 8300000, guid: 44f29bdc45a6c499c8d3a51a912c0576, type: 3}
     _pitchInSemitones: 0
-    _envelope:
-      _enabled: 1
-      _reverse: 0
-      _offset: 0
-      _attackTime: 0
-      _sustainTime: .5
-      _releaseTime: .25
   _mixerGroup: {fileID: 0}
   _audioSourcePrefab: {fileID: 8277626, guid: 4647a8b8e965e6547bd5519348460160, type: 2}
   _voices: 1
@@ -6301,15 +6301,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _pattern: {fileID: 1512331555}
   Samples:
-  - _clip: {fileID: 8300000, guid: 44f29bdc45a6c499c8d3a51a912c0576, type: 3}
+  - Envelope:
+      Enabled: 1
+      Reverse: 0
+      Offset: 0
+      AttackTime: 0
+      SustainTime: .25
+      ReleaseTime: .25
+    _clip: {fileID: 8300000, guid: 44f29bdc45a6c499c8d3a51a912c0576, type: 3}
     _pitchInSemitones: 0
-    _envelope:
-      _enabled: 1
-      _reverse: 0
-      _offset: 0
-      _attackTime: 0
-      _sustainTime: .5
-      _releaseTime: .25
   _mixerGroup: {fileID: 0}
   _audioSourcePrefab: {fileID: 8277626, guid: 4647a8b8e965e6547bd5519348460160, type: 2}
   _voices: 1
@@ -6474,15 +6474,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _pattern: {fileID: 842531587}
   Samples:
-  - _clip: {fileID: 8300000, guid: 44f29bdc45a6c499c8d3a51a912c0576, type: 3}
+  - Envelope:
+      Enabled: 1
+      Reverse: 0
+      Offset: 0
+      AttackTime: 0
+      SustainTime: .25
+      ReleaseTime: .25
+    _clip: {fileID: 8300000, guid: 44f29bdc45a6c499c8d3a51a912c0576, type: 3}
     _pitchInSemitones: 0
-    _envelope:
-      _enabled: 1
-      _reverse: 0
-      _offset: 0
-      _attackTime: 0
-      _sustainTime: .5
-      _releaseTime: .25
   _mixerGroup: {fileID: 0}
   _audioSourcePrefab: {fileID: 8277626, guid: 4647a8b8e965e6547bd5519348460160, type: 2}
   _voices: 1
@@ -6823,15 +6823,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _pattern: {fileID: 1962097549}
   Samples:
-  - _clip: {fileID: 8300000, guid: d17098f8c52ebdc48a819d13e7be94fb, type: 3}
+  - Envelope:
+      Enabled: 1
+      Reverse: 0
+      Offset: 0
+      AttackTime: 0
+      SustainTime: .5
+      ReleaseTime: .5
+    _clip: {fileID: 8300000, guid: d17098f8c52ebdc48a819d13e7be94fb, type: 3}
     _pitchInSemitones: 0
-    _envelope:
-      _enabled: 1
-      _reverse: 0
-      _offset: 0
-      _attackTime: 0
-      _sustainTime: 0
-      _releaseTime: .5
   _mixerGroup: {fileID: 0}
   _audioSourcePrefab: {fileID: 8277626, guid: 4647a8b8e965e6547bd5519348460160, type: 2}
   _voices: 1
@@ -6996,15 +6996,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _pattern: {fileID: 241734412}
   Samples:
-  - _clip: {fileID: 8300000, guid: d17098f8c52ebdc48a819d13e7be94fb, type: 3}
+  - Envelope:
+      Enabled: 1
+      Reverse: 0
+      Offset: 0
+      AttackTime: 0
+      SustainTime: .5
+      ReleaseTime: .5
+    _clip: {fileID: 8300000, guid: d17098f8c52ebdc48a819d13e7be94fb, type: 3}
     _pitchInSemitones: 0
-    _envelope:
-      _enabled: 1
-      _reverse: 0
-      _offset: 0
-      _attackTime: 0
-      _sustainTime: 0
-      _releaseTime: .5
   _mixerGroup: {fileID: 0}
   _audioSourcePrefab: {fileID: 8277626, guid: 4647a8b8e965e6547bd5519348460160, type: 2}
   _voices: 1
@@ -7169,15 +7169,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _pattern: {fileID: 869096522}
   Samples:
-  - _clip: {fileID: 8300000, guid: d17098f8c52ebdc48a819d13e7be94fb, type: 3}
+  - Envelope:
+      Enabled: 1
+      Reverse: 0
+      Offset: 0
+      AttackTime: 0
+      SustainTime: .5
+      ReleaseTime: .5
+    _clip: {fileID: 8300000, guid: d17098f8c52ebdc48a819d13e7be94fb, type: 3}
     _pitchInSemitones: 0
-    _envelope:
-      _enabled: 1
-      _reverse: 0
-      _offset: 0
-      _attackTime: 0
-      _sustainTime: 0
-      _releaseTime: .5
   _mixerGroup: {fileID: 0}
   _audioSourcePrefab: {fileID: 8277626, guid: 4647a8b8e965e6547bd5519348460160, type: 2}
   _voices: 1
@@ -7429,15 +7429,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _pattern: {fileID: 2803826}
   Samples:
-  - _clip: {fileID: 8300000, guid: 328886b4cbbd04b9a9fe138c6e99df76, type: 3}
+  - Envelope:
+      Enabled: 1
+      Reverse: 0
+      Offset: 0
+      AttackTime: 0
+      SustainTime: .25
+      ReleaseTime: .25
+    _clip: {fileID: 8300000, guid: 328886b4cbbd04b9a9fe138c6e99df76, type: 3}
     _pitchInSemitones: 0
-    _envelope:
-      _enabled: 1
-      _reverse: 0
-      _offset: 0
-      _attackTime: 0
-      _sustainTime: 0
-      _releaseTime: .25
   _mixerGroup: {fileID: 0}
   _audioSourcePrefab: {fileID: 8277626, guid: 4647a8b8e965e6547bd5519348460160, type: 2}
   _voices: 1
@@ -7631,15 +7631,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _pattern: {fileID: 144990934}
   Samples:
-  - _clip: {fileID: 8300000, guid: 44f29bdc45a6c499c8d3a51a912c0576, type: 3}
+  - Envelope:
+      Enabled: 1
+      Reverse: 0
+      Offset: 0
+      AttackTime: 0
+      SustainTime: .25
+      ReleaseTime: .25
+    _clip: {fileID: 8300000, guid: 44f29bdc45a6c499c8d3a51a912c0576, type: 3}
     _pitchInSemitones: 0
-    _envelope:
-      _enabled: 1
-      _reverse: 0
-      _offset: 0
-      _attackTime: 0
-      _sustainTime: .5
-      _releaseTime: .25
   _mixerGroup: {fileID: 0}
   _audioSourcePrefab: {fileID: 8277626, guid: 4647a8b8e965e6547bd5519348460160, type: 2}
   _voices: 1
@@ -7892,15 +7892,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _pattern: {fileID: 35833594}
   Samples:
-  - _clip: {fileID: 8300000, guid: 44f29bdc45a6c499c8d3a51a912c0576, type: 3}
+  - Envelope:
+      Enabled: 1
+      Reverse: 0
+      Offset: 0
+      AttackTime: 0
+      SustainTime: .25
+      ReleaseTime: .25
+    _clip: {fileID: 8300000, guid: 44f29bdc45a6c499c8d3a51a912c0576, type: 3}
     _pitchInSemitones: 0
-    _envelope:
-      _enabled: 1
-      _reverse: 0
-      _offset: 0
-      _attackTime: 0
-      _sustainTime: .5
-      _releaseTime: .25
   _mixerGroup: {fileID: 0}
   _audioSourcePrefab: {fileID: 8277626, guid: 4647a8b8e965e6547bd5519348460160, type: 2}
   _voices: 1
@@ -8618,15 +8618,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _pattern: {fileID: 1327256030}
   Samples:
-  - _clip: {fileID: 8300000, guid: 328886b4cbbd04b9a9fe138c6e99df76, type: 3}
+  - Envelope:
+      Enabled: 1
+      Reverse: 0
+      Offset: 0
+      AttackTime: 0
+      SustainTime: .25
+      ReleaseTime: .25
+    _clip: {fileID: 8300000, guid: 328886b4cbbd04b9a9fe138c6e99df76, type: 3}
     _pitchInSemitones: 0
-    _envelope:
-      _enabled: 1
-      _reverse: 0
-      _offset: 0
-      _attackTime: 0
-      _sustainTime: 0
-      _releaseTime: .25
   _mixerGroup: {fileID: 0}
   _audioSourcePrefab: {fileID: 8277626, guid: 4647a8b8e965e6547bd5519348460160, type: 2}
   _voices: 1
@@ -8738,15 +8738,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _pattern: {fileID: 1306629565}
   Samples:
-  - _clip: {fileID: 8300000, guid: d17098f8c52ebdc48a819d13e7be94fb, type: 3}
+  - Envelope:
+      Enabled: 1
+      Reverse: 0
+      Offset: 0
+      AttackTime: 0
+      SustainTime: .5
+      ReleaseTime: .5
+    _clip: {fileID: 8300000, guid: d17098f8c52ebdc48a819d13e7be94fb, type: 3}
     _pitchInSemitones: 0
-    _envelope:
-      _enabled: 1
-      _reverse: 0
-      _offset: 0
-      _attackTime: 0
-      _sustainTime: 0
-      _releaseTime: .5
   _mixerGroup: {fileID: 0}
   _audioSourcePrefab: {fileID: 8277626, guid: 4647a8b8e965e6547bd5519348460160, type: 2}
   _voices: 1
@@ -9013,15 +9013,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _pattern: {fileID: 234413822}
   Samples:
-  - _clip: {fileID: 8300000, guid: d17098f8c52ebdc48a819d13e7be94fb, type: 3}
+  - Envelope:
+      Enabled: 1
+      Reverse: 0
+      Offset: 0
+      AttackTime: 0
+      SustainTime: .5
+      ReleaseTime: .5
+    _clip: {fileID: 8300000, guid: d17098f8c52ebdc48a819d13e7be94fb, type: 3}
     _pitchInSemitones: 0
-    _envelope:
-      _enabled: 1
-      _reverse: 0
-      _offset: 0
-      _attackTime: 0
-      _sustainTime: 0
-      _releaseTime: .5
   _mixerGroup: {fileID: 0}
   _audioSourcePrefab: {fileID: 8277626, guid: 4647a8b8e965e6547bd5519348460160, type: 2}
   _voices: 1
@@ -9245,15 +9245,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _pattern: {fileID: 476238754}
   Samples:
-  - _clip: {fileID: 8300000, guid: 44f29bdc45a6c499c8d3a51a912c0576, type: 3}
+  - Envelope:
+      Enabled: 1
+      Reverse: 0
+      Offset: 0
+      AttackTime: 0
+      SustainTime: .25
+      ReleaseTime: .25
+    _clip: {fileID: 8300000, guid: 44f29bdc45a6c499c8d3a51a912c0576, type: 3}
     _pitchInSemitones: 0
-    _envelope:
-      _enabled: 1
-      _reverse: 0
-      _offset: 0
-      _attackTime: 0
-      _sustainTime: .5
-      _releaseTime: .25
   _mixerGroup: {fileID: 0}
   _audioSourcePrefab: {fileID: 8277626, guid: 4647a8b8e965e6547bd5519348460160, type: 2}
   _voices: 1
@@ -9565,15 +9565,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _pattern: {fileID: 1438955807}
   Samples:
-  - _clip: {fileID: 8300000, guid: d17098f8c52ebdc48a819d13e7be94fb, type: 3}
+  - Envelope:
+      Enabled: 1
+      Reverse: 0
+      Offset: 0
+      AttackTime: 0
+      SustainTime: .5
+      ReleaseTime: .5
+    _clip: {fileID: 8300000, guid: d17098f8c52ebdc48a819d13e7be94fb, type: 3}
     _pitchInSemitones: 0
-    _envelope:
-      _enabled: 1
-      _reverse: 0
-      _offset: 0
-      _attackTime: 0
-      _sustainTime: 0
-      _releaseTime: .5
   _mixerGroup: {fileID: 0}
   _audioSourcePrefab: {fileID: 8277626, guid: 4647a8b8e965e6547bd5519348460160, type: 2}
   _voices: 1
@@ -10089,15 +10089,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _pattern: {fileID: 911428880}
   Samples:
-  - _clip: {fileID: 8300000, guid: 328886b4cbbd04b9a9fe138c6e99df76, type: 3}
+  - Envelope:
+      Enabled: 1
+      Reverse: 0
+      Offset: 0
+      AttackTime: 0
+      SustainTime: .25
+      ReleaseTime: .25
+    _clip: {fileID: 8300000, guid: 328886b4cbbd04b9a9fe138c6e99df76, type: 3}
     _pitchInSemitones: 0
-    _envelope:
-      _enabled: 1
-      _reverse: 0
-      _offset: 0
-      _attackTime: 0
-      _sustainTime: 0
-      _releaseTime: .25
   _mixerGroup: {fileID: 0}
   _audioSourcePrefab: {fileID: 8277626, guid: 4647a8b8e965e6547bd5519348460160, type: 2}
   _voices: 1
@@ -10262,15 +10262,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _pattern: {fileID: 216250088}
   Samples:
-  - _clip: {fileID: 8300000, guid: 328886b4cbbd04b9a9fe138c6e99df76, type: 3}
+  - Envelope:
+      Enabled: 1
+      Reverse: 0
+      Offset: 0
+      AttackTime: 0
+      SustainTime: .25
+      ReleaseTime: .25
+    _clip: {fileID: 8300000, guid: 328886b4cbbd04b9a9fe138c6e99df76, type: 3}
     _pitchInSemitones: 0
-    _envelope:
-      _enabled: 1
-      _reverse: 0
-      _offset: 0
-      _attackTime: 0
-      _sustainTime: 0
-      _releaseTime: .25
   _mixerGroup: {fileID: 0}
   _audioSourcePrefab: {fileID: 8277626, guid: 4647a8b8e965e6547bd5519348460160, type: 2}
   _voices: 1
@@ -10464,15 +10464,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _pattern: {fileID: 761667601}
   Samples:
-  - _clip: {fileID: 8300000, guid: 44f29bdc45a6c499c8d3a51a912c0576, type: 3}
+  - Envelope:
+      Enabled: 1
+      Reverse: 0
+      Offset: 0
+      AttackTime: 0
+      SustainTime: .25
+      ReleaseTime: .25
+    _clip: {fileID: 8300000, guid: 44f29bdc45a6c499c8d3a51a912c0576, type: 3}
     _pitchInSemitones: 0
-    _envelope:
-      _enabled: 1
-      _reverse: 0
-      _offset: 0
-      _attackTime: 0
-      _sustainTime: .5
-      _releaseTime: .25
   _mixerGroup: {fileID: 0}
   _audioSourcePrefab: {fileID: 8277626, guid: 4647a8b8e965e6547bd5519348460160, type: 2}
   _voices: 1
@@ -10754,15 +10754,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _pattern: {fileID: 334490359}
   Samples:
-  - _clip: {fileID: 8300000, guid: 44f29bdc45a6c499c8d3a51a912c0576, type: 3}
+  - Envelope:
+      Enabled: 1
+      Reverse: 0
+      Offset: 0
+      AttackTime: 0
+      SustainTime: .25
+      ReleaseTime: .25
+    _clip: {fileID: 8300000, guid: 44f29bdc45a6c499c8d3a51a912c0576, type: 3}
     _pitchInSemitones: 0
-    _envelope:
-      _enabled: 1
-      _reverse: 0
-      _offset: 0
-      _attackTime: 0
-      _sustainTime: .5
-      _releaseTime: .25
   _mixerGroup: {fileID: 0}
   _audioSourcePrefab: {fileID: 8277626, guid: 4647a8b8e965e6547bd5519348460160, type: 2}
   _voices: 1
@@ -10927,15 +10927,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _pattern: {fileID: 1262430913}
   Samples:
-  - _clip: {fileID: 8300000, guid: 328886b4cbbd04b9a9fe138c6e99df76, type: 3}
+  - Envelope:
+      Enabled: 1
+      Reverse: 0
+      Offset: 0
+      AttackTime: 0
+      SustainTime: .25
+      ReleaseTime: .25
+    _clip: {fileID: 8300000, guid: 328886b4cbbd04b9a9fe138c6e99df76, type: 3}
     _pitchInSemitones: 0
-    _envelope:
-      _enabled: 1
-      _reverse: 0
-      _offset: 0
-      _attackTime: 0
-      _sustainTime: 0
-      _releaseTime: .25
   _mixerGroup: {fileID: 0}
   _audioSourcePrefab: {fileID: 8277626, guid: 4647a8b8e965e6547bd5519348460160, type: 2}
   _voices: 1
@@ -11248,15 +11248,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _pattern: {fileID: 1580091309}
   Samples:
-  - _clip: {fileID: 8300000, guid: 328886b4cbbd04b9a9fe138c6e99df76, type: 3}
+  - Envelope:
+      Enabled: 1
+      Reverse: 0
+      Offset: 0
+      AttackTime: 0
+      SustainTime: .25
+      ReleaseTime: .25
+    _clip: {fileID: 8300000, guid: 328886b4cbbd04b9a9fe138c6e99df76, type: 3}
     _pitchInSemitones: 0
-    _envelope:
-      _enabled: 1
-      _reverse: 0
-      _offset: 0
-      _attackTime: 0
-      _sustainTime: 0
-      _releaseTime: .25
   _mixerGroup: {fileID: 0}
   _audioSourcePrefab: {fileID: 8277626, guid: 4647a8b8e965e6547bd5519348460160, type: 2}
   _voices: 1
@@ -11454,8 +11454,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1789923985}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.53000021, y: 0, z: -3.79999995}
-  m_LocalScale: {x: .5, y: .5, z: .5}
+  m_LocalPosition: {x: -3.3900001, y: 0, z: -4.28999996}
+  m_LocalScale: {x: .300000012, y: .300000012, z: .300000012}
   m_Children:
   - {fileID: 1421239641}
   - {fileID: 1934627486}
@@ -11658,15 +11658,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _pattern: {fileID: 1491970041}
   Samples:
-  - _clip: {fileID: 8300000, guid: d17098f8c52ebdc48a819d13e7be94fb, type: 3}
+  - Envelope:
+      Enabled: 1
+      Reverse: 0
+      Offset: 0
+      AttackTime: 0
+      SustainTime: .5
+      ReleaseTime: .5
+    _clip: {fileID: 8300000, guid: d17098f8c52ebdc48a819d13e7be94fb, type: 3}
     _pitchInSemitones: 0
-    _envelope:
-      _enabled: 1
-      _reverse: 0
-      _offset: 0
-      _attackTime: 0
-      _sustainTime: 0
-      _releaseTime: .5
   _mixerGroup: {fileID: 0}
   _audioSourcePrefab: {fileID: 8277626, guid: 4647a8b8e965e6547bd5519348460160, type: 2}
   _voices: 1
@@ -11831,15 +11831,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _pattern: {fileID: 1496815573}
   Samples:
-  - _clip: {fileID: 8300000, guid: 44f29bdc45a6c499c8d3a51a912c0576, type: 3}
+  - Envelope:
+      Enabled: 1
+      Reverse: 0
+      Offset: 0
+      AttackTime: 0
+      SustainTime: .25
+      ReleaseTime: .25
+    _clip: {fileID: 8300000, guid: 44f29bdc45a6c499c8d3a51a912c0576, type: 3}
     _pitchInSemitones: 0
-    _envelope:
-      _enabled: 1
-      _reverse: 0
-      _offset: 0
-      _attackTime: 0
-      _sustainTime: .5
-      _releaseTime: .25
   _mixerGroup: {fileID: 0}
   _audioSourcePrefab: {fileID: 8277626, guid: 4647a8b8e965e6547bd5519348460160, type: 2}
   _voices: 1
@@ -12395,15 +12395,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _pattern: {fileID: 19720303}
   Samples:
-  - _clip: {fileID: 8300000, guid: d17098f8c52ebdc48a819d13e7be94fb, type: 3}
+  - Envelope:
+      Enabled: 1
+      Reverse: 0
+      Offset: 0
+      AttackTime: 0
+      SustainTime: .5
+      ReleaseTime: .5
+    _clip: {fileID: 8300000, guid: d17098f8c52ebdc48a819d13e7be94fb, type: 3}
     _pitchInSemitones: 0
-    _envelope:
-      _enabled: 1
-      _reverse: 0
-      _offset: 0
-      _attackTime: 0
-      _sustainTime: 0
-      _releaseTime: .5
   _mixerGroup: {fileID: 0}
   _audioSourcePrefab: {fileID: 8277626, guid: 4647a8b8e965e6547bd5519348460160, type: 2}
   _voices: 1
@@ -12685,15 +12685,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _pattern: {fileID: 1278577097}
   Samples:
-  - _clip: {fileID: 8300000, guid: d17098f8c52ebdc48a819d13e7be94fb, type: 3}
+  - Envelope:
+      Enabled: 1
+      Reverse: 0
+      Offset: 0
+      AttackTime: 0
+      SustainTime: .5
+      ReleaseTime: .5
+    _clip: {fileID: 8300000, guid: d17098f8c52ebdc48a819d13e7be94fb, type: 3}
     _pitchInSemitones: 0
-    _envelope:
-      _enabled: 1
-      _reverse: 0
-      _offset: 0
-      _attackTime: 0
-      _sustainTime: 0
-      _releaseTime: .5
   _mixerGroup: {fileID: 0}
   _audioSourcePrefab: {fileID: 8277626, guid: 4647a8b8e965e6547bd5519348460160, type: 2}
   _voices: 1
@@ -12916,15 +12916,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _pattern: {fileID: 1254073547}
   Samples:
-  - _clip: {fileID: 8300000, guid: 328886b4cbbd04b9a9fe138c6e99df76, type: 3}
+  - Envelope:
+      Enabled: 1
+      Reverse: 0
+      Offset: 0
+      AttackTime: 0
+      SustainTime: .25
+      ReleaseTime: .25
+    _clip: {fileID: 8300000, guid: 328886b4cbbd04b9a9fe138c6e99df76, type: 3}
     _pitchInSemitones: 0
-    _envelope:
-      _enabled: 1
-      _reverse: 0
-      _offset: 0
-      _attackTime: 0
-      _sustainTime: 0
-      _releaseTime: .25
   _mixerGroup: {fileID: 0}
   _audioSourcePrefab: {fileID: 8277626, guid: 4647a8b8e965e6547bd5519348460160, type: 2}
   _voices: 1
@@ -13089,15 +13089,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _pattern: {fileID: 1603829200}
   Samples:
-  - _clip: {fileID: 8300000, guid: 328886b4cbbd04b9a9fe138c6e99df76, type: 3}
+  - Envelope:
+      Enabled: 1
+      Reverse: 0
+      Offset: 0
+      AttackTime: 0
+      SustainTime: .25
+      ReleaseTime: .25
+    _clip: {fileID: 8300000, guid: 328886b4cbbd04b9a9fe138c6e99df76, type: 3}
     _pitchInSemitones: 0
-    _envelope:
-      _enabled: 1
-      _reverse: 0
-      _offset: 0
-      _attackTime: 0
-      _sustainTime: 0
-      _releaseTime: .25
   _mixerGroup: {fileID: 0}
   _audioSourcePrefab: {fileID: 8277626, guid: 4647a8b8e965e6547bd5519348460160, type: 2}
   _voices: 1

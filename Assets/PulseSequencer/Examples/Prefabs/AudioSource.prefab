@@ -9,6 +9,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 431338}
   - 82: {fileID: 8277626}
+  - 114: {fileID: 11468050}
   m_Layer: 0
   m_Name: AudioSource
   m_TagString: Untagged
@@ -43,6 +44,7 @@ AudioSource:
   m_Pitch: 1
   Loop: 0
   Mute: 0
+  Spatialize: 0
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1
@@ -97,6 +99,21 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
+--- !u!114 &11468050
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 112032}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99c8c54cc7a24524395f06b3447afea9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Enabled: 0
+  AttackTime: 0
+  SustainTime: 10
+  ReleaseTime: 0
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

@@ -13,26 +13,16 @@ namespace DerelictComputer
         [Serializable]
         public class Sample
         {
+            public VolumeEnvelope Envelope = new VolumeEnvelope();
+
             [SerializeField] private AudioClip _clip;
             [SerializeField] private float _pitchInSemitones = 0f;
-			[SerializeField] private VolumeEnvelope _envelope = new VolumeEnvelope();
 
-            private bool _initialized;
-
-			private AudioClip _processedClip;
-
-            private float _pitch;
-
-			public AudioClip Clip
+            public AudioClip Clip
 			{
 			    get
 			    {
-			        if (!_initialized)
-			        {
-			            Init();    
-			        }
-
-			        return _processedClip;
+			        return _clip;
 			    }
 			}
 
@@ -40,27 +30,31 @@ namespace DerelictComputer
 			{
 			    get
 			    {
-			        if (!_initialized)
+			        if (Envelope.Enabled && Envelope.Reverse)
 			        {
-			            Init();
+			            return MusicMathUtils.SemitonesToPitch(_pitchInSemitones)*-1f;
 			        }
 
-                    return _pitch;
+			        return MusicMathUtils.SemitonesToPitch(_pitchInSemitones);
 			    }
 			}
 
-            public void Init()
+            public int Offset
             {
-                if (_initialized)
+                get
                 {
-                    return;
+                    if (!Envelope.Enabled)
+                    {
+                        return 0;
+                    }
+
+                    if (Envelope.Reverse)
+                    {
+                        return (int) (_clip.samples - Envelope.Offset*_clip.frequency - 1);
+                    }
+
+                    return (int) (Envelope.Offset*_clip.frequency);
                 }
-
-                _processedClip = _envelope.Apply(_clip);
-
-                _pitch = MusicMathUtils.SemitonesToPitch(_pitchInSemitones);
-
-                _initialized = true;
             }
         }
 
@@ -115,11 +109,6 @@ namespace DerelictComputer
 
                 _audioSources.Add(audioSource);
             }
-
-            for (var i = 0; i < Samples.Count; i++)
-            {
-                Samples[i].Init();
-            }
         }
 	
         protected override void OnStepTriggered(int stepIndex, double pulseTime)
@@ -141,8 +130,24 @@ namespace DerelictComputer
             var currentAudioSource = _audioSources[_currentAudioSourceIndex];
             _currentAudioSourceIndex = (_currentAudioSourceIndex + 1)%_audioSources.Count;
 
-			currentAudioSource.clip = currentSample.Clip;
-			currentAudioSource.pitch = currentSample.Pitch;
+            var envelopeFilter = currentAudioSource.GetComponent<VolumeEnvelopeFilter>();
+
+            if (envelopeFilter != null)
+            {
+                envelopeFilter.Enabled = currentSample.Envelope.Enabled;
+
+                if (currentSample.Envelope.Enabled)
+                {
+                    envelopeFilter.AttackTime = currentSample.Envelope.AttackTime;
+                    envelopeFilter.SustainTime = currentSample.Envelope.SustainTime;
+                    envelopeFilter.ReleaseTime = currentSample.Envelope.ReleaseTime;
+                    envelopeFilter.Trigger(pulseTime);
+                }
+            }
+
+            currentAudioSource.clip = currentSample.Clip;
+            currentAudioSource.pitch = currentSample.Pitch;
+            currentAudioSource.timeSamples = currentSample.Offset;
             currentAudioSource.PlayScheduled(pulseTime);
         }
 
