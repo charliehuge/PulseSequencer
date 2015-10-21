@@ -20,6 +20,14 @@ To get started, check out the example scene, or:
 - Add a sample and reference an AudioClip in the Sampler object
 - Add some steps to the Pattern object
 
+## Platform Support
+- Windows: verified working
+- Mac: verified working
+- Linux: theoretically works, but not verified
+- iOS: theoretically works, but not verified
+- Android: theoretically works, but not verified
+- HTML5/WebGL Preview: basic sampling works, but volume envelopes do not (pending support for AudioFilters, ETA from Unity unknown)
+
 ## Disclaimer
 
 This project is very young, and therefore many safeguards and editor helpers are not implemented. I'm using this in my own projects, and will be updating this repository as I add features in those projects. So please bear with me! If you have any feature requests or find any bugs, please feel free to report them via the issue tracker.
