@@ -10,6 +10,14 @@ namespace DerelictComputer
 
         private bool _lastSuspendState;
 
+        public void Reset()
+        {
+            foreach (var patternFollower in _patternFollowers)
+            {
+                patternFollower.Reset();
+            }
+        }
+
         private void Awake()
         {
             _patternFollowers = GetComponentsInChildren<PatternFollower>();
