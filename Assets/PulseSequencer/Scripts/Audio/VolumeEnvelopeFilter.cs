@@ -65,6 +65,11 @@ namespace DerelictComputer
                 {
                     volume = Mathf.Lerp(1f, 0f, (samplesElapsed - _attackSamples - _sustainSamples) / (float)_releaseSamples);
                 }
+                else
+                {
+                    volume = 0f;
+                    _triggered = false;
+                }
 
                 data[i] *= Mathf.Clamp(volume, 0f, 1f);
             }
