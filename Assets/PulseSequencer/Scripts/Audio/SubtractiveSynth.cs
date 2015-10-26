@@ -23,6 +23,9 @@ namespace DerelictComputer
             public WaveformType Waveform = WaveformType.Sine;
             [Range(20f, 22000f)] public float Frequency = 440f;
             [Range(0f, 1f)] public float Gain = 1f;
+            [Range(0.1f, 0.9f)] public float PulseWidth = 0.5f;
+
+            private readonly System.Random _random = new System.Random();
 
             private double _increment;
             private double _phase;
@@ -52,9 +55,9 @@ namespace DerelictComputer
                     case WaveformType.Saw:
                         return Mathf.Lerp(-1f, 1f, (float) (_phase/TwoPi)*Gain);
                     case WaveformType.Square:
-                        return 0;
+                        return (_phase/TwoPi > PulseWidth ? 1f : -1f)*Gain;
                     case WaveformType.Noise:
-                        return 0;
+                        return ((float) _random.NextDouble() - 0.5f)*2*Gain;
                     default:
                         throw new ArgumentOutOfRangeException();
                 }

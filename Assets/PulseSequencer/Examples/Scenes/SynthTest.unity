@@ -201,18 +201,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _gain: .0500000007
   _oscillators:
+  - Waveform: 2
+    Frequency: 440
+    Gain: 1
+    PulseWidth: .5
   - Waveform: 1
     Frequency: 440
-    Gain: 1
+    Gain: .474000007
+    PulseWidth: .5
   - Waveform: 0
     Frequency: 440
-    Gain: 1
-  - Waveform: 0
+    Gain: .56400001
+    PulseWidth: .5
+  - Waveform: 3
     Frequency: 440
-    Gain: 1
-  - Waveform: 0
-    Frequency: 440
-    Gain: 1
+    Gain: .36500001
+    PulseWidth: .5
 --- !u!82 &256405049
 AudioSource:
   m_ObjectHideFlags: 0
