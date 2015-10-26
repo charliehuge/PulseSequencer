@@ -114,15 +114,16 @@ namespace DerelictComputer
 
         public bool DebugPlayNote;
 
-        [SerializeField] private double _frequency = 440.0;
         [SerializeField, Range(0f, 1f)] private float _gain = 0.05f;
         [SerializeField] private Oscillator[] _oscillators;
 
+        private double _frequency;
         private uint _elapsedSamples;
         private bool _playing;
 
-        public void Play()
+        public void Play(int midiNote)
         {
+            _frequency = MusicMathUtils.MidiNoteToFrequency(midiNote);
             _elapsedSamples = 0;
             _playing = true;
         }
@@ -131,7 +132,7 @@ namespace DerelictComputer
         {
             if (DebugPlayNote)
             {
-                Play();
+                Play(UnityEngine.Random.Range(0, 127));
                 DebugPlayNote = false;
             }
         }
@@ -170,7 +171,7 @@ namespace DerelictComputer
                         }
                     }
 
-                    sample *= _gain;
+                    sample = (sample*_gain)/_oscillators.Length;
 
                     for (int j = 0; j < channels; j++)
                     {
