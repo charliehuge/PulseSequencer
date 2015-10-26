@@ -6,35 +6,62 @@ namespace DerelictComputer
     [RequireComponent(typeof(AudioSource))]
     public class SubtractiveSynth : MonoBehaviour
     {
-        [SerializeField] private double _frequency = 440.0;
-        [SerializeField] private double _gain = 0.05;
-
-        private double _twoPi;
-        private double _increment;
-        private double _phase;
-        private double _sampleRate;
-
-        private void Awake()
+        [Serializable]
+        public class Oscillator
         {
-            _twoPi = Math.PI*2;
-            _sampleRate = AudioSettings.outputSampleRate;
-        }
+            private static readonly double TwoPi;
+            private static readonly double SampleRate;
 
-        private void OnAudioFilterRead(float[] buffer, int channels)
-        {
-            _increment = _frequency*_twoPi/_sampleRate;
+            [Range(20f, 22000f)] public float _frequency = 440f;
+            [Range(0f, 1f)] public float _gain = 1f;
 
-            for (int i = 0; i < buffer.Length; i += channels)
+            private double _increment;
+            private double _phase;
+
+            static Oscillator()
             {
+                TwoPi = Math.PI*2;
+                SampleRate = AudioSettings.outputSampleRate;
+            }
+
+            public float Synthesize()
+            {
+                _increment = _frequency*TwoPi/SampleRate;
+
                 _phase = _phase + _increment;
 
                 // wrap phase
-                if (_phase > _twoPi)
+                if (_phase > TwoPi)
                 {
-                    _phase -= _twoPi;
+                    _phase -= TwoPi;
                 }
 
-                var sample = (float) (Math.Sin(_phase)*_gain);
+                return (float) Math.Sin(_phase)*_gain;
+            }
+        }
+
+        [SerializeField] private float _gain = 0.05f;
+        [SerializeField] private Oscillator[] _oscillators;
+
+        private void OnAudioFilterRead(float[] buffer, int channels)
+        {
+            if (_oscillators.Length == 0)
+            {
+                return;
+            }
+
+            for (int i = 0; i < buffer.Length; i += channels)
+            {
+                var sample = 0f;
+
+                foreach (var oscillator in _oscillators)
+                {
+                    sample += oscillator.Synthesize();
+                }
+
+                sample /= _oscillators.Length;
+
+                sample *= _gain;
 
                 for (int j = 0; j < channels; j++)
                 {
