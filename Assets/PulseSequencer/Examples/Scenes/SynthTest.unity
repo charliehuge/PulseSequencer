@@ -199,17 +199,38 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc8c54a74f7bac44cbeb2bc4420d36b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DebugPlayNote: 0
   _frequency: 440
   _gain: .0500000007
   _oscillators:
-  - Waveform: 0
-    Gain: 1
-    DetuneSemitones: 0
-    PulseWidth: 0
-  - Waveform: 0
-    Gain: 1
-    DetuneSemitones: 0
-    PulseWidth: 0
+  - _waveform: 0
+    _gain: 1
+    _detuneSemitones: 0
+    _pulseWidth: 0
+    _envelope:
+      _attackTime: 0
+      _releaseTime: .25
+  - _waveform: 2
+    _gain: .5
+    _detuneSemitones: 0
+    _pulseWidth: .69999999999999996
+    _envelope:
+      _attackTime: .25
+      _releaseTime: .25
+  - _waveform: 1
+    _gain: .25
+    _detuneSemitones: 0
+    _pulseWidth: 0
+    _envelope:
+      _attackTime: 1
+      _releaseTime: 0
+  - _waveform: 3
+    _gain: .25
+    _detuneSemitones: 0
+    _pulseWidth: 0
+    _envelope:
+      _attackTime: 0
+      _releaseTime: .10000000000000001
 --- !u!82 &256405049
 AudioSource:
   m_ObjectHideFlags: 0

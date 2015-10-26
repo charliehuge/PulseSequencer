@@ -7,6 +7,39 @@ namespace DerelictComputer
     public class SubtractiveSynth : MonoBehaviour
     {
         [Serializable]
+        public class Envelope
+        {
+            private static readonly double SampleRate;
+
+            [SerializeField] private double _attackTime = 0.0;
+            [SerializeField] private double _releaseTime = 0.0;
+
+            static Envelope()
+            {
+                SampleRate = AudioSettings.outputSampleRate;
+            }
+
+            public bool GetGain(out double outGain, uint elapsedSamples)
+            {
+                var time = elapsedSamples / SampleRate;
+
+                if (_attackTime > 0.0 && time < _attackTime)
+                {
+                    outGain = time/_attackTime;
+                    return true;
+                }
+                if (_releaseTime > 0.0 && time < _attackTime + _releaseTime)
+                {
+                    outGain = 1.0 - (time - _attackTime)/_releaseTime;
+                    return true;
+                }
+
+                outGain = 0f;
+                return false;
+            }
+        }
+
+        [Serializable]
         public class Oscillator
         {
             public enum WaveformType
@@ -20,15 +53,13 @@ namespace DerelictComputer
             private static readonly double TwoPi;
             private static readonly double SampleRate;
 
-            public WaveformType Waveform = WaveformType.Sine;
-            [Range(0f, 1f)] public float Gain = 1f;
-            public double DetuneSemitones = 0f;
-            [Range(0.1f, 0.9f)] public float PulseWidth = 0.5f;
+            [SerializeField] private WaveformType _waveform = WaveformType.Sine;
+            [SerializeField] private double _gain = 1;
+            [SerializeField] private double _detuneSemitones = 0;
+            [SerializeField] private double _pulseWidth = 0.5;
+            [SerializeField] private Envelope _envelope;
 
             private readonly System.Random _random = new System.Random();
-
-            private double _increment;
-            private double _phase;
 
             static Oscillator()
             {
@@ -36,64 +67,122 @@ namespace DerelictComputer
                 SampleRate = AudioSettings.outputSampleRate;
             }
 
-            public float Synthesize(double frequency)
+            public bool Synthesize(out float outSample, double frequency, uint elapsedSamples)
             {
-                _increment = frequency*MusicMathUtils.SemitonesToPitch(DetuneSemitones)*TwoPi/SampleRate;
-
-                _phase = _phase + _increment;
+                var phase = elapsedSamples*frequency*MusicMathUtils.SemitonesToPitch(_detuneSemitones)*TwoPi/SampleRate;
 
                 // wrap phase
-                if (_phase > TwoPi)
+                while (phase > TwoPi)
                 {
-                    _phase -= TwoPi;
+                    phase -= TwoPi;
                 }
 
-                switch (Waveform)
+                double sample;
+
+                switch (_waveform)
                 {
                     case WaveformType.Sine:
-                        return (float) Math.Sin(_phase)*Gain;
+                        sample = Math.Sin(phase);
+                        break;
                     case WaveformType.Saw:
-                        return Mathf.Lerp(-1f, 1f, (float) (_phase/TwoPi)*Gain);
+                        sample = ((phase / TwoPi) - 0.5)*2.0;
+                        break;
                     case WaveformType.Square:
-                        return (_phase/TwoPi > PulseWidth ? 1f : -1f)*Gain;
+                        sample = (phase / TwoPi > _pulseWidth ? 1.0 : -1.0);
+                        break;
                     case WaveformType.Noise:
-                        return ((float) _random.NextDouble() - 0.5f)*2*Gain;
+                        sample = (_random.NextDouble() - 0.5)*2.0;
+                        break;
                     default:
                         throw new ArgumentOutOfRangeException();
                 }
 
+                double envelopeGain;
+
+                if (!_envelope.GetGain(out envelopeGain, elapsedSamples))
+                {
+                    outSample = 0f;
+                    return false;
+                }
+
+                sample *= _gain*envelopeGain;
+
+                outSample = (float) sample;
+                return true;
             }
         }
+
+        public bool DebugPlayNote;
 
         [SerializeField] private double _frequency = 440.0;
         [SerializeField, Range(0f, 1f)] private float _gain = 0.05f;
         [SerializeField] private Oscillator[] _oscillators;
 
+        private uint _elapsedSamples;
+        private bool _playing;
+
+        public void Play()
+        {
+            _elapsedSamples = 0;
+            _playing = true;
+        }
+
+        private void Update()
+        {
+            if (DebugPlayNote)
+            {
+                Play();
+                DebugPlayNote = false;
+            }
+        }
+
         private void OnAudioFilterRead(float[] buffer, int channels)
         {
+            if (!_playing)
+            {
+                return;
+            }
+
             if (_oscillators.Length == 0)
             {
                 return;
             }
 
+
             for (int i = 0; i < buffer.Length; i += channels)
             {
-                var sample = 0f;
-
-                foreach (var oscillator in _oscillators)
+                if (_playing)
                 {
-                    sample += oscillator.Synthesize(_frequency);
+                    var sample = 0f;
+                    var numOscillatorsFinished = 0;
+
+                    foreach (var oscillator in _oscillators)
+                    {
+                        float oscSample;
+
+                        if (!oscillator.Synthesize(out oscSample, _frequency, _elapsedSamples))
+                        {
+                            numOscillatorsFinished++;
+                        }
+                        else
+                        {
+                            sample += oscSample;
+                        }
+                    }
+
+                    sample *= _gain;
+
+                    for (int j = 0; j < channels; j++)
+                    {
+                        buffer[i + j] = sample;
+                    }
+
+                    _playing = numOscillatorsFinished < _oscillators.Length;
                 }
 
-                sample /= _oscillators.Length;
-
-                sample *= _gain;
-
-                for (int j = 0; j < channels; j++)
-                {
-                    buffer[i + j] = sample;
-                }
+                _elapsedSamples++;
             }
+
         }
 
     }
