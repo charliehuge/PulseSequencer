@@ -21,8 +21,8 @@ namespace DerelictComputer
             private static readonly double SampleRate;
 
             public WaveformType Waveform = WaveformType.Sine;
-            [Range(20f, 22000f)] public float Frequency = 440f;
             [Range(0f, 1f)] public float Gain = 1f;
+            public double DetuneSemitones = 0f;
             [Range(0.1f, 0.9f)] public float PulseWidth = 0.5f;
 
             private readonly System.Random _random = new System.Random();
@@ -36,9 +36,9 @@ namespace DerelictComputer
                 SampleRate = AudioSettings.outputSampleRate;
             }
 
-            public float Synthesize()
+            public float Synthesize(double frequency)
             {
-                _increment = Frequency*TwoPi/SampleRate;
+                _increment = frequency*MusicMathUtils.SemitonesToPitch(DetuneSemitones)*TwoPi/SampleRate;
 
                 _phase = _phase + _increment;
 
@@ -65,6 +65,7 @@ namespace DerelictComputer
             }
         }
 
+        [SerializeField] private double _frequency = 440.0;
         [SerializeField, Range(0f, 1f)] private float _gain = 0.05f;
         [SerializeField] private Oscillator[] _oscillators;
 
@@ -81,7 +82,7 @@ namespace DerelictComputer
 
                 foreach (var oscillator in _oscillators)
                 {
-                    sample += oscillator.Synthesize();
+                    sample += oscillator.Synthesize(_frequency);
                 }
 
                 sample /= _oscillators.Length;

@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 namespace DerelictComputer
 {
@@ -11,7 +12,12 @@ namespace DerelictComputer
         /// <returns>percentage-based pitch</returns>
         public static float SemitonesToPitch(float semitones)
         {
-            return Mathf.Pow(2f, semitones / 12f);
+            return Mathf.Pow(2f, semitones/12f);
+        }
+
+        public static double SemitonesToPitch(double semitones)
+        {
+            return Math.Pow(2.0, semitones/12.0);
         }
     }
 }
