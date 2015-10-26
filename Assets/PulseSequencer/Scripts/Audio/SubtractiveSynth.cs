@@ -9,11 +9,20 @@ namespace DerelictComputer
         [Serializable]
         public class Oscillator
         {
+            public enum WaveformType
+            {
+                Sine,
+                Saw,
+                Square,
+                Noise
+            }
+
             private static readonly double TwoPi;
             private static readonly double SampleRate;
 
-            [Range(20f, 22000f)] public float _frequency = 440f;
-            [Range(0f, 1f)] public float _gain = 1f;
+            public WaveformType Waveform = WaveformType.Sine;
+            [Range(20f, 22000f)] public float Frequency = 440f;
+            [Range(0f, 1f)] public float Gain = 1f;
 
             private double _increment;
             private double _phase;
@@ -26,7 +35,7 @@ namespace DerelictComputer
 
             public float Synthesize()
             {
-                _increment = _frequency*TwoPi/SampleRate;
+                _increment = Frequency*TwoPi/SampleRate;
 
                 _phase = _phase + _increment;
 
@@ -36,11 +45,24 @@ namespace DerelictComputer
                     _phase -= TwoPi;
                 }
 
-                return (float) Math.Sin(_phase)*_gain;
+                switch (Waveform)
+                {
+                    case WaveformType.Sine:
+                        return (float) Math.Sin(_phase)*Gain;
+                    case WaveformType.Saw:
+                        return Mathf.Lerp(-1f, 1f, (float) (_phase/TwoPi)*Gain);
+                    case WaveformType.Square:
+                        return 0;
+                    case WaveformType.Noise:
+                        return 0;
+                    default:
+                        throw new ArgumentOutOfRangeException();
+                }
+
             }
         }
 
-        [SerializeField] private float _gain = 0.05f;
+        [SerializeField, Range(0f, 1f)] private float _gain = 0.05f;
         [SerializeField] private Oscillator[] _oscillators;
 
         private void OnAudioFilterRead(float[] buffer, int channels)
