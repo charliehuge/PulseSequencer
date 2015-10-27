@@ -7,6 +7,39 @@ namespace DerelictComputer
     {
         public const int MidiNoteA440 = 69;
 
+		private static string[] _noteNames = {"C", "C#(Db)", "D", "D#(Eb)", "E", "F", "F#(Gb)", "G", "G#/Ab", "A", "A#(Bb)", "B"};
+
+		private static string[] _midiNoteNames;
+
+		/// <summary>
+		/// A human readable list of MIDI note names, for use by the editor, mainly
+		/// </summary>
+		/// <value>The midi note names.</value>
+		public static string[] MidiNoteNames
+		{
+			get
+			{
+				if (_midiNoteNames == null)
+				{
+					_midiNoteNames = new string[128];
+
+					var octave = 0;
+
+					for (int noteNumber = 0; noteNumber < _midiNoteNames.Length; noteNumber += _noteNames.Length)
+					{
+						for (int noteName = 0; noteName < _noteNames.Length; noteName++)
+						{
+							_midiNoteNames[noteNumber + noteName] = _noteNames[noteName] + octave;
+						}
+
+						octave++;
+					}
+				}
+
+				return _midiNoteNames;
+			}
+		}
+
         /// <summary>
         /// Converts a semitone offset to a percentage pitch
         /// </summary>

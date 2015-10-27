@@ -200,7 +200,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DebugPlayNote: 0
-  _gain: .414999992
+  _gain: .5
   _oscillators:
   - _waveform: 0
     _gain: 1
