@@ -182,7 +182,7 @@ GameObject:
   - 82: {fileID: 256405049}
   - 114: {fileID: 256405048}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: Synth
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -200,7 +200,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DebugPlayNote: 0
-  _gain: .0500000007
+  _gain: .414999992
   _oscillators:
   - _waveform: 0
     _gain: 1
@@ -230,6 +230,20 @@ MonoBehaviour:
     _envelope:
       _attackTime: 0
       _releaseTime: .10000000000000001
+  - _waveform: 2
+    _gain: .5
+    _detuneSemitones: 12
+    _pulseWidth: 0
+    _envelope:
+      _attackTime: 1
+      _releaseTime: 1
+  - _waveform: 2
+    _gain: .5
+    _detuneSemitones: 24
+    _pulseWidth: 0
+    _envelope:
+      _attackTime: 2
+      _releaseTime: .25
 --- !u!82 &256405049
 AudioSource:
   m_ObjectHideFlags: 0

@@ -16,8 +16,6 @@ namespace DerelictComputer
                 Release,
             }
 
-            private static readonly int SampleRate;
-
             [SerializeField] private double _attackTime = 0.0;
             [SerializeField] private double _releaseTime = 0.0;
 
@@ -27,15 +25,10 @@ namespace DerelictComputer
 
             public Stage CurrentStage { get; private set; }
 
-            static Envelope()
-            {
-                SampleRate = AudioSettings.outputSampleRate;
-            }
-
             public void Init()
             {
-                _attackGainPerSample = _attackTime > 0 ? 1/(_attackTime*SampleRate) : 1;
-                _releaseGainPerSample = _releaseTime > 0 ? -1/(_releaseTime*SampleRate) : -1;
+                _attackGainPerSample = _attackTime > 0 ? 1/(_attackTime*AudioSettings.outputSampleRate) : 1;
+                _releaseGainPerSample = _releaseTime > 0 ? -1/(_releaseTime*AudioSettings.outputSampleRate) : -1;
                 _gain = 0;
                 CurrentStage = Stage.Attack;
             }
@@ -80,7 +73,6 @@ namespace DerelictComputer
             }
 
             private static readonly double TwoPi;
-            private static readonly int SampleRate;
 
             [SerializeField] private WaveformType _waveform = WaveformType.Sine;
             [SerializeField] private double _gain = 1;
@@ -96,12 +88,11 @@ namespace DerelictComputer
             static Oscillator()
             {
                 TwoPi = Math.PI*2;
-                SampleRate = AudioSettings.outputSampleRate;
             }
 
             public void Init(double frequency)
             {
-                _phasePerSample = frequency*MusicMathUtils.SemitonesToPitch(_detuneSemitones)*TwoPi/SampleRate;
+                _phasePerSample = frequency*MusicMathUtils.SemitonesToPitch(_detuneSemitones)*TwoPi/AudioSettings.outputSampleRate;
                 _phase = 0.0;
                 _envelope.Init();
             }
