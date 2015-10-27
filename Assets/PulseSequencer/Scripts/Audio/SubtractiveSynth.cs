@@ -144,6 +144,7 @@ namespace DerelictComputer
 
         [SerializeField, Range(0f, 1f)] private float _gain = 0.05f;
         [SerializeField] private Oscillator[] _oscillators;
+		[SerializeField] private Envelope _envelope;
 
         private bool _playing;
 
@@ -155,6 +156,8 @@ namespace DerelictComputer
             {
                 oscillator.Init(frequency);
             }
+
+			_envelope.Init();
 
             _playing = true;
         }
@@ -183,6 +186,13 @@ namespace DerelictComputer
 
             for (int i = 0; i < buffer.Length; i += channels)
             {
+				if (_envelope.CurrentStage == Envelope.Stage.NotStarted)
+				{
+					break;
+				}
+
+				var envGain = _envelope.GetGain();
+
                 if (_playing)
                 {
                     var sample = 0f;
@@ -202,7 +212,7 @@ namespace DerelictComputer
                         }
                     }
 
-                    sample = (sample*_gain)/_oscillators.Length;
+					sample = sample*_gain*(float)envGain/_oscillators.Length;
 
                     for (int j = 0; j < channels; j++)
                     {

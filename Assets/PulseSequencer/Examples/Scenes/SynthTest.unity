@@ -244,6 +244,9 @@ MonoBehaviour:
     _envelope:
       _attackTime: 2
       _releaseTime: .25
+  _envelope:
+    _attackTime: 0
+    _releaseTime: 1
 --- !u!82 &256405049
 AudioSource:
   m_ObjectHideFlags: 0
