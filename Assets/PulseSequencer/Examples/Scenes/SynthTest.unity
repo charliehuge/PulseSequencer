@@ -209,69 +209,27 @@ MonoBehaviour:
     _envelope:
       _attackTime: 0
       _releaseTime: .25
-  - _waveform: 0
-    _gain: 1
+  - _waveform: 1
+    _gain: .75
+    _detuneSemitones: -5
+    _pulseWidth: 0
+    _envelope:
+      _attackTime: .5
+      _releaseTime: 0
+  - _waveform: 2
+    _gain: .75
+    _detuneSemitones: 5
+    _pulseWidth: .40000000000000002
+    _envelope:
+      _attackTime: .25
+      _releaseTime: .25
+  - _waveform: 3
+    _gain: .5
     _detuneSemitones: 0
     _pulseWidth: 0
     _envelope:
       _attackTime: 0
-      _releaseTime: .25
-  - _waveform: 0
-    _gain: 1
-    _detuneSemitones: 0
-    _pulseWidth: 0
-    _envelope:
-      _attackTime: 0
-      _releaseTime: .25
-  - _waveform: 0
-    _gain: 1
-    _detuneSemitones: 0
-    _pulseWidth: 0
-    _envelope:
-      _attackTime: 0
-      _releaseTime: .25
-  - _waveform: 0
-    _gain: 1
-    _detuneSemitones: 0
-    _pulseWidth: 0
-    _envelope:
-      _attackTime: 0
-      _releaseTime: .25
-  - _waveform: 0
-    _gain: 1
-    _detuneSemitones: 0
-    _pulseWidth: 0
-    _envelope:
-      _attackTime: 0
-      _releaseTime: .25
-  - _waveform: 0
-    _gain: 1
-    _detuneSemitones: 0
-    _pulseWidth: 0
-    _envelope:
-      _attackTime: 0
-      _releaseTime: .25
-  - _waveform: 0
-    _gain: 1
-    _detuneSemitones: 0
-    _pulseWidth: 0
-    _envelope:
-      _attackTime: 0
-      _releaseTime: .25
-  - _waveform: 0
-    _gain: 1
-    _detuneSemitones: 0
-    _pulseWidth: 0
-    _envelope:
-      _attackTime: 0
-      _releaseTime: .25
-  - _waveform: 0
-    _gain: 1
-    _detuneSemitones: 0
-    _pulseWidth: 0
-    _envelope:
-      _attackTime: 0
-      _releaseTime: .25
+      _releaseTime: .10000000000000001
 --- !u!82 &256405049
 AudioSource:
   m_ObjectHideFlags: 0

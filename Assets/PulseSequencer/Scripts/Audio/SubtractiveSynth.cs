@@ -9,33 +9,62 @@ namespace DerelictComputer
         [Serializable]
         public class Envelope
         {
-            private static readonly double SampleRate;
+            public enum Stage
+            {
+                NotStarted,
+                Attack,
+                Release,
+            }
+
+            private static readonly int SampleRate;
 
             [SerializeField] private double _attackTime = 0.0;
             [SerializeField] private double _releaseTime = 0.0;
+
+            private double _attackGainPerSample;
+            private double _releaseGainPerSample;
+            private double _gain;
+
+            public Stage CurrentStage { get; private set; }
 
             static Envelope()
             {
                 SampleRate = AudioSettings.outputSampleRate;
             }
 
-            public bool GetGain(out double outGain, uint elapsedSamples)
+            public void Init()
             {
-                var time = elapsedSamples / SampleRate;
+                _attackGainPerSample = _attackTime > 0 ? 1/(_attackTime*SampleRate) : 1;
+                _releaseGainPerSample = _releaseTime > 0 ? -1/(_releaseTime*SampleRate) : -1;
+                _gain = 0;
+                CurrentStage = Stage.Attack;
+            }
 
-                if (_attackTime > 0.0 && time < _attackTime)
+            public double GetGain()
+            {
+                switch (CurrentStage)
                 {
-                    outGain = time/_attackTime;
-                    return true;
+                    case Stage.NotStarted:
+                        return 0;
+                    case Stage.Attack:
+                        _gain += _attackGainPerSample;
+                        if (_gain > 1)
+                        {
+                            CurrentStage = Stage.Release;
+                            return 1;
+                        }
+                        return _gain;
+                    case Stage.Release:
+                        _gain += _releaseGainPerSample;
+                        if (_gain < 0)
+                        {
+                            CurrentStage = Stage.NotStarted;
+                            return 0;
+                        }
+                        return _gain;
+                    default:
+                        throw new ArgumentOutOfRangeException();
                 }
-                if (_releaseTime > 0.0 && time < _attackTime + _releaseTime)
-                {
-                    outGain = 1.0 - (time - _attackTime)/_releaseTime;
-                    return true;
-                }
-
-                outGain = 0f;
-                return false;
             }
         }
 
@@ -51,7 +80,7 @@ namespace DerelictComputer
             }
 
             private static readonly double TwoPi;
-            private static readonly double SampleRate;
+            private static readonly int SampleRate;
 
             [SerializeField] private WaveformType _waveform = WaveformType.Sine;
             [SerializeField] private double _gain = 1;
@@ -61,20 +90,35 @@ namespace DerelictComputer
 
             private readonly System.Random _random = new System.Random();
 
+            private double _phasePerSample;
+            private double _phase;
+
             static Oscillator()
             {
                 TwoPi = Math.PI*2;
                 SampleRate = AudioSettings.outputSampleRate;
             }
 
-            public bool Synthesize(out float outSample, double frequency, uint elapsedSamples)
+            public void Init(double frequency)
             {
-                var phase = elapsedSamples*frequency*MusicMathUtils.SemitonesToPitch(_detuneSemitones)*TwoPi/SampleRate;
+                _phasePerSample = frequency*MusicMathUtils.SemitonesToPitch(_detuneSemitones)*TwoPi/SampleRate;
+                _phase = 0.0;
+                _envelope.Init();
+            }
 
-                // wrap phase
-                while (phase > TwoPi)
+            public bool Synthesize(out float outSample)
+            {
+                if (_envelope.CurrentStage == Envelope.Stage.NotStarted)
                 {
-                    phase -= TwoPi;
+                    outSample = 0f;
+                    return false;
+                }
+
+                _phase += _phasePerSample;
+
+                if (_phase > TwoPi)
+                {
+                    _phase -= TwoPi;
                 }
 
                 double sample;
@@ -82,30 +126,23 @@ namespace DerelictComputer
                 switch (_waveform)
                 {
                     case WaveformType.Sine:
-                        sample = Math.Sin(phase);
+                        sample = Math.Sin(_phase);
                         break;
                     case WaveformType.Saw:
-                        sample = ((phase / TwoPi) - 0.5)*2.0;
+                        sample = 2* _phase / TwoPi - 1;
                         break;
                     case WaveformType.Square:
-                        sample = (phase / TwoPi > _pulseWidth ? 1.0 : -1.0);
+                        sample = (_phase / TwoPi > _pulseWidth ? 1.0 : -1.0);
                         break;
                     case WaveformType.Noise:
-                        sample = (_random.NextDouble() - 0.5)*2.0;
+                        sample = 2*_random.NextDouble() - 1;
                         break;
                     default:
                         throw new ArgumentOutOfRangeException();
                 }
 
-                double envelopeGain;
 
-                if (!_envelope.GetGain(out envelopeGain, elapsedSamples))
-                {
-                    outSample = 0f;
-                    return false;
-                }
-
-                sample *= _gain*envelopeGain;
+                sample *= _gain*_envelope.GetGain();
 
                 outSample = (float) sample;
                 return true;
@@ -117,14 +154,17 @@ namespace DerelictComputer
         [SerializeField, Range(0f, 1f)] private float _gain = 0.05f;
         [SerializeField] private Oscillator[] _oscillators;
 
-        private double _frequency;
-        private uint _elapsedSamples;
         private bool _playing;
 
         public void Play(int midiNote)
         {
-            _frequency = MusicMathUtils.MidiNoteToFrequency(midiNote);
-            _elapsedSamples = 0;
+            var frequency = MusicMathUtils.MidiNoteToFrequency(midiNote);
+
+            foreach (var oscillator in _oscillators)
+            {
+                oscillator.Init(frequency);
+            }
+
             _playing = true;
         }
 
@@ -132,7 +172,7 @@ namespace DerelictComputer
         {
             if (DebugPlayNote)
             {
-                Play(UnityEngine.Random.Range(0, 127));
+                Play(UnityEngine.Random.Range(50, 70));
                 DebugPlayNote = false;
             }
         }
@@ -161,7 +201,7 @@ namespace DerelictComputer
                     {
                         float oscSample;
 
-                        if (!oscillator.Synthesize(out oscSample, _frequency, _elapsedSamples))
+                        if (!oscillator.Synthesize(out oscSample))
                         {
                             numOscillatorsFinished++;
                         }
@@ -180,8 +220,6 @@ namespace DerelictComputer
 
                     _playing = numOscillatorsFinished < _oscillators.Length;
                 }
-
-                _elapsedSamples++;
             }
 
         }
