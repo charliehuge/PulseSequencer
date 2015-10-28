@@ -142,6 +142,7 @@ namespace DerelictComputer
 
         public bool DebugPlayNote;
 
+        [SerializeField] private MidiNoteSequence _sequence;
         [SerializeField, Range(0f, 1f)] private float _gain = 0.05f;
         [SerializeField] private Oscillator[] _oscillators;
 		[SerializeField] private Envelope _envelope;
@@ -160,6 +161,27 @@ namespace DerelictComputer
 			_envelope.Init();
 
             _playing = true;
+        }
+
+        private void OnEnable()
+        {
+            if (_sequence != null)
+            {
+                _sequence.NoteTriggered += OnSequenceNoteTriggered;
+            }
+        }
+
+        private void OnDisable()
+        {
+            if (_sequence != null)
+            {
+                _sequence.NoteTriggered -= OnSequenceNoteTriggered;
+            }
+        }
+
+        private void OnSequenceNoteTriggered(MidiNoteSequence.MidiNoteInfo midiNoteInfo)
+        {
+            Play(midiNoteInfo.MidiNote);
         }
 
         private void Update()
@@ -212,7 +234,7 @@ namespace DerelictComputer
                         }
                     }
 
-					sample = sample*_gain*(float)envGain/_oscillators.Length;
+					sample = (sample*_gain*(float)envGain)/_oscillators.Length;
 
                     for (int j = 0; j < channels; j++)
                     {
