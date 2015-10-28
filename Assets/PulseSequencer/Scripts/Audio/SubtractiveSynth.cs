@@ -148,8 +148,9 @@ namespace DerelictComputer
 		[SerializeField] private Envelope _envelope;
 
         private bool _playing;
+        private double _playStartTime;
 
-        public void Play(int midiNote)
+        public void Play(int midiNote, double startTime = 0)
         {
             var frequency = MusicMathUtils.MidiNoteToFrequency(midiNote);
 
@@ -161,6 +162,8 @@ namespace DerelictComputer
 			_envelope.Init();
 
             _playing = true;
+
+            _playStartTime = startTime;
         }
 
         private void OnEnable()
@@ -179,9 +182,9 @@ namespace DerelictComputer
             }
         }
 
-        private void OnSequenceNoteTriggered(MidiNoteSequence.MidiNoteInfo midiNoteInfo)
+        private void OnSequenceNoteTriggered(MidiNoteSequence.MidiNoteInfo midiNoteInfo, double pulseTime)
         {
-            Play(midiNoteInfo.MidiNote);
+            Play(midiNoteInfo.MidiNote, pulseTime);
         }
 
         private void Update()
@@ -195,7 +198,7 @@ namespace DerelictComputer
 
         private void OnAudioFilterRead(float[] buffer, int channels)
         {
-            if (!_playing)
+            if (!_playing || AudioSettings.dspTime < _playStartTime)
             {
                 return;
             }

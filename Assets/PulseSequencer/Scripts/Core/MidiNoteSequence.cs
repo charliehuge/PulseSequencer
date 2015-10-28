@@ -13,7 +13,10 @@ namespace DerelictComputer
 	        public float Duration;
 	    }
 
-	    public event Action<MidiNoteInfo> NoteTriggered; 
+	    public delegate void MidiNoteTriggerDelegate(MidiNoteInfo noteInfo, double pulseTime);
+
+
+	    public event MidiNoteTriggerDelegate NoteTriggered; 
 
 	    [SerializeField] private MidiNoteInfo[] _notes;
 
@@ -43,7 +46,7 @@ namespace DerelictComputer
 
 	        if (NoteTriggered != null)
 	        {
-	            NoteTriggered(_notes[_currentNoteIdx]);
+	            NoteTriggered(_notes[noteIdx], pulseTime);
 	        }
         }
 	}
