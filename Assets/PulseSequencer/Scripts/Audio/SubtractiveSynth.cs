@@ -1,145 +1,10 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace DerelictComputer
 {
     [RequireComponent(typeof(AudioSource))]
     public class SubtractiveSynth : MonoBehaviour
     {
-        [Serializable]
-        public class Envelope
-        {
-            public enum Stage
-            {
-                NotStarted,
-                Attack,
-                Release,
-            }
-
-            [SerializeField] private double _attackTime = 0.0;
-            [SerializeField] private double _releaseTime = 0.0;
-
-            private double _attackGainPerSample;
-            private double _releaseGainPerSample;
-            private double _gain;
-
-            public Stage CurrentStage { get; private set; }
-
-            public void Init()
-            {
-                _attackGainPerSample = _attackTime > 0 ? 1/(_attackTime*AudioSettings.outputSampleRate) : 1;
-                _releaseGainPerSample = _releaseTime > 0 ? -1/(_releaseTime*AudioSettings.outputSampleRate) : -1;
-                _gain = 0;
-                CurrentStage = Stage.Attack;
-            }
-
-            public double GetGain()
-            {
-                switch (CurrentStage)
-                {
-                    case Stage.NotStarted:
-                        return 0;
-                    case Stage.Attack:
-                        _gain += _attackGainPerSample;
-                        if (_gain > 1)
-                        {
-                            CurrentStage = Stage.Release;
-                            return 1;
-                        }
-                        return _gain;
-                    case Stage.Release:
-                        _gain += _releaseGainPerSample;
-                        if (_gain < 0)
-                        {
-                            CurrentStage = Stage.NotStarted;
-                            return 0;
-                        }
-                        return _gain;
-                    default:
-                        throw new ArgumentOutOfRangeException();
-                }
-            }
-        }
-
-        [Serializable]
-        public class Oscillator
-        {
-            public enum WaveformType
-            {
-                Sine,
-                Saw,
-                Square,
-                Noise
-            }
-
-            private static readonly double TwoPi;
-
-            [SerializeField] private WaveformType _waveform = WaveformType.Sine;
-            [SerializeField] private double _gain = 1;
-            [SerializeField] private double _detuneSemitones = 0;
-            [SerializeField] private double _pulseWidth = 0.5;
-            [SerializeField] private Envelope _envelope;
-
-            private readonly System.Random _random = new System.Random();
-
-            private double _phasePerSample;
-            private double _phase;
-
-            static Oscillator()
-            {
-                TwoPi = Math.PI*2;
-            }
-
-            public void Init(double frequency)
-            {
-                _phasePerSample = frequency*MusicMathUtils.SemitonesToPitch(_detuneSemitones)*TwoPi/AudioSettings.outputSampleRate;
-                _phase = 0.0;
-                _envelope.Init();
-            }
-
-            public bool Synthesize(out float outSample)
-            {
-                if (_envelope.CurrentStage == Envelope.Stage.NotStarted)
-                {
-                    outSample = 0f;
-                    return false;
-                }
-
-                _phase += _phasePerSample;
-
-                if (_phase > TwoPi)
-                {
-                    _phase -= TwoPi;
-                }
-
-                double sample;
-
-                switch (_waveform)
-                {
-                    case WaveformType.Sine:
-                        sample = Math.Sin(_phase);
-                        break;
-                    case WaveformType.Saw:
-                        sample = 2* _phase / TwoPi - 1;
-                        break;
-                    case WaveformType.Square:
-                        sample = (_phase / TwoPi > _pulseWidth ? 1.0 : -1.0);
-                        break;
-                    case WaveformType.Noise:
-                        sample = 2*_random.NextDouble() - 1;
-                        break;
-                    default:
-                        throw new ArgumentOutOfRangeException();
-                }
-
-
-                sample *= _gain*_envelope.GetGain();
-
-                outSample = (float) sample;
-                return true;
-            }
-        }
-
         public bool DebugPlayNote;
 
         [SerializeField] private MidiNoteSequence _sequence;
@@ -148,22 +13,24 @@ namespace DerelictComputer
 		[SerializeField] private Envelope _envelope;
 
         private bool _playing;
-        private double _playStartTime;
+        private double _startTime;
+        private double _releaseTime;
 
-        public void Play(int midiNote, double startTime = 0)
+        public void Play(int midiNote, double startTime = 0, double releaseTime = 0)
         {
             var frequency = MusicMathUtils.MidiNoteToFrequency(midiNote);
 
             foreach (var oscillator in _oscillators)
             {
-                oscillator.Init(frequency);
+                oscillator.Trigger(frequency);
             }
 
-			_envelope.Init();
+            _envelope.Trigger();
 
             _playing = true;
 
-            _playStartTime = startTime;
+            _startTime = startTime;
+            _releaseTime = releaseTime;
         }
 
         private void OnEnable()
@@ -184,21 +51,12 @@ namespace DerelictComputer
 
         private void OnSequenceNoteTriggered(MidiNoteSequence.MidiNoteInfo midiNoteInfo, double pulseTime)
         {
-            Play(midiNoteInfo.MidiNote, pulseTime);
-        }
-
-        private void Update()
-        {
-            if (DebugPlayNote)
-            {
-                Play(UnityEngine.Random.Range(50, 70));
-                DebugPlayNote = false;
-            }
+            Play(midiNoteInfo.MidiNote, pulseTime, midiNoteInfo.Duration + pulseTime);
         }
 
         private void OnAudioFilterRead(float[] buffer, int channels)
         {
-            if (!_playing || AudioSettings.dspTime < _playStartTime)
+            if (!_playing || AudioSettings.dspTime < _startTime)
             {
                 return;
             }
@@ -208,43 +66,30 @@ namespace DerelictComputer
                 return;
             }
 
+            if (AudioSettings.dspTime > _releaseTime)
+            {
+                _envelope.Release();
+            }
 
             for (int i = 0; i < buffer.Length; i += channels)
             {
-				if (_envelope.CurrentStage == Envelope.Stage.NotStarted)
+				if (_envelope.CurrentStage == Envelope.Stage.Inactive)
 				{
 					break;
 				}
 
-				var envGain = _envelope.GetGain();
+                var sample = 0f;
 
-                if (_playing)
+                foreach (var oscillator in _oscillators)
                 {
-                    var sample = 0f;
-                    var numOscillatorsFinished = 0;
+                    sample += oscillator.Synthesize();
+                }
 
-                    foreach (var oscillator in _oscillators)
-                    {
-                        float oscSample;
+                sample = (sample * _gain * (float)_envelope.GetGain()) / _oscillators.Length;
 
-                        if (!oscillator.Synthesize(out oscSample))
-                        {
-                            numOscillatorsFinished++;
-                        }
-                        else
-                        {
-                            sample += oscSample;
-                        }
-                    }
-
-					sample = (sample*_gain*(float)envGain)/_oscillators.Length;
-
-                    for (int j = 0; j < channels; j++)
-                    {
-                        buffer[i + j] = sample;
-                    }
-
-                    _playing = numOscillatorsFinished < _oscillators.Length;
+                for (int j = 0; j < channels; j++)
+                {
+                    buffer[i + j] = sample;
                 }
             }
 

@@ -116,11 +116,19 @@ MonoBehaviour:
   - Active: 1
   - Active: 0
   - Active: 0
-  - Active: 1
   - Active: 0
   - Active: 0
+  - Active: 0
+  - Active: 0
+  - Active: 0
+  - Active: 0
+  - Active: 0
+  - Active: 0
+  - Active: 0
   - Active: 1
+  - Active: 0
   - Active: 1
+  - Active: 0
   _followType: 0
   _pulse: {fileID: 1466883772}
   _pattern: {fileID: 0}
@@ -258,26 +266,19 @@ MonoBehaviour:
     _gain: 1
     _detuneSemitones: 0
     _pulseWidth: 0
-    _envelope:
-      _attackTime: .10000000000000001
-      _releaseTime: .20000000000000001
-  - _waveform: 0
-    _gain: 1
+  - _waveform: 1
+    _gain: .25
     _detuneSemitones: 5
     _pulseWidth: 0
-    _envelope:
-      _attackTime: .5
-      _releaseTime: .25
-  - _waveform: 0
-    _gain: 1
-    _detuneSemitones: 11
-    _pulseWidth: 0
-    _envelope:
-      _attackTime: 0
-      _releaseTime: .10000000000000001
+  - _waveform: 2
+    _gain: .25
+    _detuneSemitones: 7
+    _pulseWidth: .40000000000000002
   _envelope:
     _attackTime: 0
-    _releaseTime: .5
+    _decayTime: .25
+    _sustainLevel: .25
+    _releaseTime: .10000000000000001
 --- !u!82 &256405049
 AudioSource:
   m_ObjectHideFlags: 0
@@ -450,11 +451,11 @@ MonoBehaviour:
   _pattern: {fileID: 26857862}
   _notes:
   - MidiNote: 50
-    Duration: 0
+    Duration: 1
   - MidiNote: 55
-    Duration: 0
-  - MidiNote: 61
-    Duration: 0
+    Duration: .200000003
+  - MidiNote: 57
+    Duration: .5
 --- !u!4 &450643469
 Transform:
   m_ObjectHideFlags: 0
