@@ -24,7 +24,6 @@ namespace DerelictComputer
 
         private readonly Random _random = new Random();
 
-        private double _phasePerSample;
         private double _phase;
 
         static Oscillator()
@@ -32,15 +31,14 @@ namespace DerelictComputer
             TwoPi = Math.PI * 2;
         }
 
-        public void Trigger(double frequency)
+        public void Trigger()
         {
-            _phasePerSample = frequency * MusicMathUtils.SemitonesToPitch(_detuneSemitones) * TwoPi / AudioSettings.outputSampleRate;
             _phase = 0.0;
         }
 
-        public float Synthesize()
+        public double Synthesize(double frequency, int sampleRate)
         {
-            _phase += _phasePerSample;
+            _phase += frequency * MusicMathUtils.SemitonesToPitch(_detuneSemitones) * TwoPi / sampleRate;
 
             if (_phase > TwoPi)
             {
@@ -67,7 +65,7 @@ namespace DerelictComputer
                     throw new ArgumentOutOfRangeException();
             }
 
-            return (float) (sample*_gain);
+            return sample*_gain;
         }
     }
 }

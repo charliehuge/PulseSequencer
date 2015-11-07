@@ -30,7 +30,7 @@ namespace DerelictComputer
 
         public void Trigger()
         {
-            _attackGainPerSample = _attackTime > 0 ? 1 / (_attackTime * AudioSettings.outputSampleRate) : 1;
+            _attackGainPerSample = _attackTime > 0 ? 1 / (_attackTime * AudioSettings.outputSampleRate) : 0;
 
             if (_decayTime > 0)
             {
@@ -40,7 +40,7 @@ namespace DerelictComputer
             }
             else
             {
-                _decayGainPerSample = _sustainLevel - 1.0;
+                _decayGainPerSample = 0;
             }
 
             if (_releaseTime > 0)
@@ -51,7 +51,7 @@ namespace DerelictComputer
             }
             else
             {
-                _releaseGainPerSample = 0.0 - _sustainLevel;
+                _releaseGainPerSample = 0;
             }
             
             _gain = 0;
@@ -98,7 +98,7 @@ namespace DerelictComputer
             // decay
             if (CurrentStage == Stage.Decay)
             {
-                if (_decayGainPerSample > 0)
+                if (_decayGainPerSample < 0)
                 {
                     _gain += _decayGainPerSample;
 

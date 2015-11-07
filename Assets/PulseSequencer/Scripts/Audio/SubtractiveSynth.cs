@@ -8,23 +8,24 @@ namespace DerelictComputer
         public bool DebugPlayNote;
 
         [SerializeField] private MidiNoteSequence _sequence;
-        [SerializeField, Range(0f, 1f)] private float _gain = 0.05f;
-        [SerializeField] private Oscillator[] _oscillators;
+        [SerializeField, Range(0f, 1f)] private float _gain = 0.5f;
+        [SerializeField] private Oscillator[] _oscillators = new Oscillator[3];
 		[SerializeField] private Envelope _envelope;
         [SerializeField] private MultimodeFilter _filter;
 
         private bool _playing;
+        private double _frequency;
         private double _startTime;
         private double _releaseTime;
         private int _outputSampleRate;
 
         public void Play(int midiNote, double startTime = 0, double releaseTime = 0)
         {
-            var frequency = MusicMathUtils.MidiNoteToFrequency(midiNote);
+            _frequency = MusicMathUtils.MidiNoteToFrequency(midiNote);
 
             foreach (var oscillator in _oscillators)
             {
-                oscillator.Trigger(frequency);
+                oscillator.Trigger();
             }
 
             _envelope.Trigger();
@@ -85,11 +86,11 @@ namespace DerelictComputer
 					break;
 				}
 
-                var sample = 0f;
+                var sample = 0.0;
 
                 foreach (var oscillator in _oscillators)
                 {
-                    sample += oscillator.Synthesize();
+                    sample += oscillator.Synthesize(_frequency, _outputSampleRate);
                 }
 
                 sample = (sample * _gain * (float)_envelope.GetGain()) / _oscillators.Length;
@@ -98,7 +99,7 @@ namespace DerelictComputer
 
                 for (int j = 0; j < channels; j++)
                 {
-                    buffer[i + j] = sample;
+                    buffer[i + j] = (float)sample;
                 }
             }
         }
