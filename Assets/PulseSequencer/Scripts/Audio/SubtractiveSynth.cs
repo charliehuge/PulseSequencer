@@ -11,10 +11,12 @@ namespace DerelictComputer
         [SerializeField, Range(0f, 1f)] private float _gain = 0.05f;
         [SerializeField] private Oscillator[] _oscillators;
 		[SerializeField] private Envelope _envelope;
+        [SerializeField] private MultimodeFilter _filter;
 
         private bool _playing;
         private double _startTime;
         private double _releaseTime;
+        private int _outputSampleRate;
 
         public void Play(int midiNote, double startTime = 0, double releaseTime = 0)
         {
@@ -31,6 +33,11 @@ namespace DerelictComputer
 
             _startTime = startTime;
             _releaseTime = releaseTime;
+        }
+
+        private void Awake()
+        {
+            _outputSampleRate = AudioSettings.outputSampleRate;
         }
 
         private void OnEnable()
@@ -87,12 +94,13 @@ namespace DerelictComputer
 
                 sample = (sample * _gain * (float)_envelope.GetGain()) / _oscillators.Length;
 
+                sample = _filter.Apply(sample, _outputSampleRate);
+
                 for (int j = 0; j < channels; j++)
                 {
                     buffer[i + j] = sample;
                 }
             }
-
         }
 
     }
