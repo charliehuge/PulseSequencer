@@ -37,4 +37,4 @@ If you like using the Pulse Sequencer, and want to help me develop it, that's aw
 - Submit bugs and feature requests via the issue tracker. This will help me know what people want to see, and prioritize those things.
 - If you're a coder, fork the repo and submit pull requests for features and bug fixes. This gets a lot better if I have help.
 - Let me know how you're using it. Seeing your work inspires me to keep going further, and often gives me ideas for new features.
-- If you're a dev studio that wants a novel interactive music solution, [hire me](http://charliehuge.tumblr.com/consulting)!
+- If you're a dev studio that wants a novel interactive music solution, [hire me](http://derelict.computer/consulting.html)!
