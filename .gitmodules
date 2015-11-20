@@ -1,0 +1,3 @@
+[submodule "Assets/PulseSequencer/Source"]
+	path = Assets/PulseSequencer/Source
+	url = git@github.com:derelictcomputer/PulseSequencerCore.git
