@@ -266,7 +266,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
 --- !u!1 &360848652
 GameObject:
   m_ObjectHideFlags: 0
@@ -326,7 +326,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
 --- !u!1 &699239118
 GameObject:
   m_ObjectHideFlags: 0
@@ -357,7 +357,7 @@ Transform:
   - {fileID: 88798497}
   - {fileID: 91640524}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
 --- !u!114 &699239120
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -509,6 +509,12 @@ MonoBehaviour:
     Duration: .25
   - MidiNote: 70
     Duration: 1
+  - MidiNote: 80
+    Duration: 1
+  - MidiNote: 62
+    Duration: 1
+  - MidiNote: 81
+    Duration: 1
 --- !u!1 &864398210
 GameObject:
   m_ObjectHideFlags: 0
@@ -539,7 +545,7 @@ Transform:
   - {fileID: 890164779}
   - {fileID: 777072931}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
 --- !u!114 &864398212
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -553,17 +559,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DebugPlayNote: 0
   _sequence: {fileID: 777072932}
-  _gain: .5
+  _gain: .204999998
   _oscillators:
-  - _waveform: 0
+  - _waveform: 1
     _gain: 1
     _detuneSemitones: 0
     _pulseWidth: .5
-  - _waveform: 0
+  - _waveform: 1
     _gain: 1
-    _detuneSemitones: 12
+    _detuneSemitones: -5
     _pulseWidth: .25099998712539673
-  - _waveform: 0
+  - _waveform: 1
     _gain: 1
     _detuneSemitones: -12
     _pulseWidth: .5
@@ -574,8 +580,8 @@ MonoBehaviour:
     _releaseTime: 0
   _filter:
     _mode: 0
-    _cutoff: 10962
-    _resonance: 0
+    _cutoff: 7396
+    _resonance: 2.5899999141693115
 --- !u!82 &864398213
 AudioSource:
   m_ObjectHideFlags: 0
@@ -677,6 +683,9 @@ MonoBehaviour:
   - Active: 1
   - Active: 0
   - Active: 0
+  - Active: 1
+  - Active: 1
+  - Active: 0
   _followType: 0
   _pulse: {fileID: 1466883772}
   _pattern: {fileID: 0}
@@ -692,6 +701,241 @@ Transform:
   m_Children: []
   m_Father: {fileID: 864398211}
   m_RootOrder: 0
+--- !u!1 &923331433
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 923331434}
+  - 82: {fileID: 923331436}
+  - 114: {fileID: 923331435}
+  m_Layer: 0
+  m_Name: SynthRig (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &923331434
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 923331433}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.01398957, y: -.685944974, z: -1.617697}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 997715958}
+  - {fileID: 1385369385}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+--- !u!114 &923331435
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 923331433}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc8c54a74f7bac44cbeb2bc4420d36b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DebugPlayNote: 0
+  _sequence: {fileID: 1385369384}
+  _gain: .5
+  _oscillators:
+  - _waveform: 0
+    _gain: 1
+    _detuneSemitones: 0
+    _pulseWidth: .5
+  - _waveform: 2
+    _gain: 1
+    _detuneSemitones: -24
+    _pulseWidth: .25099998712539673
+  - _waveform: 1
+    _gain: 1
+    _detuneSemitones: -.10000000149011612
+    _pulseWidth: .5
+  _envelope:
+    _attackTime: .059999998658895493
+    _decayTime: .14000000059604645
+    _sustainLevel: .26899999380111694
+    _releaseTime: 2.2400000095367432
+  _filter:
+    _mode: 0
+    _cutoff: 3964
+    _resonance: 3.1800000667572021
+--- !u!82 &923331436
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 923331433}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+--- !u!1 &997715956
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 997715958}
+  - 114: {fileID: 997715957}
+  m_Layer: 0
+  m_Name: Pattern
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &997715957
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 997715956}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8533c7e9298c34956b876eb07885172d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Steps:
+  - Active: 1
+  - Active: 0
+  - Active: 0
+  - Active: 0
+  - Active: 0
+  - Active: 0
+  - Active: 0
+  - Active: 0
+  _followType: 0
+  _pulse: {fileID: 1466883772}
+  _pattern: {fileID: 0}
+--- !u!4 &997715958
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 997715956}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 923331434}
+  m_RootOrder: 0
+--- !u!1 &1385369383
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1385369385}
+  - 114: {fileID: 1385369384}
+  m_Layer: 0
+  m_Name: MidiNoteSequence
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1385369384
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1385369383}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2e353b48514d48159b33643585cfd62, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _pattern: {fileID: 997715957}
+  _notes:
+  - MidiNote: 62
+    Duration: .25
+  - MidiNote: 69
+    Duration: 1
+  - MidiNote: 61
+    Duration: 1
+--- !u!4 &1385369385
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1385369383}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 923331434}
+  m_RootOrder: 1
 --- !u!1 &1466883771
 GameObject:
   m_ObjectHideFlags: 0
@@ -733,4 +977,4 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
