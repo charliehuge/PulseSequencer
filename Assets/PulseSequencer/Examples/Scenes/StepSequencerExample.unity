@@ -8,25 +8,25 @@ SceneSettings:
   m_PVSPortalsArray: []
   m_OcclusionBakeSettings:
     smallestOccluder: 5
-    smallestHole: .25
+    smallestHole: 0.25
     backfaceThreshold: 100
 --- !u!104 &2
 RenderSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 6
   m_Fog: 0
-  m_FogColor: {r: .5, g: .5, b: .5, a: 1}
+  m_FogColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   m_FogMode: 3
-  m_FogDensity: .00999999978
+  m_FogDensity: 0.01
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
-  m_AmbientSkyColor: {r: .211999997, g: .226999998, b: .259000003, a: 1}
-  m_AmbientEquatorColor: {r: .114, g: .125, b: .133000001, a: 1}
-  m_AmbientGroundColor: {r: .0469999984, g: .0430000015, b: .0350000001, a: 1}
+  m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
+  m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
+  m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SkyboxMaterial: {fileID: 2100000, guid: d2997eb2c97b0324785349cb300e1984, type: 2}
-  m_HaloStrength: .5
+  m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
   m_HaloTexture: {fileID: 0}
@@ -40,7 +40,7 @@ RenderSettings:
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
-  serializedVersion: 5
+  serializedVersion: 6
   m_GIWorkflowMode: 0
   m_LightmapsMode: 1
   m_GISettings:
@@ -66,7 +66,7 @@ LightmapSettings:
     m_FinalGather: 0
     m_FinalGatherRayCount: 1024
     m_ReflectionCompression: 2
-  m_LightmapSnapshot: {fileID: 0}
+  m_LightingDataAsset: {fileID: 0}
   m_RuntimeCPUUsage: 25
 --- !u!196 &4
 NavMeshSettings:
@@ -74,15 +74,15 @@ NavMeshSettings:
   m_ObjectHideFlags: 0
   m_BuildSettings:
     serializedVersion: 2
-    agentRadius: .5
+    agentRadius: 0.5
     agentHeight: 2
     agentSlope: 45
-    agentClimb: .400000006
+    agentClimb: 0.4
     ledgeDropHeight: 0
     maxJumpAcrossDistance: 0
     accuratePlacement: 0
     minRegionArea: 2
-    cellSize: .166666672
+    cellSize: 0.16666667
     manualCellSize: 0
   m_NavMeshData: {fileID: 0}
 --- !u!1 &2803824
@@ -198,8 +198,8 @@ MonoBehaviour:
       Reverse: 0
       Offset: 0
       AttackTime: 0
-      SustainTime: .5
-      ReleaseTime: .5
+      SustainTime: 0.5
+      ReleaseTime: 0.5
     _clip: {fileID: 8300000, guid: d17098f8c52ebdc48a819d13e7be94fb, type: 3}
     _pitchInSemitones: 0
   _mixerGroup: {fileID: 0}
@@ -217,8 +217,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _colors:
-  - {r: .279411793, g: .279411793, b: .279411793, a: 1}
-  - {r: .968762934, g: .433823526, b: 1, a: 1}
+  - {r: 0.2794118, g: 0.2794118, b: 0.2794118, a: 1}
+  - {r: 0.96876293, g: 0.43382353, b: 1, a: 1}
   _renderer: {fileID: 5169048}
 --- !u!114 &5169044
 MonoBehaviour:
@@ -292,8 +292,10 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_PreserveUVs: 1
+  m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_AutoUVMaxDistance: .5
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
@@ -548,8 +550,8 @@ MonoBehaviour:
       Reverse: 0
       Offset: 0
       AttackTime: 0
-      SustainTime: .25
-      ReleaseTime: .25
+      SustainTime: 0.25
+      ReleaseTime: 0.25
     _clip: {fileID: 8300000, guid: 328886b4cbbd04b9a9fe138c6e99df76, type: 3}
     _pitchInSemitones: 0
   _mixerGroup: {fileID: 0}
@@ -567,8 +569,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _colors:
-  - {r: .279411793, g: .279411793, b: .279411793, a: 1}
-  - {r: 0, g: 1, b: .668965578, a: 1}
+  - {r: 0.2794118, g: 0.2794118, b: 0.2794118, a: 1}
+  - {r: 0, g: 1, b: 0.6689656, a: 1}
   _renderer: {fileID: 60740068}
 --- !u!114 &60740064
 MonoBehaviour:
@@ -642,8 +644,10 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_PreserveUVs: 1
+  m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_AutoUVMaxDistance: .5
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
@@ -738,8 +742,8 @@ MonoBehaviour:
       Reverse: 0
       Offset: 0
       AttackTime: 0
-      SustainTime: .25
-      ReleaseTime: .25
+      SustainTime: 0.25
+      ReleaseTime: 0.25
     _clip: {fileID: 8300000, guid: 328886b4cbbd04b9a9fe138c6e99df76, type: 3}
     _pitchInSemitones: 0
   _mixerGroup: {fileID: 0}
@@ -757,8 +761,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _colors:
-  - {r: .279411793, g: .279411793, b: .279411793, a: 1}
-  - {r: 0, g: 1, b: .668965578, a: 1}
+  - {r: 0.2794118, g: 0.2794118, b: 0.2794118, a: 1}
+  - {r: 0, g: 1, b: 0.6689656, a: 1}
   _renderer: {fileID: 84500741}
 --- !u!114 &84500737
 MonoBehaviour:
@@ -832,8 +836,10 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_PreserveUVs: 1
+  m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_AutoUVMaxDistance: .5
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
@@ -923,8 +929,8 @@ MonoBehaviour:
       Reverse: 0
       Offset: 0
       AttackTime: 0
-      SustainTime: .25
-      ReleaseTime: .25
+      SustainTime: 0.25
+      ReleaseTime: 0.25
     _clip: {fileID: 8300000, guid: 328886b4cbbd04b9a9fe138c6e99df76, type: 3}
     _pitchInSemitones: 0
   _mixerGroup: {fileID: 0}
@@ -942,8 +948,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _colors:
-  - {r: .279411793, g: .279411793, b: .279411793, a: 1}
-  - {r: 0, g: 1, b: .668965578, a: 1}
+  - {r: 0.2794118, g: 0.2794118, b: 0.2794118, a: 1}
+  - {r: 0, g: 1, b: 0.6689656, a: 1}
   _renderer: {fileID: 134265122}
 --- !u!114 &134265118
 MonoBehaviour:
@@ -1017,8 +1023,10 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_PreserveUVs: 1
+  m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_AutoUVMaxDistance: .5
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
@@ -1155,8 +1163,8 @@ MonoBehaviour:
       Reverse: 0
       Offset: 0
       AttackTime: 0
-      SustainTime: .25
-      ReleaseTime: .25
+      SustainTime: 0.25
+      ReleaseTime: 0.25
     _clip: {fileID: 8300000, guid: 44f29bdc45a6c499c8d3a51a912c0576, type: 3}
     _pitchInSemitones: 0
   _mixerGroup: {fileID: 0}
@@ -1174,8 +1182,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _colors:
-  - {r: .279411793, g: .279411793, b: .279411793, a: 1}
-  - {r: 1, g: .889655113, b: 0, a: 1}
+  - {r: 0.2794118, g: 0.2794118, b: 0.2794118, a: 1}
+  - {r: 1, g: 0.8896551, b: 0, a: 1}
   _renderer: {fileID: 157008483}
 --- !u!114 &157008479
 MonoBehaviour:
@@ -1249,8 +1257,10 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_PreserveUVs: 1
+  m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_AutoUVMaxDistance: .5
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
@@ -1296,7 +1306,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 165691597}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -3.0999999, z: -3.0999999}
+  m_LocalPosition: {x: 0, y: -3.1, z: -3.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1646308824}
@@ -1459,8 +1469,8 @@ MonoBehaviour:
       Reverse: 0
       Offset: 0
       AttackTime: 0
-      SustainTime: .25
-      ReleaseTime: .25
+      SustainTime: 0.25
+      ReleaseTime: 0.25
     _clip: {fileID: 8300000, guid: 44f29bdc45a6c499c8d3a51a912c0576, type: 3}
     _pitchInSemitones: 0
   _mixerGroup: {fileID: 0}
@@ -1478,8 +1488,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _colors:
-  - {r: .279411793, g: .279411793, b: .279411793, a: 1}
-  - {r: 1, g: .889655113, b: 0, a: 1}
+  - {r: 0.2794118, g: 0.2794118, b: 0.2794118, a: 1}
+  - {r: 1, g: 0.8896551, b: 0, a: 1}
   _renderer: {fileID: 228644609}
 --- !u!114 &228644605
 MonoBehaviour:
@@ -1553,8 +1563,10 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_PreserveUVs: 1
+  m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_AutoUVMaxDistance: .5
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
@@ -1779,8 +1791,8 @@ MonoBehaviour:
       Reverse: 0
       Offset: 0
       AttackTime: 0
-      SustainTime: .25
-      ReleaseTime: .25
+      SustainTime: 0.25
+      ReleaseTime: 0.25
     _clip: {fileID: 8300000, guid: 328886b4cbbd04b9a9fe138c6e99df76, type: 3}
     _pitchInSemitones: 0
   _mixerGroup: {fileID: 0}
@@ -1798,8 +1810,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _colors:
-  - {r: .279411793, g: .279411793, b: .279411793, a: 1}
-  - {r: 0, g: 1, b: .668965578, a: 1}
+  - {r: 0.2794118, g: 0.2794118, b: 0.2794118, a: 1}
+  - {r: 0, g: 1, b: 0.6689656, a: 1}
   _renderer: {fileID: 259644498}
 --- !u!114 &259644494
 MonoBehaviour:
@@ -1873,8 +1885,10 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_PreserveUVs: 1
+  m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_AutoUVMaxDistance: .5
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
@@ -1981,8 +1995,8 @@ MonoBehaviour:
       Reverse: 0
       Offset: 0
       AttackTime: 0
-      SustainTime: .25
-      ReleaseTime: .25
+      SustainTime: 0.25
+      ReleaseTime: 0.25
     _clip: {fileID: 8300000, guid: 328886b4cbbd04b9a9fe138c6e99df76, type: 3}
     _pitchInSemitones: 0
   _mixerGroup: {fileID: 0}
@@ -2000,8 +2014,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _colors:
-  - {r: .279411793, g: .279411793, b: .279411793, a: 1}
-  - {r: 0, g: 1, b: .668965578, a: 1}
+  - {r: 0.2794118, g: 0.2794118, b: 0.2794118, a: 1}
+  - {r: 0, g: 1, b: 0.6689656, a: 1}
   _renderer: {fileID: 279105716}
 --- !u!114 &279105712
 MonoBehaviour:
@@ -2075,8 +2089,10 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_PreserveUVs: 1
+  m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_AutoUVMaxDistance: .5
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
@@ -2154,8 +2170,8 @@ MonoBehaviour:
       Reverse: 0
       Offset: 0
       AttackTime: 0
-      SustainTime: .25
-      ReleaseTime: .25
+      SustainTime: 0.25
+      ReleaseTime: 0.25
     _clip: {fileID: 8300000, guid: 44f29bdc45a6c499c8d3a51a912c0576, type: 3}
     _pitchInSemitones: 0
   _mixerGroup: {fileID: 0}
@@ -2173,8 +2189,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _colors:
-  - {r: .279411793, g: .279411793, b: .279411793, a: 1}
-  - {r: 1, g: .889655113, b: 0, a: 1}
+  - {r: 0.2794118, g: 0.2794118, b: 0.2794118, a: 1}
+  - {r: 1, g: 0.8896551, b: 0, a: 1}
   _renderer: {fileID: 291671282}
 --- !u!114 &291671278
 MonoBehaviour:
@@ -2248,8 +2264,10 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_PreserveUVs: 1
+  m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_AutoUVMaxDistance: .5
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
@@ -2474,8 +2492,8 @@ MonoBehaviour:
       Reverse: 0
       Offset: 0
       AttackTime: 0
-      SustainTime: .25
-      ReleaseTime: .25
+      SustainTime: 0.25
+      ReleaseTime: 0.25
     _clip: {fileID: 8300000, guid: 44f29bdc45a6c499c8d3a51a912c0576, type: 3}
     _pitchInSemitones: 0
   _mixerGroup: {fileID: 0}
@@ -2493,8 +2511,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _colors:
-  - {r: .279411793, g: .279411793, b: .279411793, a: 1}
-  - {r: 1, g: .889655113, b: 0, a: 1}
+  - {r: 0.2794118, g: 0.2794118, b: 0.2794118, a: 1}
+  - {r: 1, g: 0.8896551, b: 0, a: 1}
   _renderer: {fileID: 332195574}
 --- !u!114 &332195570
 MonoBehaviour:
@@ -2568,8 +2586,10 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_PreserveUVs: 1
+  m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_AutoUVMaxDistance: .5
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
@@ -2864,7 +2884,7 @@ RectTransform:
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
-  m_Pivot: {x: .5, y: .5}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &360083379
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3033,8 +3053,8 @@ MonoBehaviour:
       Reverse: 0
       Offset: 0
       AttackTime: 0
-      SustainTime: .25
-      ReleaseTime: .25
+      SustainTime: 0.25
+      ReleaseTime: 0.25
     _clip: {fileID: 8300000, guid: 44f29bdc45a6c499c8d3a51a912c0576, type: 3}
     _pitchInSemitones: 0
   _mixerGroup: {fileID: 0}
@@ -3052,8 +3072,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _colors:
-  - {r: .279411793, g: .279411793, b: .279411793, a: 1}
-  - {r: 1, g: .889655113, b: 0, a: 1}
+  - {r: 0.2794118, g: 0.2794118, b: 0.2794118, a: 1}
+  - {r: 1, g: 0.8896551, b: 0, a: 1}
   _renderer: {fileID: 394184880}
 --- !u!114 &394184876
 MonoBehaviour:
@@ -3127,8 +3147,10 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_PreserveUVs: 1
+  m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_AutoUVMaxDistance: .5
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
@@ -3323,8 +3345,8 @@ MonoBehaviour:
       Reverse: 0
       Offset: 0
       AttackTime: 0
-      SustainTime: .25
-      ReleaseTime: .25
+      SustainTime: 0.25
+      ReleaseTime: 0.25
     _clip: {fileID: 8300000, guid: 44f29bdc45a6c499c8d3a51a912c0576, type: 3}
     _pitchInSemitones: 0
   _mixerGroup: {fileID: 0}
@@ -3342,8 +3364,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _colors:
-  - {r: .279411793, g: .279411793, b: .279411793, a: 1}
-  - {r: 1, g: .889655113, b: 0, a: 1}
+  - {r: 0.2794118, g: 0.2794118, b: 0.2794118, a: 1}
+  - {r: 1, g: 0.8896551, b: 0, a: 1}
   _renderer: {fileID: 453256350}
 --- !u!114 &453256346
 MonoBehaviour:
@@ -3417,8 +3439,10 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_PreserveUVs: 1
+  m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_AutoUVMaxDistance: .5
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
@@ -3555,8 +3579,8 @@ MonoBehaviour:
       Reverse: 0
       Offset: 0
       AttackTime: 0
-      SustainTime: .25
-      ReleaseTime: .25
+      SustainTime: 0.25
+      ReleaseTime: 0.25
     _clip: {fileID: 8300000, guid: 44f29bdc45a6c499c8d3a51a912c0576, type: 3}
     _pitchInSemitones: 0
   _mixerGroup: {fileID: 0}
@@ -3574,8 +3598,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _colors:
-  - {r: .279411793, g: .279411793, b: .279411793, a: 1}
-  - {r: 1, g: .889655113, b: 0, a: 1}
+  - {r: 0.2794118, g: 0.2794118, b: 0.2794118, a: 1}
+  - {r: 1, g: 0.8896551, b: 0, a: 1}
   _renderer: {fileID: 483545755}
 --- !u!114 &483545751
 MonoBehaviour:
@@ -3649,8 +3673,10 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_PreserveUVs: 1
+  m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_AutoUVMaxDistance: .5
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
@@ -3716,8 +3742,8 @@ MonoBehaviour:
       Reverse: 0
       Offset: 0
       AttackTime: 0
-      SustainTime: .5
-      ReleaseTime: .5
+      SustainTime: 0.5
+      ReleaseTime: 0.5
     _clip: {fileID: 8300000, guid: d17098f8c52ebdc48a819d13e7be94fb, type: 3}
     _pitchInSemitones: 0
   _mixerGroup: {fileID: 0}
@@ -3735,8 +3761,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _colors:
-  - {r: .279411793, g: .279411793, b: .279411793, a: 1}
-  - {r: .968762934, g: .433823526, b: 1, a: 1}
+  - {r: 0.2794118, g: 0.2794118, b: 0.2794118, a: 1}
+  - {r: 0.96876293, g: 0.43382353, b: 1, a: 1}
   _renderer: {fileID: 486832934}
 --- !u!114 &486832930
 MonoBehaviour:
@@ -3810,8 +3836,10 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_PreserveUVs: 1
+  m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_AutoUVMaxDistance: .5
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
@@ -3930,8 +3958,8 @@ MonoBehaviour:
       Reverse: 0
       Offset: 0
       AttackTime: 0
-      SustainTime: .5
-      ReleaseTime: .5
+      SustainTime: 0.5
+      ReleaseTime: 0.5
     _clip: {fileID: 8300000, guid: d17098f8c52ebdc48a819d13e7be94fb, type: 3}
     _pitchInSemitones: 0
   _mixerGroup: {fileID: 0}
@@ -3949,8 +3977,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _colors:
-  - {r: .279411793, g: .279411793, b: .279411793, a: 1}
-  - {r: .968762934, g: .433823526, b: 1, a: 1}
+  - {r: 0.2794118, g: 0.2794118, b: 0.2794118, a: 1}
+  - {r: 0.96876293, g: 0.43382353, b: 1, a: 1}
   _renderer: {fileID: 514347852}
 --- !u!114 &514347848
 MonoBehaviour:
@@ -4024,8 +4052,10 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_PreserveUVs: 1
+  m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_AutoUVMaxDistance: .5
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
@@ -4103,8 +4133,8 @@ MonoBehaviour:
       Reverse: 0
       Offset: 0
       AttackTime: 0
-      SustainTime: .25
-      ReleaseTime: .25
+      SustainTime: 0.25
+      ReleaseTime: 0.25
     _clip: {fileID: 8300000, guid: 328886b4cbbd04b9a9fe138c6e99df76, type: 3}
     _pitchInSemitones: 0
   _mixerGroup: {fileID: 0}
@@ -4122,8 +4152,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _colors:
-  - {r: .279411793, g: .279411793, b: .279411793, a: 1}
-  - {r: 0, g: 1, b: .668965578, a: 1}
+  - {r: 0.2794118, g: 0.2794118, b: 0.2794118, a: 1}
+  - {r: 0, g: 1, b: 0.6689656, a: 1}
   _renderer: {fileID: 578448534}
 --- !u!114 &578448530
 MonoBehaviour:
@@ -4197,8 +4227,10 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_PreserveUVs: 1
+  m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_AutoUVMaxDistance: .5
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
@@ -4276,8 +4308,8 @@ MonoBehaviour:
       Reverse: 0
       Offset: 0
       AttackTime: 0
-      SustainTime: .25
-      ReleaseTime: .25
+      SustainTime: 0.25
+      ReleaseTime: 0.25
     _clip: {fileID: 8300000, guid: 328886b4cbbd04b9a9fe138c6e99df76, type: 3}
     _pitchInSemitones: 0
   _mixerGroup: {fileID: 0}
@@ -4295,8 +4327,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _colors:
-  - {r: .279411793, g: .279411793, b: .279411793, a: 1}
-  - {r: 0, g: 1, b: .668965578, a: 1}
+  - {r: 0.2794118, g: 0.2794118, b: 0.2794118, a: 1}
+  - {r: 0, g: 1, b: 0.6689656, a: 1}
   _renderer: {fileID: 609257543}
 --- !u!114 &609257539
 MonoBehaviour:
@@ -4370,8 +4402,10 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_PreserveUVs: 1
+  m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_AutoUVMaxDistance: .5
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
@@ -4507,8 +4541,8 @@ MonoBehaviour:
       Reverse: 0
       Offset: 0
       AttackTime: 0
-      SustainTime: .5
-      ReleaseTime: .5
+      SustainTime: 0.5
+      ReleaseTime: 0.5
     _clip: {fileID: 8300000, guid: d17098f8c52ebdc48a819d13e7be94fb, type: 3}
     _pitchInSemitones: 0
   _mixerGroup: {fileID: 0}
@@ -4526,8 +4560,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _colors:
-  - {r: .279411793, g: .279411793, b: .279411793, a: 1}
-  - {r: .968762934, g: .433823526, b: 1, a: 1}
+  - {r: 0.2794118, g: 0.2794118, b: 0.2794118, a: 1}
+  - {r: 0.96876293, g: 0.43382353, b: 1, a: 1}
   _renderer: {fileID: 656908510}
 --- !u!114 &656908506
 MonoBehaviour:
@@ -4601,8 +4635,10 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_PreserveUVs: 1
+  m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_AutoUVMaxDistance: .5
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
@@ -4680,8 +4716,8 @@ MonoBehaviour:
       Reverse: 0
       Offset: 0
       AttackTime: 0
-      SustainTime: .5
-      ReleaseTime: .5
+      SustainTime: 0.5
+      ReleaseTime: 0.5
     _clip: {fileID: 8300000, guid: d17098f8c52ebdc48a819d13e7be94fb, type: 3}
     _pitchInSemitones: 0
   _mixerGroup: {fileID: 0}
@@ -4699,8 +4735,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _colors:
-  - {r: .279411793, g: .279411793, b: .279411793, a: 1}
-  - {r: .968762934, g: .433823526, b: 1, a: 1}
+  - {r: 0.2794118, g: 0.2794118, b: 0.2794118, a: 1}
+  - {r: 0.96876293, g: 0.43382353, b: 1, a: 1}
   _renderer: {fileID: 658637161}
 --- !u!114 &658637157
 MonoBehaviour:
@@ -4774,8 +4810,10 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_PreserveUVs: 1
+  m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_AutoUVMaxDistance: .5
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
@@ -4853,8 +4891,8 @@ MonoBehaviour:
       Reverse: 0
       Offset: 0
       AttackTime: 0
-      SustainTime: .25
-      ReleaseTime: .25
+      SustainTime: 0.25
+      ReleaseTime: 0.25
     _clip: {fileID: 8300000, guid: 328886b4cbbd04b9a9fe138c6e99df76, type: 3}
     _pitchInSemitones: 0
   _mixerGroup: {fileID: 0}
@@ -4872,8 +4910,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _colors:
-  - {r: .279411793, g: .279411793, b: .279411793, a: 1}
-  - {r: 0, g: 1, b: .668965578, a: 1}
+  - {r: 0.2794118, g: 0.2794118, b: 0.2794118, a: 1}
+  - {r: 0, g: 1, b: 0.6689656, a: 1}
   _renderer: {fileID: 728053219}
 --- !u!114 &728053215
 MonoBehaviour:
@@ -4947,8 +4985,10 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_PreserveUVs: 1
+  m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_AutoUVMaxDistance: .5
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
@@ -5026,8 +5066,8 @@ MonoBehaviour:
       Reverse: 0
       Offset: 0
       AttackTime: 0
-      SustainTime: .5
-      ReleaseTime: .5
+      SustainTime: 0.5
+      ReleaseTime: 0.5
     _clip: {fileID: 8300000, guid: d17098f8c52ebdc48a819d13e7be94fb, type: 3}
     _pitchInSemitones: 0
   _mixerGroup: {fileID: 0}
@@ -5045,8 +5085,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _colors:
-  - {r: .279411793, g: .279411793, b: .279411793, a: 1}
-  - {r: .968762934, g: .433823526, b: 1, a: 1}
+  - {r: 0.2794118, g: 0.2794118, b: 0.2794118, a: 1}
+  - {r: 0.96876293, g: 0.43382353, b: 1, a: 1}
   _renderer: {fileID: 760581237}
 --- !u!114 &760581233
 MonoBehaviour:
@@ -5120,8 +5160,10 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_PreserveUVs: 1
+  m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_AutoUVMaxDistance: .5
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
@@ -5354,7 +5396,7 @@ RectTransform:
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
-  m_Pivot: {x: .5, y: 0}
+  m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &834625048
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5367,7 +5409,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: .958620548, b: 1, a: 1}
+  m_Color: {r: 0, g: 0.95862055, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -5382,6 +5424,7 @@ MonoBehaviour:
     m_MinSize: 10
     m_MaxSize: 40
     m_Alignment: 1
+    m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
@@ -5501,14 +5544,14 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: .192156866, g: .301960796, b: .474509805, a: .0196078438}
+  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0.019607844}
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
     y: 0
     width: 1
     height: 1
-  near clip plane: .300000012
+  near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
   orthographic: 0
@@ -5524,7 +5567,7 @@ Camera:
   m_HDR: 0
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
-  m_StereoSeparation: .0219999999
+  m_StereoSeparation: 0.022
   m_StereoMirrorMode: 0
 --- !u!4 &864166223
 Transform:
@@ -5532,7 +5575,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 864166218}
-  m_LocalRotation: {x: .12347623, y: 0, z: 0, w: .992347538}
+  m_LocalRotation: {x: 0.12347623, y: 0, z: 0, w: 0.99234754}
   m_LocalPosition: {x: 0, y: 1, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -5584,7 +5627,7 @@ MonoBehaviour:
   m_SubmitButton: Submit
   m_CancelButton: Cancel
   m_InputActionsPerSecond: 10
-  m_RepeatDelay: .5
+  m_RepeatDelay: 0.5
   m_ForceModuleActive: 0
 --- !u!114 &867309036
 MonoBehaviour:
@@ -5725,8 +5768,8 @@ MonoBehaviour:
       Reverse: 0
       Offset: 0
       AttackTime: 0
-      SustainTime: .5
-      ReleaseTime: .5
+      SustainTime: 0.5
+      ReleaseTime: 0.5
     _clip: {fileID: 8300000, guid: d17098f8c52ebdc48a819d13e7be94fb, type: 3}
     _pitchInSemitones: 0
   _mixerGroup: {fileID: 0}
@@ -5744,8 +5787,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _colors:
-  - {r: .279411793, g: .279411793, b: .279411793, a: 1}
-  - {r: .968762934, g: .433823526, b: 1, a: 1}
+  - {r: 0.2794118, g: 0.2794118, b: 0.2794118, a: 1}
+  - {r: 0.96876293, g: 0.43382353, b: 1, a: 1}
   _renderer: {fileID: 877343508}
 --- !u!114 &877343504
 MonoBehaviour:
@@ -5819,8 +5862,10 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_PreserveUVs: 1
+  m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_AutoUVMaxDistance: .5
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
@@ -6133,8 +6178,8 @@ MonoBehaviour:
       Reverse: 0
       Offset: 0
       AttackTime: 0
-      SustainTime: .25
-      ReleaseTime: .25
+      SustainTime: 0.25
+      ReleaseTime: 0.25
     _clip: {fileID: 8300000, guid: 44f29bdc45a6c499c8d3a51a912c0576, type: 3}
     _pitchInSemitones: 0
   _mixerGroup: {fileID: 0}
@@ -6152,8 +6197,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _colors:
-  - {r: .279411793, g: .279411793, b: .279411793, a: 1}
-  - {r: 1, g: .889655113, b: 0, a: 1}
+  - {r: 0.2794118, g: 0.2794118, b: 0.2794118, a: 1}
+  - {r: 1, g: 0.8896551, b: 0, a: 1}
   _renderer: {fileID: 965027021}
 --- !u!114 &965027017
 MonoBehaviour:
@@ -6227,8 +6272,10 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_PreserveUVs: 1
+  m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_AutoUVMaxDistance: .5
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
@@ -6306,8 +6353,8 @@ MonoBehaviour:
       Reverse: 0
       Offset: 0
       AttackTime: 0
-      SustainTime: .25
-      ReleaseTime: .25
+      SustainTime: 0.25
+      ReleaseTime: 0.25
     _clip: {fileID: 8300000, guid: 44f29bdc45a6c499c8d3a51a912c0576, type: 3}
     _pitchInSemitones: 0
   _mixerGroup: {fileID: 0}
@@ -6325,8 +6372,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _colors:
-  - {r: .279411793, g: .279411793, b: .279411793, a: 1}
-  - {r: 1, g: .889655113, b: 0, a: 1}
+  - {r: 0.2794118, g: 0.2794118, b: 0.2794118, a: 1}
+  - {r: 1, g: 0.8896551, b: 0, a: 1}
   _renderer: {fileID: 967286345}
 --- !u!114 &967286341
 MonoBehaviour:
@@ -6400,8 +6447,10 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_PreserveUVs: 1
+  m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_AutoUVMaxDistance: .5
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
@@ -6479,8 +6528,8 @@ MonoBehaviour:
       Reverse: 0
       Offset: 0
       AttackTime: 0
-      SustainTime: .25
-      ReleaseTime: .25
+      SustainTime: 0.25
+      ReleaseTime: 0.25
     _clip: {fileID: 8300000, guid: 44f29bdc45a6c499c8d3a51a912c0576, type: 3}
     _pitchInSemitones: 0
   _mixerGroup: {fileID: 0}
@@ -6498,8 +6547,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _colors:
-  - {r: .279411793, g: .279411793, b: .279411793, a: 1}
-  - {r: 1, g: .889655113, b: 0, a: 1}
+  - {r: 0.2794118, g: 0.2794118, b: 0.2794118, a: 1}
+  - {r: 1, g: 0.8896551, b: 0, a: 1}
   _renderer: {fileID: 975074194}
 --- !u!114 &975074190
 MonoBehaviour:
@@ -6573,8 +6622,10 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_PreserveUVs: 1
+  m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_AutoUVMaxDistance: .5
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
@@ -6828,8 +6879,8 @@ MonoBehaviour:
       Reverse: 0
       Offset: 0
       AttackTime: 0
-      SustainTime: .5
-      ReleaseTime: .5
+      SustainTime: 0.5
+      ReleaseTime: 0.5
     _clip: {fileID: 8300000, guid: d17098f8c52ebdc48a819d13e7be94fb, type: 3}
     _pitchInSemitones: 0
   _mixerGroup: {fileID: 0}
@@ -6847,8 +6898,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _colors:
-  - {r: .279411793, g: .279411793, b: .279411793, a: 1}
-  - {r: .968762934, g: .433823526, b: 1, a: 1}
+  - {r: 0.2794118, g: 0.2794118, b: 0.2794118, a: 1}
+  - {r: 0.96876293, g: 0.43382353, b: 1, a: 1}
   _renderer: {fileID: 1044931908}
 --- !u!114 &1044931904
 MonoBehaviour:
@@ -6922,8 +6973,10 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_PreserveUVs: 1
+  m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_AutoUVMaxDistance: .5
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
@@ -7001,8 +7054,8 @@ MonoBehaviour:
       Reverse: 0
       Offset: 0
       AttackTime: 0
-      SustainTime: .5
-      ReleaseTime: .5
+      SustainTime: 0.5
+      ReleaseTime: 0.5
     _clip: {fileID: 8300000, guid: d17098f8c52ebdc48a819d13e7be94fb, type: 3}
     _pitchInSemitones: 0
   _mixerGroup: {fileID: 0}
@@ -7020,8 +7073,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _colors:
-  - {r: .279411793, g: .279411793, b: .279411793, a: 1}
-  - {r: .968762934, g: .433823526, b: 1, a: 1}
+  - {r: 0.2794118, g: 0.2794118, b: 0.2794118, a: 1}
+  - {r: 0.96876293, g: 0.43382353, b: 1, a: 1}
   _renderer: {fileID: 1047087690}
 --- !u!114 &1047087686
 MonoBehaviour:
@@ -7095,8 +7148,10 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_PreserveUVs: 1
+  m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_AutoUVMaxDistance: .5
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
@@ -7174,8 +7229,8 @@ MonoBehaviour:
       Reverse: 0
       Offset: 0
       AttackTime: 0
-      SustainTime: .5
-      ReleaseTime: .5
+      SustainTime: 0.5
+      ReleaseTime: 0.5
     _clip: {fileID: 8300000, guid: d17098f8c52ebdc48a819d13e7be94fb, type: 3}
     _pitchInSemitones: 0
   _mixerGroup: {fileID: 0}
@@ -7193,8 +7248,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _colors:
-  - {r: .279411793, g: .279411793, b: .279411793, a: 1}
-  - {r: .968762934, g: .433823526, b: 1, a: 1}
+  - {r: 0.2794118, g: 0.2794118, b: 0.2794118, a: 1}
+  - {r: 0.96876293, g: 0.43382353, b: 1, a: 1}
   _renderer: {fileID: 1053752129}
 --- !u!114 &1053752125
 MonoBehaviour:
@@ -7268,8 +7323,10 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_PreserveUVs: 1
+  m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_AutoUVMaxDistance: .5
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
@@ -7434,8 +7491,8 @@ MonoBehaviour:
       Reverse: 0
       Offset: 0
       AttackTime: 0
-      SustainTime: .25
-      ReleaseTime: .25
+      SustainTime: 0.25
+      ReleaseTime: 0.25
     _clip: {fileID: 8300000, guid: 328886b4cbbd04b9a9fe138c6e99df76, type: 3}
     _pitchInSemitones: 0
   _mixerGroup: {fileID: 0}
@@ -7453,8 +7510,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _colors:
-  - {r: .279411793, g: .279411793, b: .279411793, a: 1}
-  - {r: 0, g: 1, b: .668965578, a: 1}
+  - {r: 0.2794118, g: 0.2794118, b: 0.2794118, a: 1}
+  - {r: 0, g: 1, b: 0.6689656, a: 1}
   _renderer: {fileID: 1116092414}
 --- !u!114 &1116092410
 MonoBehaviour:
@@ -7528,8 +7585,10 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_PreserveUVs: 1
+  m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_AutoUVMaxDistance: .5
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
@@ -7636,8 +7695,8 @@ MonoBehaviour:
       Reverse: 0
       Offset: 0
       AttackTime: 0
-      SustainTime: .25
-      ReleaseTime: .25
+      SustainTime: 0.25
+      ReleaseTime: 0.25
     _clip: {fileID: 8300000, guid: 44f29bdc45a6c499c8d3a51a912c0576, type: 3}
     _pitchInSemitones: 0
   _mixerGroup: {fileID: 0}
@@ -7655,8 +7714,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _colors:
-  - {r: .279411793, g: .279411793, b: .279411793, a: 1}
-  - {r: 1, g: .889655113, b: 0, a: 1}
+  - {r: 0.2794118, g: 0.2794118, b: 0.2794118, a: 1}
+  - {r: 1, g: 0.8896551, b: 0, a: 1}
   _renderer: {fileID: 1126446170}
 --- !u!114 &1126446166
 MonoBehaviour:
@@ -7730,8 +7789,10 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_PreserveUVs: 1
+  m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_AutoUVMaxDistance: .5
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
@@ -7897,8 +7958,8 @@ MonoBehaviour:
       Reverse: 0
       Offset: 0
       AttackTime: 0
-      SustainTime: .25
-      ReleaseTime: .25
+      SustainTime: 0.25
+      ReleaseTime: 0.25
     _clip: {fileID: 8300000, guid: 44f29bdc45a6c499c8d3a51a912c0576, type: 3}
     _pitchInSemitones: 0
   _mixerGroup: {fileID: 0}
@@ -7916,8 +7977,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _colors:
-  - {r: .279411793, g: .279411793, b: .279411793, a: 1}
-  - {r: 1, g: .889655113, b: 0, a: 1}
+  - {r: 0.2794118, g: 0.2794118, b: 0.2794118, a: 1}
+  - {r: 1, g: 0.8896551, b: 0, a: 1}
   _renderer: {fileID: 1221349793}
 --- !u!114 &1221349789
 MonoBehaviour:
@@ -7991,8 +8052,10 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_PreserveUVs: 1
+  m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_AutoUVMaxDistance: .5
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
@@ -8505,8 +8568,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _colors:
-  - {r: .279411793, g: .279411793, b: .279411793, a: 1}
-  - {r: 0, g: 1, b: .668965578, a: 1}
+  - {r: 0.2794118, g: 0.2794118, b: 0.2794118, a: 1}
+  - {r: 0, g: 1, b: 0.6689656, a: 1}
   _renderer: {fileID: 1384754800}
 --- !u!114 &1384754796
 MonoBehaviour:
@@ -8580,8 +8643,10 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_PreserveUVs: 1
+  m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_AutoUVMaxDistance: .5
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
@@ -8623,8 +8688,8 @@ MonoBehaviour:
       Reverse: 0
       Offset: 0
       AttackTime: 0
-      SustainTime: .25
-      ReleaseTime: .25
+      SustainTime: 0.25
+      ReleaseTime: 0.25
     _clip: {fileID: 8300000, guid: 328886b4cbbd04b9a9fe138c6e99df76, type: 3}
     _pitchInSemitones: 0
   _mixerGroup: {fileID: 0}
@@ -8743,8 +8808,8 @@ MonoBehaviour:
       Reverse: 0
       Offset: 0
       AttackTime: 0
-      SustainTime: .5
-      ReleaseTime: .5
+      SustainTime: 0.5
+      ReleaseTime: 0.5
     _clip: {fileID: 8300000, guid: d17098f8c52ebdc48a819d13e7be94fb, type: 3}
     _pitchInSemitones: 0
   _mixerGroup: {fileID: 0}
@@ -8762,8 +8827,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _colors:
-  - {r: .279411793, g: .279411793, b: .279411793, a: 1}
-  - {r: .968762934, g: .433823526, b: 1, a: 1}
+  - {r: 0.2794118, g: 0.2794118, b: 0.2794118, a: 1}
+  - {r: 0.96876293, g: 0.43382353, b: 1, a: 1}
   _renderer: {fileID: 1402119686}
 --- !u!114 &1402119682
 MonoBehaviour:
@@ -8837,8 +8902,10 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_PreserveUVs: 1
+  m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_AutoUVMaxDistance: .5
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
@@ -8943,7 +9010,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1421239640}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -1.29999995}
+  m_LocalPosition: {x: 0, y: 0, z: -1.3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 275696585}
@@ -9018,8 +9085,8 @@ MonoBehaviour:
       Reverse: 0
       Offset: 0
       AttackTime: 0
-      SustainTime: .5
-      ReleaseTime: .5
+      SustainTime: 0.5
+      ReleaseTime: 0.5
     _clip: {fileID: 8300000, guid: d17098f8c52ebdc48a819d13e7be94fb, type: 3}
     _pitchInSemitones: 0
   _mixerGroup: {fileID: 0}
@@ -9037,8 +9104,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _colors:
-  - {r: .279411793, g: .279411793, b: .279411793, a: 1}
-  - {r: .968762934, g: .433823526, b: 1, a: 1}
+  - {r: 0.2794118, g: 0.2794118, b: 0.2794118, a: 1}
+  - {r: 0.96876293, g: 0.43382353, b: 1, a: 1}
   _renderer: {fileID: 1437112116}
 --- !u!114 &1437112112
 MonoBehaviour:
@@ -9112,8 +9179,10 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_PreserveUVs: 1
+  m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_AutoUVMaxDistance: .5
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
@@ -9250,8 +9319,8 @@ MonoBehaviour:
       Reverse: 0
       Offset: 0
       AttackTime: 0
-      SustainTime: .25
-      ReleaseTime: .25
+      SustainTime: 0.25
+      ReleaseTime: 0.25
     _clip: {fileID: 8300000, guid: 44f29bdc45a6c499c8d3a51a912c0576, type: 3}
     _pitchInSemitones: 0
   _mixerGroup: {fileID: 0}
@@ -9269,8 +9338,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _colors:
-  - {r: .279411793, g: .279411793, b: .279411793, a: 1}
-  - {r: 1, g: .889655113, b: 0, a: 1}
+  - {r: 0.2794118, g: 0.2794118, b: 0.2794118, a: 1}
+  - {r: 1, g: 0.8896551, b: 0, a: 1}
   _renderer: {fileID: 1477270720}
 --- !u!114 &1477270716
 MonoBehaviour:
@@ -9344,8 +9413,10 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_PreserveUVs: 1
+  m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_AutoUVMaxDistance: .5
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
@@ -9570,8 +9641,8 @@ MonoBehaviour:
       Reverse: 0
       Offset: 0
       AttackTime: 0
-      SustainTime: .5
-      ReleaseTime: .5
+      SustainTime: 0.5
+      ReleaseTime: 0.5
     _clip: {fileID: 8300000, guid: d17098f8c52ebdc48a819d13e7be94fb, type: 3}
     _pitchInSemitones: 0
   _mixerGroup: {fileID: 0}
@@ -9589,8 +9660,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _colors:
-  - {r: .279411793, g: .279411793, b: .279411793, a: 1}
-  - {r: .968762934, g: .433823526, b: 1, a: 1}
+  - {r: 0.2794118, g: 0.2794118, b: 0.2794118, a: 1}
+  - {r: 0.96876293, g: 0.43382353, b: 1, a: 1}
   _renderer: {fileID: 1501510116}
 --- !u!114 &1501510112
 MonoBehaviour:
@@ -9664,8 +9735,10 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_PreserveUVs: 1
+  m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_AutoUVMaxDistance: .5
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
@@ -10094,8 +10167,8 @@ MonoBehaviour:
       Reverse: 0
       Offset: 0
       AttackTime: 0
-      SustainTime: .25
-      ReleaseTime: .25
+      SustainTime: 0.25
+      ReleaseTime: 0.25
     _clip: {fileID: 8300000, guid: 328886b4cbbd04b9a9fe138c6e99df76, type: 3}
     _pitchInSemitones: 0
   _mixerGroup: {fileID: 0}
@@ -10113,8 +10186,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _colors:
-  - {r: .279411793, g: .279411793, b: .279411793, a: 1}
-  - {r: 0, g: 1, b: .668965578, a: 1}
+  - {r: 0.2794118, g: 0.2794118, b: 0.2794118, a: 1}
+  - {r: 0, g: 1, b: 0.6689656, a: 1}
   _renderer: {fileID: 1629500021}
 --- !u!114 &1629500017
 MonoBehaviour:
@@ -10188,8 +10261,10 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_PreserveUVs: 1
+  m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_AutoUVMaxDistance: .5
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
@@ -10267,8 +10342,8 @@ MonoBehaviour:
       Reverse: 0
       Offset: 0
       AttackTime: 0
-      SustainTime: .25
-      ReleaseTime: .25
+      SustainTime: 0.25
+      ReleaseTime: 0.25
     _clip: {fileID: 8300000, guid: 328886b4cbbd04b9a9fe138c6e99df76, type: 3}
     _pitchInSemitones: 0
   _mixerGroup: {fileID: 0}
@@ -10286,8 +10361,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _colors:
-  - {r: .279411793, g: .279411793, b: .279411793, a: 1}
-  - {r: 0, g: 1, b: .668965578, a: 1}
+  - {r: 0.2794118, g: 0.2794118, b: 0.2794118, a: 1}
+  - {r: 0, g: 1, b: 0.6689656, a: 1}
   _renderer: {fileID: 1641424325}
 --- !u!114 &1641424321
 MonoBehaviour:
@@ -10361,8 +10436,10 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_PreserveUVs: 1
+  m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_AutoUVMaxDistance: .5
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
@@ -10469,8 +10546,8 @@ MonoBehaviour:
       Reverse: 0
       Offset: 0
       AttackTime: 0
-      SustainTime: .25
-      ReleaseTime: .25
+      SustainTime: 0.25
+      ReleaseTime: 0.25
     _clip: {fileID: 8300000, guid: 44f29bdc45a6c499c8d3a51a912c0576, type: 3}
     _pitchInSemitones: 0
   _mixerGroup: {fileID: 0}
@@ -10488,8 +10565,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _colors:
-  - {r: .279411793, g: .279411793, b: .279411793, a: 1}
-  - {r: 1, g: .889655113, b: 0, a: 1}
+  - {r: 0.2794118, g: 0.2794118, b: 0.2794118, a: 1}
+  - {r: 1, g: 0.8896551, b: 0, a: 1}
   _renderer: {fileID: 1649643914}
 --- !u!114 &1649643910
 MonoBehaviour:
@@ -10563,8 +10640,10 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_PreserveUVs: 1
+  m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_AutoUVMaxDistance: .5
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
@@ -10759,8 +10838,8 @@ MonoBehaviour:
       Reverse: 0
       Offset: 0
       AttackTime: 0
-      SustainTime: .25
-      ReleaseTime: .25
+      SustainTime: 0.25
+      ReleaseTime: 0.25
     _clip: {fileID: 8300000, guid: 44f29bdc45a6c499c8d3a51a912c0576, type: 3}
     _pitchInSemitones: 0
   _mixerGroup: {fileID: 0}
@@ -10778,8 +10857,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _colors:
-  - {r: .279411793, g: .279411793, b: .279411793, a: 1}
-  - {r: 1, g: .889655113, b: 0, a: 1}
+  - {r: 0.2794118, g: 0.2794118, b: 0.2794118, a: 1}
+  - {r: 1, g: 0.8896551, b: 0, a: 1}
   _renderer: {fileID: 1693484293}
 --- !u!114 &1693484289
 MonoBehaviour:
@@ -10853,8 +10932,10 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_PreserveUVs: 1
+  m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_AutoUVMaxDistance: .5
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
@@ -10932,8 +11013,8 @@ MonoBehaviour:
       Reverse: 0
       Offset: 0
       AttackTime: 0
-      SustainTime: .25
-      ReleaseTime: .25
+      SustainTime: 0.25
+      ReleaseTime: 0.25
     _clip: {fileID: 8300000, guid: 328886b4cbbd04b9a9fe138c6e99df76, type: 3}
     _pitchInSemitones: 0
   _mixerGroup: {fileID: 0}
@@ -10951,8 +11032,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _colors:
-  - {r: .279411793, g: .279411793, b: .279411793, a: 1}
-  - {r: 0, g: 1, b: .668965578, a: 1}
+  - {r: 0.2794118, g: 0.2794118, b: 0.2794118, a: 1}
+  - {r: 0, g: 1, b: 0.6689656, a: 1}
   _renderer: {fileID: 1695187808}
 --- !u!114 &1695187804
 MonoBehaviour:
@@ -11026,8 +11107,10 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_PreserveUVs: 1
+  m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_AutoUVMaxDistance: .5
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
@@ -11152,6 +11235,7 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingLayerID: 0
   m_SortingOrder: 0
+  m_TargetDisplay: 0
 --- !u!224 &1714179188
 RectTransform:
   m_ObjectHideFlags: 0
@@ -11253,8 +11337,8 @@ MonoBehaviour:
       Reverse: 0
       Offset: 0
       AttackTime: 0
-      SustainTime: .25
-      ReleaseTime: .25
+      SustainTime: 0.25
+      ReleaseTime: 0.25
     _clip: {fileID: 8300000, guid: 328886b4cbbd04b9a9fe138c6e99df76, type: 3}
     _pitchInSemitones: 0
   _mixerGroup: {fileID: 0}
@@ -11272,8 +11356,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _colors:
-  - {r: .279411793, g: .279411793, b: .279411793, a: 1}
-  - {r: 0, g: 1, b: .668965578, a: 1}
+  - {r: 0.2794118, g: 0.2794118, b: 0.2794118, a: 1}
+  - {r: 0, g: 1, b: 0.6689656, a: 1}
   _renderer: {fileID: 1766879148}
 --- !u!114 &1766879144
 MonoBehaviour:
@@ -11347,8 +11431,10 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_PreserveUVs: 1
+  m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_AutoUVMaxDistance: .5
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
@@ -11397,7 +11483,7 @@ Light:
   m_Enabled: 1
   serializedVersion: 6
   m_Type: 1
-  m_Color: {r: 1, g: .956862748, b: .839215696, a: 1}
+  m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
   m_Intensity: 1
   m_Range: 10
   m_SpotAngle: 30
@@ -11406,8 +11492,9 @@ Light:
     m_Type: 2
     m_Resolution: -1
     m_Strength: 1
-    m_Bias: .0500000007
-    m_NormalBias: .400000006
+    m_Bias: 0.05
+    m_NormalBias: 0.4
+    m_NearPlane: 0.2
   m_Cookie: {fileID: 0}
   m_DrawHalo: 0
   m_Flare: {fileID: 0}
@@ -11426,7 +11513,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1778490975}
-  m_LocalRotation: {x: .408217937, y: -.234569728, z: .109381676, w: .875426054}
+  m_LocalRotation: {x: 0.40821794, y: -0.23456973, z: 0.109381676, w: 0.87542605}
   m_LocalPosition: {x: 0, y: 3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -11454,8 +11541,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1789923985}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.3900001, y: 0, z: -4.28999996}
-  m_LocalScale: {x: .300000012, y: .300000012, z: .300000012}
+  m_LocalPosition: {x: -3.39, y: 0, z: -4.29}
+  m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
   m_Children:
   - {fileID: 1421239641}
   - {fileID: 1934627486}
@@ -11663,8 +11750,8 @@ MonoBehaviour:
       Reverse: 0
       Offset: 0
       AttackTime: 0
-      SustainTime: .5
-      ReleaseTime: .5
+      SustainTime: 0.5
+      ReleaseTime: 0.5
     _clip: {fileID: 8300000, guid: d17098f8c52ebdc48a819d13e7be94fb, type: 3}
     _pitchInSemitones: 0
   _mixerGroup: {fileID: 0}
@@ -11682,8 +11769,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _colors:
-  - {r: .279411793, g: .279411793, b: .279411793, a: 1}
-  - {r: .968762934, g: .433823526, b: 1, a: 1}
+  - {r: 0.2794118, g: 0.2794118, b: 0.2794118, a: 1}
+  - {r: 0.96876293, g: 0.43382353, b: 1, a: 1}
   _renderer: {fileID: 1865907272}
 --- !u!114 &1865907268
 MonoBehaviour:
@@ -11757,8 +11844,10 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_PreserveUVs: 1
+  m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_AutoUVMaxDistance: .5
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
@@ -11836,8 +11925,8 @@ MonoBehaviour:
       Reverse: 0
       Offset: 0
       AttackTime: 0
-      SustainTime: .25
-      ReleaseTime: .25
+      SustainTime: 0.25
+      ReleaseTime: 0.25
     _clip: {fileID: 8300000, guid: 44f29bdc45a6c499c8d3a51a912c0576, type: 3}
     _pitchInSemitones: 0
   _mixerGroup: {fileID: 0}
@@ -11855,8 +11944,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _colors:
-  - {r: .279411793, g: .279411793, b: .279411793, a: 1}
-  - {r: 1, g: .889655113, b: 0, a: 1}
+  - {r: 0.2794118, g: 0.2794118, b: 0.2794118, a: 1}
+  - {r: 1, g: 0.8896551, b: 0, a: 1}
   _renderer: {fileID: 1867148903}
 --- !u!114 &1867148899
 MonoBehaviour:
@@ -11930,8 +12019,10 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_PreserveUVs: 1
+  m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_AutoUVMaxDistance: .5
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
@@ -12011,9 +12102,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ff69fccba9b444119af1ab5c87c94af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _period: .125
+  _period: 0.125
   _pulsesPerBeat: 4
-  _latency: .10000000000000001
+  _latency: 0.1
 --- !u!4 &1894814885
 Transform:
   m_ObjectHideFlags: 0
@@ -12059,7 +12150,7 @@ RectTransform:
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
-  m_Pivot: {x: .5, y: 0}
+  m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &1907985265
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12072,7 +12163,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: .958620548, b: 1, a: 1}
+  m_Color: {r: 0, g: 0.95862055, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -12087,6 +12178,7 @@ MonoBehaviour:
     m_MinSize: 10
     m_MaxSize: 40
     m_Alignment: 1
+    m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
@@ -12149,7 +12241,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1934627485}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -1.5, z: -2.20000005}
+  m_LocalPosition: {x: 0, y: -1.5, z: -2.2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1532256074}
@@ -12400,8 +12492,8 @@ MonoBehaviour:
       Reverse: 0
       Offset: 0
       AttackTime: 0
-      SustainTime: .5
-      ReleaseTime: .5
+      SustainTime: 0.5
+      ReleaseTime: 0.5
     _clip: {fileID: 8300000, guid: d17098f8c52ebdc48a819d13e7be94fb, type: 3}
     _pitchInSemitones: 0
   _mixerGroup: {fileID: 0}
@@ -12419,8 +12511,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _colors:
-  - {r: .279411793, g: .279411793, b: .279411793, a: 1}
-  - {r: .968762934, g: .433823526, b: 1, a: 1}
+  - {r: 0.2794118, g: 0.2794118, b: 0.2794118, a: 1}
+  - {r: 0.96876293, g: 0.43382353, b: 1, a: 1}
   _renderer: {fileID: 1962718544}
 --- !u!114 &1962718540
 MonoBehaviour:
@@ -12494,8 +12586,10 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_PreserveUVs: 1
+  m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_AutoUVMaxDistance: .5
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
@@ -12690,8 +12784,8 @@ MonoBehaviour:
       Reverse: 0
       Offset: 0
       AttackTime: 0
-      SustainTime: .5
-      ReleaseTime: .5
+      SustainTime: 0.5
+      ReleaseTime: 0.5
     _clip: {fileID: 8300000, guid: d17098f8c52ebdc48a819d13e7be94fb, type: 3}
     _pitchInSemitones: 0
   _mixerGroup: {fileID: 0}
@@ -12709,8 +12803,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _colors:
-  - {r: .279411793, g: .279411793, b: .279411793, a: 1}
-  - {r: .968762934, g: .433823526, b: 1, a: 1}
+  - {r: 0.2794118, g: 0.2794118, b: 0.2794118, a: 1}
+  - {r: 0.96876293, g: 0.43382353, b: 1, a: 1}
   _renderer: {fileID: 1994409271}
 --- !u!114 &1994409267
 MonoBehaviour:
@@ -12784,8 +12878,10 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_PreserveUVs: 1
+  m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_AutoUVMaxDistance: .5
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
@@ -12921,8 +13017,8 @@ MonoBehaviour:
       Reverse: 0
       Offset: 0
       AttackTime: 0
-      SustainTime: .25
-      ReleaseTime: .25
+      SustainTime: 0.25
+      ReleaseTime: 0.25
     _clip: {fileID: 8300000, guid: 328886b4cbbd04b9a9fe138c6e99df76, type: 3}
     _pitchInSemitones: 0
   _mixerGroup: {fileID: 0}
@@ -12940,8 +13036,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _colors:
-  - {r: .279411793, g: .279411793, b: .279411793, a: 1}
-  - {r: 0, g: 1, b: .668965578, a: 1}
+  - {r: 0.2794118, g: 0.2794118, b: 0.2794118, a: 1}
+  - {r: 0, g: 1, b: 0.6689656, a: 1}
   _renderer: {fileID: 2084402115}
 --- !u!114 &2084402111
 MonoBehaviour:
@@ -13015,8 +13111,10 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_PreserveUVs: 1
+  m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_AutoUVMaxDistance: .5
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
@@ -13094,8 +13192,8 @@ MonoBehaviour:
       Reverse: 0
       Offset: 0
       AttackTime: 0
-      SustainTime: .25
-      ReleaseTime: .25
+      SustainTime: 0.25
+      ReleaseTime: 0.25
     _clip: {fileID: 8300000, guid: 328886b4cbbd04b9a9fe138c6e99df76, type: 3}
     _pitchInSemitones: 0
   _mixerGroup: {fileID: 0}
@@ -13113,8 +13211,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _colors:
-  - {r: .279411793, g: .279411793, b: .279411793, a: 1}
-  - {r: 0, g: 1, b: .668965578, a: 1}
+  - {r: 0.2794118, g: 0.2794118, b: 0.2794118, a: 1}
+  - {r: 0, g: 1, b: 0.6689656, a: 1}
   _renderer: {fileID: 2089898000}
 --- !u!114 &2089897996
 MonoBehaviour:
@@ -13188,8 +13286,10 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_PreserveUVs: 1
+  m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_AutoUVMaxDistance: .5
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
