@@ -8,25 +8,25 @@ SceneSettings:
   m_PVSPortalsArray: []
   m_OcclusionBakeSettings:
     smallestOccluder: 5
-    smallestHole: .25
+    smallestHole: 0.25
     backfaceThreshold: 100
 --- !u!104 &2
 RenderSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 6
   m_Fog: 0
-  m_FogColor: {r: .5, g: .5, b: .5, a: 1}
+  m_FogColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   m_FogMode: 3
-  m_FogDensity: .00999999978
+  m_FogDensity: 0.01
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
-  m_AmbientSkyColor: {r: .211999997, g: .226999998, b: .259000003, a: 1}
-  m_AmbientEquatorColor: {r: .114, g: .125, b: .133000001, a: 1}
-  m_AmbientGroundColor: {r: .0469999984, g: .0430000015, b: .0350000001, a: 1}
+  m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
+  m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
+  m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
-  m_HaloStrength: .5
+  m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
   m_HaloTexture: {fileID: 0}
@@ -40,7 +40,7 @@ RenderSettings:
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
-  serializedVersion: 5
+  serializedVersion: 6
   m_GIWorkflowMode: 0
   m_LightmapsMode: 1
   m_GISettings:
@@ -66,7 +66,7 @@ LightmapSettings:
     m_FinalGather: 0
     m_FinalGatherRayCount: 1024
     m_ReflectionCompression: 2
-  m_LightmapSnapshot: {fileID: 0}
+  m_LightingDataAsset: {fileID: 0}
   m_RuntimeCPUUsage: 25
 --- !u!196 &4
 NavMeshSettings:
@@ -74,15 +74,15 @@ NavMeshSettings:
   m_ObjectHideFlags: 0
   m_BuildSettings:
     serializedVersion: 2
-    agentRadius: .5
+    agentRadius: 0.5
     agentHeight: 2
     agentSlope: 45
-    agentClimb: .400000006
+    agentClimb: 0.4
     ledgeDropHeight: 0
     maxJumpAcrossDistance: 0
     accuratePlacement: 0
     minRegionArea: 2
-    cellSize: .166666672
+    cellSize: 0.16666667
     manualCellSize: 0
   m_NavMeshData: {fileID: 0}
 --- !u!1 &88798496
@@ -166,7 +166,7 @@ MonoBehaviour:
   _pattern: {fileID: 88798498}
   _notes:
   - MidiNote: 50
-    Duration: .25
+    Duration: 0.25
   - MidiNote: 70
     Duration: 1
 --- !u!4 &91640524
@@ -230,14 +230,14 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: .192156866, g: .301960796, b: .474509805, a: .0196078438}
+  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0.019607844}
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
     y: 0
     width: 1
     height: 1
-  near clip plane: .300000012
+  near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
   orthographic: 0
@@ -253,7 +253,7 @@ Camera:
   m_HDR: 0
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
-  m_StereoSeparation: .0219999999
+  m_StereoSeparation: 0.022
   m_StereoMirrorMode: 0
 --- !u!4 &160123073
 Transform:
@@ -292,7 +292,7 @@ Light:
   m_Enabled: 1
   serializedVersion: 6
   m_Type: 1
-  m_Color: {r: 1, g: .956862748, b: .839215696, a: 1}
+  m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
   m_Intensity: 1
   m_Range: 10
   m_SpotAngle: 30
@@ -301,8 +301,9 @@ Light:
     m_Type: 2
     m_Resolution: -1
     m_Strength: 1
-    m_Bias: .0500000007
-    m_NormalBias: .400000006
+    m_Bias: 0.05
+    m_NormalBias: 0.4
+    m_NearPlane: 0.2
   m_Cookie: {fileID: 0}
   m_DrawHalo: 0
   m_Flare: {fileID: 0}
@@ -321,7 +322,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 360848652}
-  m_LocalRotation: {x: .408217937, y: -.234569728, z: .109381676, w: .875426054}
+  m_LocalRotation: {x: 0.40821794, y: -0.23456973, z: 0.109381676, w: 0.87542605}
   m_LocalPosition: {x: 0, y: 3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -351,7 +352,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 699239118}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.01398957, y: -.685944974, z: -1.617697}
+  m_LocalPosition: {x: -1.0139896, y: -0.685945, z: -1.617697}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 88798497}
@@ -371,25 +372,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DebugPlayNote: 0
   _sequence: {fileID: 91640523}
-  _gain: .5
+  _gain: 0.5
   _oscillators:
   - _waveform: 0
     _gain: 1
     _detuneSemitones: 0
-    _pulseWidth: .5
+    _pulseWidth: 0.5
   - _waveform: 2
     _gain: 1
     _detuneSemitones: -24
-    _pulseWidth: .25099998712539673
+    _pulseWidth: 0.25099998712539673
   - _waveform: 1
     _gain: 1
-    _detuneSemitones: -.10000000149011612
-    _pulseWidth: .5
+    _detuneSemitones: -0.10000000149011612
+    _pulseWidth: 0.5
   _envelope:
-    _attackTime: .2800000011920929
-    _decayTime: .14000000059604645
-    _sustainLevel: .26899999380111694
-    _releaseTime: 2.2400000095367432
+    _attackTime: 0.2800000011920929
+    _decayTime: 0.14000000059604645
+    _sustainLevel: 0.26899999380111694
+    _releaseTime: 2.240000009536743
   _filter:
     _mode: 0
     _cutoff: 4654
@@ -434,6 +435,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
+    m_RotationOrder: 4
   panLevelCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -444,6 +446,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
+    m_RotationOrder: 0
   spreadCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -454,6 +457,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
+    m_RotationOrder: 0
   reverbZoneMixCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -464,6 +468,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
+    m_RotationOrder: 0
 --- !u!1 &777072930
 GameObject:
   m_ObjectHideFlags: 0
@@ -506,7 +511,7 @@ MonoBehaviour:
   _pattern: {fileID: 890164778}
   _notes:
   - MidiNote: 75
-    Duration: .25
+    Duration: 0.25
   - MidiNote: 70
     Duration: 1
   - MidiNote: 80
@@ -539,7 +544,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 864398210}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.01398957, y: -.685944974, z: -1.617697}
+  m_LocalPosition: {x: -1.0139896, y: -0.685945, z: -1.617697}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 890164779}
@@ -559,23 +564,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DebugPlayNote: 0
   _sequence: {fileID: 777072932}
-  _gain: .204999998
+  _gain: 0.205
   _oscillators:
   - _waveform: 1
     _gain: 1
     _detuneSemitones: 0
-    _pulseWidth: .5
+    _pulseWidth: 0.5
   - _waveform: 1
     _gain: 1
     _detuneSemitones: -5
-    _pulseWidth: .25099998712539673
+    _pulseWidth: 0.25099998712539673
   - _waveform: 1
     _gain: 1
     _detuneSemitones: -12
-    _pulseWidth: .5
+    _pulseWidth: 0.5
   _envelope:
     _attackTime: 0
-    _decayTime: .54000002145767212
+    _decayTime: 0.5400000214576721
     _sustainLevel: 0
     _releaseTime: 0
   _filter:
@@ -622,6 +627,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
+    m_RotationOrder: 4
   panLevelCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -632,6 +638,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
+    m_RotationOrder: 4
   spreadCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -642,6 +649,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
+    m_RotationOrder: 4
   reverbZoneMixCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -652,6 +660,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &890164777
 GameObject:
   m_ObjectHideFlags: 0
@@ -725,7 +734,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 923331433}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.01398957, y: -.685944974, z: -1.617697}
+  m_LocalPosition: {x: -1.0139896, y: -0.685945, z: -1.617697}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 997715958}
@@ -745,29 +754,29 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DebugPlayNote: 0
   _sequence: {fileID: 1385369384}
-  _gain: .5
+  _gain: 0.5
   _oscillators:
   - _waveform: 0
     _gain: 1
     _detuneSemitones: 0
-    _pulseWidth: .5
+    _pulseWidth: 0.5
   - _waveform: 2
     _gain: 1
     _detuneSemitones: -24
-    _pulseWidth: .25099998712539673
+    _pulseWidth: 0.25099998712539673
   - _waveform: 1
     _gain: 1
-    _detuneSemitones: -.10000000149011612
-    _pulseWidth: .5
+    _detuneSemitones: -0.10000000149011612
+    _pulseWidth: 0.5
   _envelope:
-    _attackTime: .059999998658895493
-    _decayTime: .14000000059604645
-    _sustainLevel: .26899999380111694
-    _releaseTime: 2.2400000095367432
+    _attackTime: 0.05999999865889549
+    _decayTime: 0.14000000059604645
+    _sustainLevel: 0.26899999380111694
+    _releaseTime: 2.240000009536743
   _filter:
     _mode: 0
     _cutoff: 3964
-    _resonance: 3.1800000667572021
+    _resonance: 3.180000066757202
 --- !u!82 &923331436
 AudioSource:
   m_ObjectHideFlags: 0
@@ -808,6 +817,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
+    m_RotationOrder: 4
   panLevelCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -818,6 +828,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
+    m_RotationOrder: 4
   spreadCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -828,6 +839,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
+    m_RotationOrder: 4
   reverbZoneMixCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -838,6 +850,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &997715956
 GameObject:
   m_ObjectHideFlags: 0
@@ -919,7 +932,7 @@ MonoBehaviour:
   _pattern: {fileID: 997715957}
   _notes:
   - MidiNote: 62
-    Duration: .25
+    Duration: 0.25
   - MidiNote: 69
     Duration: 1
   - MidiNote: 61
@@ -963,9 +976,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ff69fccba9b444119af1ab5c87c94af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _period: .14999999999999999
+  _period: 0.15
   _pulsesPerBeat: 4
-  _latency: .10000000000000001
+  _latency: 0.1
 --- !u!4 &1466883773
 Transform:
   m_ObjectHideFlags: 0
@@ -973,7 +986,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1466883771}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.01398957, y: -.685944974, z: -1.617697}
+  m_LocalPosition: {x: -1.0139896, y: -0.685945, z: -1.617697}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
