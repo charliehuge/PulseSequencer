@@ -19,7 +19,7 @@ namespace DerelictComputer
         public void Trigger(double triggerTime)
         {
             _triggered = true;
-            _startTime = AudioSettings.dspTime;
+            _startTime = triggerTime;
             _frequency = AudioSettings.outputSampleRate;
             _attackSamples = (int) (AttackTime* _frequency);
             _sustainSamples = (int) (SustainTime* _frequency);
