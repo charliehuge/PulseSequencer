@@ -365,4 +365,4 @@ MonoBehaviour:
   Trigger: 0
   _envelope: {fileID: 1391401834}
   _audioSource: {fileID: 1391401835}
-  _delay: 0.1
+  _delay: 0

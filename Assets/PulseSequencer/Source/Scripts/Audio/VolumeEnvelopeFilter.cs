@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 namespace DerelictComputer
 {
@@ -11,22 +12,22 @@ namespace DerelictComputer
 
         private bool _triggered;
         private double _startTime;
-        private int _frequency;
-        private int _attackSamples;
-        private int _sustainSamples;
-        private int _releaseSamples;
+        private double _sampleDuration;
+        private double _attackFinishTime;
+        private double _sustainFinishTime;
+        private double _releaseFinishTime;
 
         public void Trigger(double triggerTime)
         {
             _triggered = true;
             _startTime = triggerTime;
-            _frequency = AudioSettings.outputSampleRate;
-            _attackSamples = (int) (AttackTime* _frequency);
-            _sustainSamples = (int) (SustainTime* _frequency);
-            _releaseSamples = (int) (ReleaseTime* _frequency);
+            _sampleDuration = 1.0/AudioSettings.outputSampleRate;
+            _attackFinishTime = triggerTime + AttackTime;
+            _sustainFinishTime = _attackFinishTime + SustainTime;
+            _releaseFinishTime = _sustainFinishTime + ReleaseTime;
         }
 
-        private void OnAudioFilterRead(float[] data, int channels)
+        private void OnAudioFilterRead(float[] buffer, int channels)
         {
             // if not enabled, don't do any attenuation
             if (!Enabled)
@@ -37,33 +38,32 @@ namespace DerelictComputer
             // if enabled, but outside the range of the envelope, attenuate fully
             if (!_triggered || AudioSettings.dspTime < _startTime)
             {
-                for (int i = 0; i < data.Length; i++)
+                for (int i = 0; i < buffer.Length; i++)
                 {
-                    data[i] = 0f;
+                    buffer[i] = 0f;
                 }
 
                 return;
             }
 
-            var samplesSinceTrigger = (int) (_frequency*(AudioSettings.dspTime - _startTime));
+            float volume;
+            double sampleTime = AudioSettings.dspTime;
 
-            for (int i = 0; i < data.Length; i++)
+            for (int i = 0; i < buffer.Length; i += channels)
             {
-                var samplesElapsed = samplesSinceTrigger + i/channels;
+                sampleTime += _sampleDuration;
 
-                var volume = 0f;
-
-                if (samplesElapsed < _attackSamples)
+                if (AttackTime > 0 && sampleTime < _attackFinishTime)
                 {
-                    volume = Mathf.Lerp(0f, 1f, samplesElapsed / (float)_attackSamples);
+                    volume = (float)Math.Pow((sampleTime - _startTime)/AttackTime, 4);
                 }
-                else if (samplesElapsed < _sustainSamples + _attackSamples)
+                else if (SustainTime > 0 && sampleTime < _sustainFinishTime)
                 {
                     volume = 1f;
                 }
-                else if (samplesElapsed < _releaseSamples + _sustainSamples + _attackSamples)
+                else if (ReleaseTime > 0 && sampleTime < _releaseFinishTime)
                 {
-                    volume = Mathf.Lerp(1f, 0f, (samplesElapsed - _attackSamples - _sustainSamples) / (float)_releaseSamples);
+                    volume = (float)Math.Pow((_releaseFinishTime - sampleTime)/ReleaseTime, 4);
                 }
                 else
                 {
@@ -71,7 +71,10 @@ namespace DerelictComputer
                     _triggered = false;
                 }
 
-                data[i] *= Mathf.Clamp(volume, 0f, 1f);
+                for (int j = 0; j < channels; j++)
+                {
+                    buffer[i + j] *= volume;
+                }
             }
         }
     }
